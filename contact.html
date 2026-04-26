@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beats Studio Buds - Trands</title>
+    <title>Contact Us - Trands</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,21 +56,6 @@
         .animate-marquee:hover {
             animation-play-state: paused;
         }
-        /* Custom Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in {
-            animation: fadeIn 0.4s ease-out forwards;
-        }
     </style>
 </head>
 <body class="text-slate-900 antialiased">
@@ -115,7 +100,7 @@
         <header class="bg-white py-5 rounded-t-[2.5rem] lg:rounded-t-[3rem] sticky top-0 z-50">
             <div class="container mx-auto px-4 lg:px-12 flex justify-between items-center">
                 <!-- Logo -->
-                <a href="#" class="text-[26px] font-extrabold text-[#111] flex items-center tracking-tight">
+                <a href="index.html" class="text-[26px] font-extrabold text-[#111] flex items-center tracking-tight">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
                         <path d="M5 16L10 9" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
                         <path d="M11 20L16 13" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
@@ -126,7 +111,7 @@
 
                 <!-- Navigation Links -->
                 <nav class="hidden lg:flex items-center space-x-8 text-[14px] font-medium text-gray-800">
-                    <a href="#" class="flex items-center hover:text-black transition">Home <i data-lucide="chevron-down" class="ml-1.5 text-gray-400" stroke-width="2" width="12" height="12"></i></a>
+                    <a href="index.html" class="flex items-center hover:text-black transition">Home <i data-lucide="chevron-down" class="ml-1.5 text-gray-400" stroke-width="2" width="12" height="12"></i></a>
                     
                     <!-- Shop Mega Menu -->
                     <div class="group static">
@@ -239,7 +224,7 @@
                     <a href="headphones.html" class="hover:text-black transition">Headphones</a>
                     <a href="#" class="hover:text-black transition">Accessories</a>
                     <a href="#" class="hover:text-black transition">Blog</a>
-                    <a href="#" class="hover:text-black transition">Contact</a>
+                    <a href="contact.html" class="hover:text-black transition">Contact</a>
                 </nav>
 
                 <!-- Header Actions -->
@@ -267,278 +252,98 @@
         </header>
     </div>
 
-        <main>
-        <!-- Breadcrumbs -->
-        <div class="bg-white py-4 border-b border-gray-100">
-            <div class="container mx-auto px-4 lg:px-8 flex items-center text-xs text-gray-500 font-medium">
-                <a href="index.html" class="hover:text-black transition">Home</a>
-                <i data-lucide="chevron-right" width="12" height="12" class="mx-2"></i>
-                <a href="headphones.html" class="hover:text-black transition">Earphones</a>
-                <i data-lucide="chevron-right" width="12" height="12" class="mx-2"></i>
-                <a href="#" class="hover:text-black transition">Bluetooth Earphones</a>
-                <i data-lucide="chevron-right" width="12" height="12" class="mx-2"></i>
-                <span class="text-black">Beats Studio Buds</span>
+    <main class="bg-white">
+        <!-- Page Header -->
+        <div class="bg-[#f8f9fa] py-16 lg:py-24 border-b border-gray-100 relative overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover opacity-10 mix-blend-multiply" alt="Office Background">
+            </div>
+            <div class="container mx-auto px-4 lg:px-8 relative z-10 text-center">
+                <h1 class="text-4xl lg:text-6xl font-extrabold text-[#111] tracking-tight mb-4">Contact Us</h1>
+                <p class="text-gray-500 font-medium max-w-2xl mx-auto">Get in touch with the Trands team for any inquiries or support.</p>
             </div>
         </div>
 
-        <!-- Product Hero Section -->
-        <section class="container mx-auto px-4 lg:px-8 py-12 flex flex-col lg:flex-row gap-12 lg:gap-16">
-            <!-- Left: Gallery -->
-            <div class="w-full lg:w-1/2">
-                <!-- Main Image -->
-                <div class="relative bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef] rounded-[2rem] aspect-square flex items-center justify-center p-8 mb-4 shadow-sm overflow-hidden">
-                    <div class="absolute top-6 left-6 bg-black/80 backdrop-blur-md border border-white/20 text-white text-xs font-bold px-4 py-2 rounded-full z-10 shadow-lg">22% OFF</div>
-                    <img id="main-product-image" src="https://images.unsplash.com/photo-1606220838315-056192d5e927?auto=format&fit=crop&q=80&w=800" alt="Beats Studio Buds" class="w-full h-full object-contain mix-blend-multiply transition-opacity duration-300 animate-float">
-                </div>
-                <!-- Thumbnails -->
-                <div class="flex space-x-4">
-                    <div class="w-20 h-20 bg-[#f5f5f5] rounded-xl cursor-pointer border-2 border-black p-2 flex items-center justify-center" onclick="changeMainImage(this, 'https://images.unsplash.com/photo-1606220838315-056192d5e927?auto=format&fit=crop&q=80&w=800')">
-                        <img src="https://images.unsplash.com/photo-1606220838315-056192d5e927?auto=format&fit=crop&q=80&w=200" alt="Thumb 1" class="w-full h-full object-contain mix-blend-multiply">
-                    </div>
-                    <div class="w-20 h-20 bg-[#f5f5f5] rounded-xl cursor-pointer border-2 border-transparent hover:border-gray-300 p-2 flex items-center justify-center transition opacity-60" onclick="changeMainImage(this, 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&q=80&w=800')">
-                        <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&q=80&w=200" alt="Thumb 2" class="w-full h-full object-contain mix-blend-multiply">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right: Product Info -->
-            <div class="w-full lg:w-1/2 flex flex-col justify-center">
-                <p class="text-xs text-gray-500 font-medium mb-2">Bluetooth Earphones</p>
-                <h1 class="text-3xl lg:text-[40px] font-extrabold text-[#111] leading-tight mb-4 tracking-tighter">Beats Studio Buds</h1>
-                
-                <!-- Ratings & SKU -->
-                <div class="flex items-center space-x-6 mb-6">
-                    <div class="flex items-center">
-                        <div class="flex text-black mr-2">
-                            <i data-lucide="star" class="fill-current" width="14" height="14"></i>
-                            <i data-lucide="star" class="fill-current" width="14" height="14"></i>
-                            <i data-lucide="star" class="fill-current" width="14" height="14"></i>
-                            <i data-lucide="star" class="fill-current" width="14" height="14"></i>
-                            <i data-lucide="star" class="fill-gray-300 text-gray-300" width="14" height="14"></i>
+        <!-- Contact Content Area -->
+        <section class="container mx-auto px-4 lg:px-8 py-16 lg:py-24">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <!-- Contact Info -->
+                <div class="w-full lg:w-1/3 space-y-12">
+                    <div>
+                        <h3 class="text-2xl font-bold text-[#111] mb-6">Get in Touch</h3>
+                        <p class="text-gray-600 mb-8 text-[15px] leading-relaxed">
+                            We'd love to hear from you. Please fill out the form or reach out to us using the contact details below.
+                        </p>
+                        <div class="space-y-8">
+                            <div class="flex items-start">
+                                <div class="bg-gray-100 p-3 rounded-full mr-4">
+                                    <i data-lucide="map-pin" class="text-black" width="24" height="24"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-[#111] mb-1">Head Office</h4>
+                                    <p class="text-gray-500 text-sm">1234 Fashion Street, Suite 567<br>New York, NY 10001</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-gray-100 p-3 rounded-full mr-4">
+                                    <i data-lucide="phone" class="text-black" width="24" height="24"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-[#111] mb-1">Phone Number</h4>
+                                    <p class="text-gray-500 text-sm">+1 (234) 567-890<br>Mon-Fri 9am-6pm</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-gray-100 p-3 rounded-full mr-4">
+                                    <i data-lucide="mail" class="text-black" width="24" height="24"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-[#111] mb-1">Email Address</h4>
+                                    <p class="text-gray-500 text-sm">info@trands.com<br>support@trands.com</p>
+                                </div>
+                            </div>
                         </div>
-                        <span class="text-xs text-gray-500 font-medium">3</span>
-                    </div>
-                    <div class="text-xs text-gray-500 font-medium">SKU: <span class="text-black font-semibold">F8H3M5V7S2</span></div>
-                </div>
-
-                <!-- Price and Stock -->
-                <div class="border-t border-gray-100 py-6 flex items-center justify-between">
-                    <div class="flex items-end">
-                        <span class="text-3xl font-bold text-[#111] mr-3">$35.99</span>
-                        <span class="text-lg text-gray-400 line-through font-medium mb-1">$45.99</span>
-                    </div>
-                    <span class="text-xs font-semibold text-[#111]">In Stock</span>
-                </div>
-
-                <!-- Description -->
-                <p class="text-sm text-gray-500 leading-relaxed mb-8">Enjoy premium sound quality with Beats Studio Buds, featuring active noise cancellation, transparency mode, ergonomic fit, and seamless compatibility for an immersive audio experience.</p>
-
-
-
-                <!-- Meta Info & Share -->
-                <div class="border-t border-gray-100 pt-6 flex flex-wrap items-center justify-between gap-4 text-xs font-semibold text-gray-700">
-                    <div class="flex items-center space-x-6">
-                        <a href="#" class="flex items-center hover:text-black transition"><i data-lucide="help-circle" width="16" height="16" class="mr-2 text-gray-500"></i> Ask a question</a>
-                        <a href="#" class="flex items-center hover:text-black transition"><i data-lucide="box" width="16" height="16" class="mr-2 text-gray-500"></i> Delivery Return</a>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <span class="text-gray-400 font-medium">Share:</span>
-                        <a href="#" class="hover:text-black transition"><i data-lucide="facebook" width="14" height="14"></i></a>
-                        <a href="#" class="hover:text-black transition"><i data-lucide="twitter" width="14" height="14"></i></a>
-                        <a href="#" class="hover:text-black transition">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                        </a>
-                        <a href="#" class="hover:text-black transition"><i data-lucide="linkedin" width="14" height="14"></i></a>
-                        <a href="#" class="hover:text-black transition"><i data-lucide="smartphone" width="14" height="14"></i></a>
                     </div>
                 </div>
 
-                <!-- Product Highlights -->
-                <div class="border-t border-gray-100 mt-6 pt-6">
-                    <h3 class="font-bold text-[#111] mb-4 text-sm">Product Highlights</h3>
-                    <ul class="text-xs text-gray-600 space-y-3">
-                        <li class="flex items-start"><i data-lucide="check-circle-2" class="mr-2 text-green-500 flex-shrink-0 mt-0.5" width="14" height="14"></i><span class="font-bold text-gray-800">Active Noise Cancellation:</span> Eliminates distractions for focused listening.</li>
-                        <li class="flex items-start"><i data-lucide="check-circle-2" class="mr-2 text-green-500 flex-shrink-0 mt-0.5" width="14" height="14"></i><span class="font-bold text-gray-800">Transparency Mode:</span> Allows awareness of surroundings when needed.</li>
-                        <li class="flex items-start"><i data-lucide="check-circle-2" class="mr-2 text-green-500 flex-shrink-0 mt-0.5" width="14" height="14"></i><span class="font-bold text-gray-800">Ergonomic Design:</span> Lightweight with customizable ear tips for comfort.</li>
-                        <li class="flex items-start"><i data-lucide="check-circle-2" class="mr-2 text-green-500 flex-shrink-0 mt-0.5" width="14" height="14"></i><span class="font-bold text-gray-800">Long Battery Life:</span> Up to 24 hours with the charging case.</li>
-                    </ul>
+                <!-- Contact Form -->
+                <div class="w-full lg:w-2/3">
+                    <div class="bg-white p-8 lg:p-12 rounded-[2rem] border border-gray-100 shadow-xl shadow-gray-100/50">
+                        <h3 class="text-2xl font-bold text-[#111] mb-8">Send us a Message</h3>
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label for="name" class="text-sm font-bold text-gray-700">Full Name *</label>
+                                    <input type="text" id="name" class="w-full px-5 py-4 bg-[#f8f9fa] border-transparent border focus:bg-white rounded-xl outline-none focus:border-black transition text-sm" placeholder="John Doe" required>
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="email" class="text-sm font-bold text-gray-700">Email Address *</label>
+                                    <input type="email" id="email" class="w-full px-5 py-4 bg-[#f8f9fa] border-transparent border focus:bg-white rounded-xl outline-none focus:border-black transition text-sm" placeholder="john@example.com" required>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label for="subject" class="text-sm font-bold text-gray-700">Subject *</label>
+                                <input type="text" id="subject" class="w-full px-5 py-4 bg-[#f8f9fa] border-transparent border focus:bg-white rounded-xl outline-none focus:border-black transition text-sm" placeholder="How can we help?" required>
+                            </div>
+                            <div class="space-y-2">
+                                <label for="message" class="text-sm font-bold text-gray-700">Message *</label>
+                                <textarea id="message" rows="5" class="w-full px-5 py-4 bg-[#f8f9fa] border-transparent border focus:bg-white rounded-xl outline-none focus:border-black transition text-sm" placeholder="Write your message here..." required></textarea>
+                            </div>
+                            <button type="submit" class="bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-xl transition inline-flex items-center group w-full justify-center md:w-auto">
+                                Send Message
+                                <i data-lucide="send" class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Information Tabs -->
-        <section class="container mx-auto px-4 lg:px-8 py-16 border-t border-gray-100">
-            <div class="flex space-x-2 bg-gray-50 p-2 rounded-2xl mb-8 overflow-x-auto hide-scrollbar w-max max-w-full">
-                <button class="detail-tab-btn bg-white shadow-sm text-black font-bold px-6 py-2.5 rounded-xl whitespace-nowrap transition" data-target="tab-description">Description</button>
-                <button class="detail-tab-btn text-gray-500 font-medium hover:text-black hover:bg-gray-100 px-6 py-2.5 rounded-xl whitespace-nowrap transition" data-target="tab-additional">Additional Information</button>
-                <button class="detail-tab-btn text-gray-500 font-medium hover:text-black hover:bg-gray-100 px-6 py-2.5 rounded-xl whitespace-nowrap transition" data-target="tab-reviews">Reviews (3)</button>
-            </div>
-
-            <div id="tab-description" class="detail-tab-content animate-fade-in text-sm text-gray-500 leading-relaxed max-w-4xl">
-                <p class="mb-4">Experience sound exactly as it was intended. Beats Studio Buds are engineered to deliver powerful, balanced sound in a compact design. Through an entirely custom acoustic platform, the two-piece diaphragm driver resides within a dual-chamber housing, resulting in clear sound with outstanding stereo separation.</p>
-                <p>An advanced digital processor then optimizes audio performance for loudness and clarity, while simultaneously ensuring clean noise cancellation. Control the noise: Active Noise Cancelling (ANC) dynamically blocks unwanted external noise. Switch to Transparency mode when you need to hear the world around you. Microphones outside the earbuds mix the sounds of your surroundings back in with your music for a natural, ‘open’ listening experience.</p>
-            </div>
-
-            <div id="tab-additional" class="detail-tab-content hidden animate-fade-in text-sm text-gray-500 max-w-4xl">
-                <table class="w-full text-left border-collapse">
-                    <tbody>
-                        <tr class="border-b border-gray-100">
-                            <th class="py-4 font-bold text-gray-800 w-1/3">Weight</th>
-                            <td class="py-4">0.15 kg</td>
-                        </tr>
-                        <tr class="border-b border-gray-100">
-                            <th class="py-4 font-bold text-gray-800">Dimensions</th>
-                            <td class="py-4">5 × 5 × 2.5 cm</td>
-                        </tr>
-                        <tr class="border-b border-gray-100">
-                            <th class="py-4 font-bold text-gray-800">Color</th>
-                            <td class="py-4">Black, White, Red</td>
-                        </tr>
-                        <tr class="border-b border-gray-100">
-                            <th class="py-4 font-bold text-gray-800">Connectivity</th>
-                            <td class="py-4">Bluetooth 5.2</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div id="tab-reviews" class="detail-tab-content hidden animate-fade-in text-sm text-gray-500 max-w-4xl">
-                <h3 class="font-bold text-black text-lg mb-6">3 reviews for Beats Studio Buds</h3>
-                <!-- Reviews List -->
-                <div class="space-y-6 mb-10">
-                    <div class="flex gap-4">
-                        <div class="w-12 h-12 rounded-full bg-gray-200 flex-shrink-0"></div>
-                        <div>
-                            <div class="flex text-black mb-1"><i data-lucide="star" class="fill-current" width="12" height="12"></i><i data-lucide="star" class="fill-current" width="12" height="12"></i><i data-lucide="star" class="fill-current" width="12" height="12"></i><i data-lucide="star" class="fill-current" width="12" height="12"></i><i data-lucide="star" class="fill-current" width="12" height="12"></i></div>
-                            <p class="font-bold text-[#111] text-xs mb-2">John Doe <span class="text-gray-400 font-normal ml-2">April 15, 2026</span></p>
-                            <p>Excellent sound quality and the ANC is surprisingly good for the size. Highly recommend.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4">
-                        <div class="w-12 h-12 rounded-full bg-gray-200 flex-shrink-0"></div>
-                        <div>
-                            <div class="flex text-black mb-1"><i data-lucide="star" class="fill-current" width="12" height="12"></i><i data-lucide="star" class="fill-current" width="12" height="12"></i><i data-lucide="star" class="fill-current" width="12" height="12"></i><i data-lucide="star" class="fill-current" width="12" height="12"></i><i data-lucide="star" class="fill-gray-300 text-gray-300" width="12" height="12"></i></div>
-                            <p class="font-bold text-[#111] text-xs mb-2">Jane Smith <span class="text-gray-400 font-normal ml-2">March 22, 2026</span></p>
-                            <p>Very comfortable. Battery life is decent, but could be slightly better.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add Review Form -->
-                <h4 class="font-bold text-black text-base mb-4">Add a review</h4>
-                <p class="mb-4">Your email address will not be published. Required fields are marked *</p>
-                <form class="space-y-4">
-                    <div>
-                        <label class="block font-semibold text-gray-800 text-xs mb-2">Your rating *</label>
-                        <div class="flex text-gray-300 cursor-pointer hover:text-black transition">
-                            <i data-lucide="star" class="fill-current" width="16" height="16"></i>
-                            <i data-lucide="star" class="fill-current" width="16" height="16"></i>
-                            <i data-lucide="star" class="fill-current" width="16" height="16"></i>
-                            <i data-lucide="star" class="fill-current" width="16" height="16"></i>
-                            <i data-lucide="star" class="fill-current" width="16" height="16"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block font-semibold text-gray-800 text-xs mb-2">Your review *</label>
-                        <textarea class="w-full bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm focus:border-black outline-none transition" rows="4"></textarea>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block font-semibold text-gray-800 text-xs mb-2">Name *</label>
-                            <input type="text" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:border-black outline-none transition">
-                        </div>
-                        <div>
-                            <label class="block font-semibold text-gray-800 text-xs mb-2">Email *</label>
-                            <input type="email" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:border-black outline-none transition">
-                        </div>
-                    </div>
-                    <button type="submit" class="bg-black text-white font-bold rounded-full px-8 py-3.5 hover:bg-gray-800 transition shadow-md text-sm mt-2">Submit Review</button>
-                </form>
-            </div>
-        </section>
-
-        <!-- Related Products -->
-        <section class="bg-[#f5f5f5] py-16">
-            <div class="container mx-auto px-4 lg:px-8">
-                <h2 class="text-2xl font-bold text-[#111] mb-8">Related Products</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Product 1 -->
-                    <div class="bg-white rounded-[1.25rem] p-6 group cursor-pointer transition relative hover:shadow-lg">
-                        <div class="relative h-64 mb-6 flex items-center justify-center">
-                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400" alt="Headphones" class="h-[90%] object-contain group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div>
-                            <p class="text-[12px] text-gray-500 mb-2">Headphones</p>
-                            <h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px]">Wireless Gaming Headphones MS920</h3>
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center text-[13px]">
-                                    <span class="font-bold text-[#111] mr-2">$75.66</span>
-                                </div>
-                                <button class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center shadow-sm hover:bg-[#111] hover:text-white transition group-hover:shadow-md text-[#111]">
-                                    <i data-lucide="shopping-cart" width="14" height="14"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 2 -->
-                    <div class="bg-white rounded-[1.25rem] p-6 group cursor-pointer transition relative hover:shadow-lg">
-                        <div class="relative h-64 mb-6 flex items-center justify-center">
-                            <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=400" alt="Headphones" class="h-[90%] object-contain group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div>
-                            <p class="text-[12px] text-gray-500 mb-2">Headphones</p>
-                            <h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px]">Wireless Gaming Headphones DM420</h3>
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center text-[13px]">
-                                    <span class="font-bold text-[#111]">$117.88</span>
-                                </div>
-                                <button class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center shadow-sm hover:bg-[#111] hover:text-white transition group-hover:shadow-md text-[#111]">
-                                    <i data-lucide="shopping-cart" width="14" height="14"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 3 -->
-                    <div class="bg-white rounded-[1.25rem] p-6 group cursor-pointer transition relative hover:shadow-lg">
-                        <div class="relative h-64 mb-6 flex items-center justify-center">
-                            <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=400" alt="Headphones" class="h-[90%] object-contain group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div>
-                            <p class="text-[12px] text-gray-500 mb-2">Headphones</p>
-                            <h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px]">Premium Studio Headphones</h3>
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center text-[13px]">
-                                    <span class="font-bold text-[#111]">$299.99</span>
-                                </div>
-                                <button class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center shadow-sm hover:bg-[#111] hover:text-white transition group-hover:shadow-md text-[#111]">
-                                    <i data-lucide="shopping-cart" width="14" height="14"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 4 -->
-                    <div class="bg-white rounded-[1.25rem] p-6 group cursor-pointer transition relative hover:shadow-lg">
-                        <div class="relative h-64 mb-6 flex items-center justify-center">
-                            <div class="absolute top-0 left-0 bg-[#111] text-white text-[11px] font-bold px-3 py-1 rounded-full">19%</div>
-                            <img src="https://images.unsplash.com/photo-1612444530582-fc66184b156b?auto=format&fit=crop&q=80&w=400" alt="Headphones" class="h-[90%] object-contain group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div>
-                            <p class="text-[12px] text-gray-500 mb-2">Headphones</p>
-                            <h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px]">W75 Automobili Lamborghini</h3>
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center text-[13px]">
-                                    <span class="font-bold text-[#111] mr-2">$247.55</span>
-                                </div>
-                                <button class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center shadow-sm hover:bg-[#111] hover:text-white transition group-hover:shadow-md text-[#111]">
-                                    <i data-lucide="shopping-cart" width="14" height="14"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Map Section -->
+        <section class="h-96 w-full bg-gray-200 mt-8">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1688031599370!5m2!1sen!2s" width="100%" height="100%" style="border:0; filter: grayscale(100%) contrast(1.2) opacity(0.8);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
     </main>
-
 
     <!-- Floating Left Navbar -->
     <div id="left-floating-navbar" class="fixed left-0 top-1/2 transform -translate-y-1/2 -translate-x-full opacity-0 pointer-events-none z-40 bg-white rounded-r-[3rem] shadow-[4px_0_24px_rgba(0,0,0,0.08)] border border-l-0 border-gray-100 py-10 px-4 flex flex-col items-center space-y-8 hidden 2xl:flex transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
@@ -647,11 +452,10 @@
         </div>
     </footer>
 
-    <!-- Initialize Lucide Icons -->
     <!-- Mobile Full Screen Menu -->
     <div id="mobile-menu" class="fixed inset-0 bg-white z-[100] flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
         <div class="p-5 flex justify-between items-center border-b border-gray-100">
-            <a href="#" class="text-[26px] font-extrabold text-[#111] flex items-center tracking-tight">
+            <a href="index.html" class="text-[26px] font-extrabold text-[#111] flex items-center tracking-tight">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
                     <path d="M5 16L10 9" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
                     <path d="M11 20L16 13" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
@@ -665,12 +469,12 @@
         </div>
         <div class="flex-1 overflow-y-auto px-6 py-8">
             <nav class="flex flex-col space-y-6 text-xl font-bold text-gray-800">
-                <a href="#" class="flex justify-between items-center border-b border-gray-50 pb-4">Home <i data-lucide="chevron-right" width="20" height="20" class="text-gray-300"></i></a>
+                <a href="index.html" class="flex justify-between items-center border-b border-gray-50 pb-4">Home <i data-lucide="chevron-right" width="20" height="20" class="text-gray-300"></i></a>
                 <a href="products.html" class="flex justify-between items-center border-b border-gray-50 pb-4">Shop <i data-lucide="chevron-right" width="20" height="20" class="text-gray-300"></i></a>
                 <a href="headphones.html" class="flex justify-between items-center border-b border-gray-50 pb-4">Headphones</a>
                 <a href="#" class="flex justify-between items-center border-b border-gray-50 pb-4">Accessories</a>
                 <a href="#" class="flex justify-between items-center border-b border-gray-50 pb-4">Blog</a>
-                <a href="#" class="flex justify-between items-center border-b border-gray-50 pb-4">Contact</a>
+                <a href="contact.html" class="flex justify-between items-center border-b border-gray-50 pb-4">Contact</a>
             </nav>
             <div class="mt-12">
                 <p class="text-sm text-gray-500 mb-4 uppercase font-semibold tracking-wider">Need Help?</p>
@@ -737,62 +541,6 @@
             setInterval(nextTopbarSlide, 4000);
         }
 
-        // Hero Slider Logic
-        const heroSlides = document.querySelectorAll('.hero-slide');
-        const heroDots = document.querySelectorAll('.hero-dot');
-        let currentHeroSlide = 0;
-
-        function showHeroSlide(index) {
-            heroSlides.forEach((slide, i) => {
-                if (i === index) {
-                    slide.classList.remove('opacity-0', 'pointer-events-none', 'z-0');
-                    slide.classList.add('opacity-100', 'z-10');
-                } else {
-                    slide.classList.remove('opacity-100', 'z-10');
-                    slide.classList.add('opacity-0', 'pointer-events-none', 'z-0');
-                }
-            });
-            
-            heroDots.forEach((dot, i) => {
-                if (i === index) {
-                    dot.classList.remove('bg-white/40');
-                    dot.classList.add('bg-white');
-                } else {
-                    dot.classList.remove('bg-white');
-                    dot.classList.add('bg-white/40');
-                }
-            });
-        }
-
-        function nextHeroSlide() {
-            currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
-            showHeroSlide(currentHeroSlide);
-        }
-
-        function prevHeroSlide() {
-            currentHeroSlide = (currentHeroSlide - 1 + heroSlides.length) % heroSlides.length;
-            showHeroSlide(currentHeroSlide);
-        }
-
-        const heroPrev = document.getElementById('hero-prev');
-        const heroNext = document.getElementById('hero-next');
-
-        if(heroSlides.length > 0 && heroDots.length > 0) {
-            heroDots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    currentHeroSlide = index;
-                    showHeroSlide(currentHeroSlide);
-                });
-            });
-            
-            if (heroPrev && heroNext) {
-                heroPrev.addEventListener('click', prevHeroSlide);
-                heroNext.addEventListener('click', nextHeroSlide);
-            }
-            
-            setInterval(nextHeroSlide, 5000);
-        }
-
         // Floating Navbar Scroll Logic
         const leftFloatingNavbar = document.getElementById('left-floating-navbar');
         if (leftFloatingNavbar) {
@@ -808,81 +556,6 @@
             // Trigger once on load to set initial state correctly
             window.dispatchEvent(new Event('scroll'));
         }
-
-        // Most Sold Tabs Logic
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
-
-        if(tabBtns.length > 0 && tabContents.length > 0) {
-            tabBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Update active tab styling
-                    tabBtns.forEach(b => {
-                        b.classList.remove('text-black');
-                        b.classList.add('text-gray-400');
-                    });
-                    btn.classList.remove('text-gray-400');
-                    btn.classList.add('text-black');
-
-                    // Show corresponding grid
-                    const targetId = btn.getAttribute('data-target');
-                    tabContents.forEach(content => {
-                        if (content.id === targetId) {
-                            content.classList.remove('hidden');
-                        } else {
-                            content.classList.add('hidden');
-                        }
-                    });
-                });
-            });
-        }
-    
-        // Product Details Image Gallery
-        function changeMainImage(element, src) {
-            const mainImg = document.getElementById('main-product-image');
-            mainImg.classList.add('opacity-0');
-            setTimeout(() => {
-                mainImg.src = src;
-                mainImg.classList.remove('opacity-0');
-            }, 150);
-            
-            // Update active thumbnail border
-            const thumbs = element.parentElement.children;
-            for(let i=0; i<thumbs.length; i++) {
-                thumbs[i].classList.remove('border-black', 'opacity-100');
-                thumbs[i].classList.add('border-transparent', 'opacity-60');
-            }
-            element.classList.remove('border-transparent', 'opacity-60');
-            element.classList.add('border-black', 'opacity-100');
-        }
-
-        // Product Details Tabs
-        const detailTabBtns = document.querySelectorAll('.detail-tab-btn');
-        const detailTabContents = document.querySelectorAll('.detail-tab-content');
-
-        if(detailTabBtns.length > 0) {
-            detailTabBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Update active tab styling
-                    detailTabBtns.forEach(b => {
-                        b.classList.remove('bg-white', 'shadow-sm', 'text-black', 'font-bold');
-                        b.classList.add('text-gray-500', 'font-medium', 'hover:text-black', 'hover:bg-gray-100');
-                    });
-                    btn.classList.remove('text-gray-500', 'font-medium', 'hover:text-black', 'hover:bg-gray-100');
-                    btn.classList.add('bg-white', 'shadow-sm', 'text-black', 'font-bold');
-
-                    // Show corresponding content
-                    const targetId = btn.getAttribute('data-target');
-                    detailTabContents.forEach(content => {
-                        if (content.id === targetId) {
-                            content.classList.remove('hidden');
-                        } else {
-                            content.classList.add('hidden');
-                        }
-                    });
-                });
-            });
-        }
-</script>
+    </script>
 </body>
 </html>
