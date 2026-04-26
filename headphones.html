@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trands - High Performance Electronics</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        background: '#f8f8f8',
+                        surface: '#f3f3f3',
+                        border: '#e5e5e5',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="text-slate-900 antialiased">
+
+    <!-- Top Bar & Header Wrapper -->
+    <div class="bg-[#0b0b0b]">
+        <!-- Top Bar -->
+        <div class="text-white text-[11px] font-medium py-3">
+            <div class="container mx-auto px-4 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="hover:text-gray-300 transition">Order Tracking</a>
+                    <a href="about.html" class="hover:text-gray-300 transition">About Us</a>
+                    <a href="#" class="hover:text-gray-300 transition">FAQ</a>
+                </div>
+                <div class="text-center flex-1 mt-2 md:mt-0 text-gray-300 flex justify-center items-center relative overflow-hidden h-6">
+                    <i id="topbar-prev" data-lucide="chevron-left" stroke-width="1.5" width="16" height="16" class="mr-12 text-gray-500 cursor-pointer hover:text-white transition z-10 relative"></i>
+                    <div id="topbar-slider" class="relative w-full max-w-lg h-full flex justify-center items-center">
+                        <div class="topbar-slide absolute inset-0 flex justify-center items-center transition-opacity duration-500 opacity-100 z-10">
+                            <span class="truncate">Enjoy free shipping on all orders this week! <a href="#" class="text-white font-bold ml-1 hover:underline">Shop Now <i data-lucide="arrow-right" class="ml-1 inline" width="12" height="12"></i></a></span>
+                        </div>
+                        <div class="topbar-slide absolute inset-0 flex justify-center items-center transition-opacity duration-500 opacity-0 z-0 pointer-events-none">
+                            <span class="truncate">Get 20% off your first purchase! <a href="#" class="text-white font-bold ml-1 hover:underline">Use Code: WELCOME</a></span>
+                        </div>
+                        <div class="topbar-slide absolute inset-0 flex justify-center items-center transition-opacity duration-500 opacity-0 z-0 pointer-events-none">
+                            <span class="truncate">New arrivals are here! <a href="#" class="text-white font-bold ml-1 hover:underline">Explore Now</a></span>
+                        </div>
+                    </div>
+                    <i id="topbar-next" data-lucide="chevron-right" stroke-width="1.5" width="16" height="16" class="ml-12 text-gray-500 cursor-pointer hover:text-white transition z-10 relative"></i>
+                </div>
+                <div class="flex items-center space-x-4 mt-2 md:mt-0">
+                    <div class="flex items-center cursor-pointer hover:text-gray-300 transition">
+                        English <i data-lucide="chevron-down" class="ml-1" width="12" height="12"></i>
+                    </div>
+                    <div class="flex items-center cursor-pointer hover:text-gray-300 transition">
+                        USD <i data-lucide="chevron-down" class="ml-1" width="12" height="12"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <header class="bg-white py-5 rounded-t-[2.5rem] lg:rounded-t-[3rem] sticky top-0 z-50">
+            <div class="container mx-auto px-4 lg:px-12 flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#" class="text-[26px] font-extrabold text-[#111] flex items-center tracking-tight">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
+                        <path d="M5 16L10 9" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M11 20L16 13" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M12 12L15 8" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                    trands
+                </a>
+
+                <!-- Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-8 text-[14px] font-medium text-gray-800">
+                    <a href="#" class="flex items-center hover:text-black transition">Home <i data-lucide="chevron-down" class="ml-1.5 text-gray-400" stroke-width="2" width="12" height="12"></i></a>
+                    
+                    <!-- Shop Mega Menu -->
+                    <div class="group static">
+                        <a href="products.html" class="flex items-center hover:text-black transition py-4">
+                            Shop <i data-lucide="chevron-down" class="ml-1.5 text-gray-400 group-hover:rotate-180 transition-transform duration-300" stroke-width="2" width="12" height="12"></i>
+                        </a>
+                        
+                        <!-- Dropdown Container with Hover Bridge -->
+                        <div class="absolute left-0 right-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <!-- Invisible Bridge -->
+                            <div class="absolute -top-6 left-0 w-full h-6 bg-transparent"></div>
+                            
+                            <!-- Mega Menu Content -->
+                            <div class="bg-white rounded-b-[2.5rem] lg:rounded-b-[3rem] shadow-2xl border-t border-gray-100 transform origin-top -translate-y-2 group-hover:translate-y-0 transition-transform duration-300 relative">
+                                <div class="container mx-auto px-4 lg:px-12 py-10">
+                                    <div class="grid grid-cols-5 gap-8">
+                                        <!-- Shop Lists -->
+                                        <div>
+                                            <h4 class="font-bold text-black mb-5 text-[15px]">Shop Lists</h4>
+                                            <ul class="space-y-4 text-[13px] text-gray-600 font-normal">
+                                                <li><a href="#" class="hover:text-black transition block">Shop Default</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Shop Right Sidebar</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Shop Wide</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Filters Area</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">List Left Sidebar</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Load More Button</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Infinite Scrolling</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Image Hover – Zoom</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Image Hover – Slider</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Image Hover – Flip</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product Variable</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Sale Countdown</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- Product Detail -->
+                                        <div>
+                                            <h4 class="font-bold text-black mb-5 text-[15px]">Product Detail</h4>
+                                            <ul class="space-y-4 text-[13px] text-gray-600 font-normal">
+                                                <li><a href="#" class="hover:text-black transition block">Product Default</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product Variable</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product Grouped</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product External</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product Downloadable</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product Zoom Image</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Produt With Video</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Thumbnails Left</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Gallery 1 Column</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Gallery 2 Columns</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Carousel 2 Columns</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- Product Features -->
+                                        <div>
+                                            <h4 class="font-bold text-black mb-5 text-[15px]">Product Features</h4>
+                                            <ul class="space-y-4 text-[13px] text-gray-600 font-normal">
+                                                <li><a href="#" class="hover:text-black transition block">Buy Now Button</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Order on WhatsApp</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Stock Progress Bar</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Sale Countdown</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Sticky Add to Cart</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Sticky Tab Titles</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Reviews Without Tab</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product Full Width</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Sticky Description</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Vertical Tabs</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Accordion Tabs</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Accordion in Content</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- Shop Pages -->
+                                        <div>
+                                            <h4 class="font-bold text-black mb-5 text-[15px]">Shop Pages</h4>
+                                            <ul class="space-y-4 text-[13px] text-gray-600 font-normal">
+                                                <li><a href="#" class="hover:text-black transition block">Cart</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Checkout</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">My account</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Wishlist</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Compare</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Order Tracking</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Catalog Mode</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Featured Products</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Best Selling Products</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Stock Progress Bar</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Stock Status</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Shop by Brand</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- Shop Layouts -->
+                                        <div>
+                                            <h4 class="font-bold text-black mb-5 text-[15px]">Shop Layouts</h4>
+                                            <ul class="space-y-4 text-[13px] text-gray-600 font-normal">
+                                                <li><a href="#" class="hover:text-black transition block">Two Columns</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Three Columns</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Three Columns Wide</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Four Columns</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Four Columns Wide</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Five Columns Wide</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Bordered Shipping Class</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product SKU</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Additional Information</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Login to See Prices</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="headphones.html" class="text-black font-bold border-b-2 border-black pb-1 transition">Headphones</a>
+                    <a href="#" class="hover:text-black transition">Accessories</a>
+                    <a href="#" class="hover:text-black transition">Blog</a>
+                    <a href="#" class="hover:text-black transition">Contact</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="flex items-center space-x-6 text-gray-800">
+                    <button class="hover:text-black transition"><i data-lucide="search" stroke-width="1.5" width="22" height="22"></i></button>
+                    <a href="#" class="hidden sm:flex items-center hover:text-black transition">
+                        <i data-lucide="user" stroke-width="1.5" width="22" height="22"></i>
+                        <span class="ml-2 text-sm font-medium">Account</span>
+                    </a>
+                    <a href="#" class="relative hover:text-black transition">
+                        <i data-lucide="heart" stroke-width="1.5" width="22" height="22"></i>
+                        <span class="absolute -top-1.5 -right-2 bg-black text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </a>
+                    <button class="hover:text-black transition"><i data-lucide="refresh-cw" stroke-width="1.5" width="22" height="22"></i></button>
+                    <a href="#" class="relative hover:text-black transition">
+                        <i data-lucide="shopping-cart" stroke-width="1.5" width="22" height="22"></i>
+                        <span class="absolute -top-1.5 -right-2 bg-black text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </a>
+                    <!-- Mobile Menu Toggle Button -->
+                    <button id="mobile-menu-btn" class="lg:hidden hover:text-black transition ml-4">
+                        <i data-lucide="menu" stroke-width="1.5" width="24" height="24"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+    </div>
+
+        <main>
+        <!-- Page Header -->
+        <section class="bg-[#f5f5f5] py-16 border-b border-gray-100">
+            <div class="container mx-auto px-4 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-[#111] mb-4 tracking-tight">Headphones</h1>
+                <p class="text-gray-500 max-w-2xl mx-auto">Discover our collection of premium headphones, engineered for ultimate sound clarity, comfort, and performance.</p>
+            </div>
+        </section>
+
+        <!-- Category Layout -->
+        <section class="container mx-auto px-4 lg:px-8 py-16 flex flex-col lg:flex-row gap-10">
+            <!-- Left Sidebar (Filters) -->
+            <aside class="w-full lg:w-1/4 flex-shrink-0">
+                <div class="sticky top-24 space-y-8">
+                    <!-- Categories -->
+                    <div>
+                        <h3 class="text-lg font-bold text-[#111] mb-4">Categories</h3>
+                        <ul class="space-y-3 text-sm font-medium text-gray-500">
+                            <li><a href="#" class="hover:text-black transition flex justify-between items-center group"><span class="group-hover:text-black">Earphone</span> <span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full text-xs">24</span></a></li>
+                            <li><a href="#" class="hover:text-black transition flex justify-between items-center group"><span class="group-hover:text-black">Headset</span> <span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full text-xs">12</span></a></li>
+                            <li><a href="#" class="hover:text-black transition flex justify-between items-center group"><span class="group-hover:text-black">Speaker</span> <span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full text-xs">15</span></a></li>
+                            <li><a href="#" class="hover:text-black transition flex justify-between items-center group"><span class="group-hover:text-black">Audio Cable</span> <span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full text-xs">8</span></a></li>
+                            <li><a href="#" class="hover:text-black transition flex justify-between items-center group"><span class="group-hover:text-black">More</span> <span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full text-xs">32</span></a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Price -->
+                    <div class="border-t border-gray-100 pt-6">
+                        <h3 class="text-lg font-bold text-[#111] mb-4">Price</h3>
+                        <div class="flex items-center space-x-2">
+                            <input type="number" placeholder="Min" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-black transition">
+                            <span class="text-gray-400">-</span>
+                            <input type="number" placeholder="Max" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-black transition">
+                        </div>
+                        <button class="w-full bg-[#111] text-white text-sm font-semibold rounded-full py-2.5 mt-4 hover:bg-black transition shadow-sm">Apply Filter</button>
+                    </div>
+
+                    <!-- Brands -->
+                    <div class="border-t border-gray-100 pt-6">
+                        <h3 class="text-lg font-bold text-[#111] mb-4">Brands</h3>
+                        <div class="space-y-3 text-sm font-medium text-gray-500">
+                            <label class="flex items-center space-x-3 cursor-pointer group">
+                                <input type="checkbox" class="form-checkbox h-4 w-4 text-black rounded border-gray-300 focus:ring-black">
+                                <span class="group-hover:text-black transition">Sennheiser</span>
+                            </label>
+                            <label class="flex items-center space-x-3 cursor-pointer group">
+                                <input type="checkbox" class="form-checkbox h-4 w-4 text-black rounded border-gray-300 focus:ring-black">
+                                <span class="group-hover:text-black transition">Logitech</span>
+                            </label>
+                            <label class="flex items-center space-x-3 cursor-pointer group">
+                                <input type="checkbox" class="form-checkbox h-4 w-4 text-black rounded border-gray-300 focus:ring-black">
+                                <span class="group-hover:text-black transition">Sony</span>
+                            </label>
+                            <label class="flex items-center space-x-3 cursor-pointer group">
+                                <input type="checkbox" class="form-checkbox h-4 w-4 text-black rounded border-gray-300 focus:ring-black">
+                                <span class="group-hover:text-black transition">Bose</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Right Content (Product Grid) -->
+            <div class="w-full lg:w-3/4">
+                <!-- Sorting Bar -->
+                <div class="flex flex-col sm:flex-row justify-between items-center mb-8 pb-4 border-b border-gray-100 gap-4">
+                    <p class="text-sm text-gray-500 font-medium">Showing 1–9 of 24 results</p>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm text-gray-500 font-medium">Sort by:</span>
+                        <select class="bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm font-medium focus:outline-none focus:border-black cursor-pointer transition">
+                            <option>Popularity</option>
+                            <option>Latest</option>
+                            <option>Price: low to high</option>
+                            <option>Price: high to low</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <!-- Product Card -->
+                    <div class="bg-[#f5f5f5] rounded-[1.25rem] p-6 group cursor-pointer transition relative">
+                        <div class="relative h-64 mb-6 flex items-center justify-center">
+                            <div class="absolute top-0 left-0 bg-[#111] text-white text-[11px] font-bold px-3 py-1 rounded-full">12%</div>
+                            <div class="absolute top-0 right-0 bg-white text-[#111] text-[11px] font-bold px-3 py-1 rounded-full flex items-center shadow-sm">
+                                <i data-lucide="star" class="fill-yellow-400 text-yellow-400 mr-1" width="10" height="10"></i> 4.67
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400" alt="Headphones" class="h-[90%] object-contain mix-blend-multiply group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div>
+                            <p class="text-[12px] text-gray-500 mb-2">Headphones</p>
+                            <a href="product-details.html"><h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px] hover:underline">Wireless Gaming Headphones MS920</h3></a>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center text-[13px]">
+                                    <span class="font-bold text-[#111] mr-2">$75.66</span>
+                                    <span class="text-gray-400 line-through">$85.66</span>
+                                </div>
+                                <button class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm hover:bg-[#111] hover:text-white transition group-hover:shadow-md text-[#111]">
+                                    <i data-lucide="shopping-cart" width="14" height="14"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Card 2 -->
+                    <div class="bg-[#f5f5f5] rounded-[1.25rem] p-6 group cursor-pointer transition relative">
+                        <div class="relative h-64 mb-6 flex items-center justify-center">
+                            <div class="absolute top-0 left-0 bg-[#111] text-white text-[11px] font-bold px-3 py-1 rounded-full">8%</div>
+                            <div class="absolute top-0 right-0 bg-white text-[#111] text-[11px] font-bold px-3 py-1 rounded-full flex items-center shadow-sm">
+                                <i data-lucide="star" class="fill-yellow-400 text-yellow-400 mr-1" width="10" height="10"></i> 3.67
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=400" alt="Headphones" class="h-[90%] object-contain mix-blend-multiply group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div>
+                            <p class="text-[12px] text-gray-500 mb-2">Headphones</p>
+                            <h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px]">Wireless Gaming Headphones DM420</h3>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center text-[13px]">
+                                    <span class="font-bold text-[#111]">$117.88</span>
+                                </div>
+                                <button class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm hover:bg-[#111] hover:text-white transition group-hover:shadow-md text-[#111]">
+                                    <i data-lucide="shopping-cart" width="14" height="14"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="bg-[#f5f5f5] rounded-[1.25rem] p-6 group cursor-pointer transition relative">
+                        <div class="relative h-64 mb-6 flex items-center justify-center">
+                            <div class="absolute top-0 right-0 bg-white text-[#111] text-[11px] font-bold px-3 py-1 rounded-full flex items-center shadow-sm">
+                                <i data-lucide="star" class="fill-yellow-400 text-yellow-400 mr-1" width="10" height="10"></i> 4.90
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=400" alt="Headphones" class="h-[90%] object-contain mix-blend-multiply group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div>
+                            <p class="text-[12px] text-gray-500 mb-2">Headphones</p>
+                            <h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px]">Premium Studio Headphones</h3>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center text-[13px]">
+                                    <span class="font-bold text-[#111] mr-2">$299.99</span>
+                                </div>
+                                <button class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm hover:bg-[#111] hover:text-white transition group-hover:shadow-md text-[#111]">
+                                    <i data-lucide="shopping-cart" width="14" height="14"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 4 -->
+                    <div class="bg-[#f5f5f5] rounded-[1.25rem] p-6 group cursor-pointer transition relative">
+                        <div class="relative h-64 mb-6 flex items-center justify-center">
+                            <div class="absolute top-0 left-0 bg-[#111] text-white text-[11px] font-bold px-3 py-1 rounded-full">19%</div>
+                            <div class="absolute top-0 right-0 bg-white text-[#111] text-[11px] font-bold px-3 py-1 rounded-full flex items-center shadow-sm">
+                                <i data-lucide="star" class="fill-yellow-400 text-yellow-400 mr-1" width="10" height="10"></i> 3.67
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1612444530582-fc66184b156b?auto=format&fit=crop&q=80&w=400" alt="Headphones" class="h-[90%] object-contain mix-blend-multiply group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div>
+                            <p class="text-[12px] text-gray-500 mb-2">Headphones</p>
+                            <h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px]">W75 Automobili Lamborghini</h3>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center text-[13px]">
+                                    <span class="font-bold text-[#111] mr-2">$247.55</span>
+                                    <span class="text-gray-400 line-through">$303.45</span>
+                                </div>
+                                <button class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm hover:bg-[#111] hover:text-white transition group-hover:shadow-md text-[#111]">
+                                    <i data-lucide="shopping-cart" width="14" height="14"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 5 -->
+                    <div class="bg-[#f5f5f5] rounded-[1.25rem] p-6 group cursor-pointer transition relative">
+                        <div class="relative h-64 mb-6 flex items-center justify-center">
+                            <div class="absolute top-0 left-0 bg-[#111] text-white text-[11px] font-bold px-3 py-1 rounded-full">35%</div>
+                            <div class="absolute top-0 right-0 bg-white text-[#111] text-[11px] font-bold px-3 py-1 rounded-full flex items-center shadow-sm">
+                                <i data-lucide="star" class="fill-yellow-400 text-yellow-400 mr-1" width="10" height="10"></i> 4.80
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=400" alt="Headphones" class="h-[90%] object-contain mix-blend-multiply group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div>
+                            <p class="text-[12px] text-gray-500 mb-2">Headphones</p>
+                            <h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px]">Smart Ergonomic Wireless</h3>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center text-[13px]">
+                                    <span class="font-bold text-[#111] mr-2">$48.90</span>
+                                    <span class="text-gray-400 line-through">$75.90</span>
+                                </div>
+                                <button class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm hover:bg-[#111] hover:text-white transition group-hover:shadow-md text-[#111]">
+                                    <i data-lucide="shopping-cart" width="14" height="14"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 6 -->
+                    <div class="bg-[#f5f5f5] rounded-[1.25rem] p-6 group cursor-pointer transition relative">
+                        <div class="relative h-64 mb-6 flex items-center justify-center">
+                            <div class="absolute top-0 right-0 bg-white text-[#111] text-[11px] font-bold px-3 py-1 rounded-full flex items-center shadow-sm">
+                                <i data-lucide="star" class="fill-yellow-400 text-yellow-400 mr-1" width="10" height="10"></i> 4.50
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1599669454699-248893623440?auto=format&fit=crop&q=80&w=400" alt="Headphones" class="h-[90%] object-contain mix-blend-multiply group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div>
+                            <p class="text-[12px] text-gray-500 mb-2">Headphones</p>
+                            <h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px]">Classic Over-Ear Headphones</h3>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center text-[13px]">
+                                    <span class="font-bold text-[#111] mr-2">$145.00</span>
+                                </div>
+                                <button class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm hover:bg-[#111] hover:text-white transition group-hover:shadow-md text-[#111]">
+                                    <i data-lucide="shopping-cart" width="14" height="14"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex justify-center mt-12 space-x-2">
+                    <button class="w-10 h-10 rounded-full bg-[#111] text-white font-bold flex items-center justify-center shadow-md hover:bg-black transition">1</button>
+                    <button class="w-10 h-10 rounded-full bg-white text-[#111] font-bold flex items-center justify-center shadow-sm hover:bg-gray-50 transition border border-gray-100">2</button>
+                    <button class="w-10 h-10 rounded-full bg-white text-[#111] font-bold flex items-center justify-center shadow-sm hover:bg-gray-50 transition border border-gray-100"><i data-lucide="chevron-right" width="18" height="18"></i></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Floating Left Navbar -->
+    <div id="left-floating-navbar" class="fixed left-0 top-1/2 transform -translate-y-1/2 -translate-x-full opacity-0 pointer-events-none z-40 bg-white rounded-r-[3rem] shadow-[4px_0_24px_rgba(0,0,0,0.08)] border border-l-0 border-gray-100 py-10 px-4 flex flex-col items-center space-y-8 hidden 2xl:flex transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
+        <a href="#" class="text-black transition hover:scale-110 transform" title="Speakers"><i data-lucide="speaker" stroke-width="2" width="26" height="26"></i></a>
+        <a href="headphones.html" class="bg-[#111] text-white p-3 rounded-full shadow-md transition hover:scale-110 transform flex items-center justify-center" title="Headphones"><i data-lucide="headphones" stroke-width="2" width="24" height="24"></i></a>
+        <a href="#" class="text-black transition hover:scale-110 transform" title="Earbuds">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 16v-5c0-1.66-1.34-3-3-3H6a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h1v2a1.5 1.5 0 0 0 3 0z" />
+                <circle cx="6.5" cy="10.5" r="1.5" fill="currentColor" stroke="none" />
+                <path d="M14 16v-5c0-1.66 1.34-3 3-3h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1v2a1.5 1.5 0 0 1-3 0z" />
+                <circle cx="17.5" cy="10.5" r="1.5" fill="currentColor" stroke="none" />
+            </svg>
+        </a>
+        <a href="#" class="text-black transition hover:scale-110 transform" title="Microphone"><i data-lucide="mic" stroke-width="2" width="26" height="26"></i></a>
+        <a href="#" class="text-black transition hover:scale-110 transform" title="Smartwatch"><i data-lucide="watch" stroke-width="2" width="26" height="26"></i></a>
+        <a href="#" class="text-black transition hover:scale-110 transform" title="Accessories"><i data-lucide="plug" stroke-width="2" width="26" height="26"></i></a>
+    </div>
+
+    <!-- Mobile Bottom Navbar -->
+    <div class="fixed bottom-0 left-0 w-full bg-white z-40 border-t border-gray-100 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] rounded-t-[2rem] py-4 px-8 flex justify-between items-center 2xl:hidden">
+        <a href="#" class="text-gray-500 hover:text-black transition transform hover:scale-110"><i data-lucide="speaker" stroke-width="2" width="24" height="24"></i></a>
+        <a href="headphones.html" class="text-black transition transform hover:scale-110"><i data-lucide="headphones" stroke-width="2" width="24" height="24"></i></a>
+        <a href="#" class="text-gray-500 hover:text-black transition transform hover:scale-110">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 16v-5c0-1.66-1.34-3-3-3H6a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h1v2a1.5 1.5 0 0 0 3 0z" />
+                <circle cx="6.5" cy="10.5" r="1.5" fill="currentColor" stroke="none" />
+                <path d="M14 16v-5c0-1.66 1.34-3 3-3h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1v2a1.5 1.5 0 0 1-3 0z" />
+                <circle cx="17.5" cy="10.5" r="1.5" fill="currentColor" stroke="none" />
+            </svg>
+        </a>
+        <a href="#" class="text-gray-500 hover:text-black transition transform hover:scale-110"><i data-lucide="mic" stroke-width="2" width="24" height="24"></i></a>
+        <a href="#" class="text-gray-500 hover:text-black transition transform hover:scale-110"><i data-lucide="watch" stroke-width="2" width="24" height="24"></i></a>
+        <a href="#" class="text-gray-500 hover:text-black transition transform hover:scale-110"><i data-lucide="plug" stroke-width="2" width="24" height="24"></i></a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#0b0b0b] text-white pt-20 pb-28 2xl:pb-8">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Company Info -->
+                <div>
+                    <a href="#" class="text-2xl font-extrabold text-white flex items-center mb-8">
+                        <i data-lucide="zap" class="mr-2 fill-white" width="24" height="24"></i>
+                        trands
+                    </a>
+                    <div class="text-xs text-gray-400 space-y-3">
+                        <p><span class="text-white font-semibold">Address:</span> 1234 Fashion Street, Suite 567, New York, NY</p>
+                        <p><span class="text-white font-semibold">Phone:</span> +123 456 7890</p>
+                        <p><span class="text-white font-semibold">Email:</span> info@example.com</p>
+                    </div>
+                </div>
+
+                <!-- Let Us Help You -->
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-6">Let Us Help You</h4>
+                    <ul class="text-xs text-gray-400 space-y-3">
+                        <li><a href="#" class="hover:text-white transition">Accessibility Statement</a></li>
+                        <li><a href="#" class="hover:text-white transition">Your Orders</a></li>
+                        <li><a href="service.html" class="hover:text-white transition">Returns & Replacements</a></li>
+                        <li><a href="#" class="hover:text-white transition">Shipping Rates & Policies</a></li>
+                        <li><a href="#" class="hover:text-white transition">Refund and Returns Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms and Conditions</a></li>
+                        <li><a href="#" class="hover:text-white transition">Cookie Settings</a></li>
+                        <li><a href="#" class="hover:text-white transition">Help Center</a></li>
+                    </ul>
+                </div>
+
+                <!-- Get to Know Us -->
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-6">Get to Know Us</h4>
+                    <ul class="text-xs text-gray-400 space-y-3">
+                        <li><a href="#" class="hover:text-white transition">Careers for Trands</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">About Trands</a></li>
+                        <li><a href="#" class="hover:text-white transition">Investor Relations</a></li>
+                        <li><a href="#" class="hover:text-white transition">Trands Devices</a></li>
+                        <li><a href="#" class="hover:text-white transition">Customer reviews</a></li>
+                        <li><a href="#" class="hover:text-white transition">Social Responsibility</a></li>
+                        <li><a href="#" class="hover:text-white transition">Store Locations</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-6">Sign Up for Email</h4>
+                    <p class="text-xs text-gray-400 mb-4">Sign up to get first dibs on new arrivals, sales, exclusive content, events and more!</p>
+                    <form class="flex flex-col space-y-3 relative mb-4">
+                        <input type="email" placeholder="Enter your email address" class="w-full px-4 py-3 bg-[#1a1a1a] border border-gray-800 rounded-md text-white text-xs outline-none focus:border-gray-500 transition pr-20">
+                        <button type="submit" class="absolute right-1 top-1 bottom-1 bg-black hover:bg-gray-800 text-white text-[10px] font-bold px-4 rounded transition">SEND</button>
+                    </form>
+                    <p class="text-[10px] text-gray-500">By subscribing you agree to our <a href="#" class="underline hover:text-white">Terms & Conditions and Privacy & Cookies Policy.</a></p>
+                </div>
+            </div>
+
+            <!-- Copyright Bar -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>Copyright &copy; 2026 <a href="#" class="text-white hover:underline">Trands</a>. All rights reserved.</p>
+                <div class="flex items-center space-x-2 mt-4 md:mt-0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa" class="h-4 bg-white rounded px-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Mastercard" class="h-4 bg-white rounded px-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/2560px-PayPal.svg.png" alt="PayPal" class="h-4 bg-white rounded px-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Skrill_logo.svg/2560px-Skrill_logo.svg.png" alt="Skrill" class="h-4 bg-white rounded px-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Klarna_logo_%282019%29.svg/2560px-Klarna_logo_%282019%29.svg.png" alt="Klarna" class="h-4 bg-white rounded px-1">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <!-- Mobile Full Screen Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[100] flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
+        <div class="p-5 flex justify-between items-center border-b border-gray-100">
+            <a href="#" class="text-[26px] font-extrabold text-[#111] flex items-center tracking-tight">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
+                    <path d="M5 16L10 9" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M11 20L16 13" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M12 12L15 8" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+                trands
+            </a>
+            <button id="close-menu-btn" class="text-gray-500 hover:text-black transition p-2 rounded-full bg-gray-100">
+                <i data-lucide="x" stroke-width="2" width="24" height="24"></i>
+            </button>
+        </div>
+        <div class="flex-1 overflow-y-auto px-6 py-8">
+            <nav class="flex flex-col space-y-6 text-xl font-bold text-gray-800">
+                <a href="#" class="flex justify-between items-center border-b border-gray-50 pb-4">Home <i data-lucide="chevron-right" width="20" height="20" class="text-gray-300"></i></a>
+                <a href="products.html" class="flex justify-between items-center border-b border-gray-50 pb-4">Shop <i data-lucide="chevron-right" width="20" height="20" class="text-gray-300"></i></a>
+                <a href="headphones.html" class="flex justify-between items-center border-b border-gray-50 pb-4 text-black font-extrabold">Headphones</a>
+                <a href="#" class="flex justify-between items-center border-b border-gray-50 pb-4">Accessories</a>
+                <a href="#" class="flex justify-between items-center border-b border-gray-50 pb-4">Blog</a>
+                <a href="#" class="flex justify-between items-center border-b border-gray-50 pb-4">Contact</a>
+            </nav>
+            <div class="mt-12">
+                <p class="text-sm text-gray-500 mb-4 uppercase font-semibold tracking-wider">Need Help?</p>
+                <div class="space-y-4 font-medium text-gray-700">
+                    <a href="#" class="block">Order Tracking</a>
+                    <a href="#" class="block">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Initialize Lucide Icons & Scripts -->
+    <script>
+        lucide.createIcons();
+        
+        // Mobile Menu Toggle logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if(mobileMenuBtn && closeMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full');
+                document.body.classList.add('overflow-hidden');
+            });
+
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.classList.remove('overflow-hidden');
+            });
+        }
+
+        // Topbar Slider Logic
+        const topbarSlides = document.querySelectorAll('.topbar-slide');
+        const topbarPrev = document.getElementById('topbar-prev');
+        const topbarNext = document.getElementById('topbar-next');
+        let currentTopbarSlide = 0;
+
+        function showTopbarSlide(index) {
+            topbarSlides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.remove('opacity-0', 'pointer-events-none', 'z-0');
+                    slide.classList.add('opacity-100', 'z-10');
+                } else {
+                    slide.classList.remove('opacity-100', 'z-10');
+                    slide.classList.add('opacity-0', 'pointer-events-none', 'z-0');
+                }
+            });
+        }
+
+        function nextTopbarSlide() {
+            currentTopbarSlide = (currentTopbarSlide + 1) % topbarSlides.length;
+            showTopbarSlide(currentTopbarSlide);
+        }
+
+        function prevTopbarSlide() {
+            currentTopbarSlide = (currentTopbarSlide - 1 + topbarSlides.length) % topbarSlides.length;
+            showTopbarSlide(currentTopbarSlide);
+        }
+
+        if(topbarNext && topbarPrev && topbarSlides.length > 0) {
+            topbarNext.addEventListener('click', nextTopbarSlide);
+            topbarPrev.addEventListener('click', prevTopbarSlide);
+            setInterval(nextTopbarSlide, 4000);
+        }
+
+        // Hero Slider Logic
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        const heroDots = document.querySelectorAll('.hero-dot');
+        let currentHeroSlide = 0;
+
+        function showHeroSlide(index) {
+            heroSlides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.remove('opacity-0', 'pointer-events-none', 'z-0');
+                    slide.classList.add('opacity-100', 'z-10');
+                } else {
+                    slide.classList.remove('opacity-100', 'z-10');
+                    slide.classList.add('opacity-0', 'pointer-events-none', 'z-0');
+                }
+            });
+            
+            heroDots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.remove('bg-white/40');
+                    dot.classList.add('bg-white');
+                } else {
+                    dot.classList.remove('bg-white');
+                    dot.classList.add('bg-white/40');
+                }
+            });
+        }
+
+        function nextHeroSlide() {
+            currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
+            showHeroSlide(currentHeroSlide);
+        }
+
+        function prevHeroSlide() {
+            currentHeroSlide = (currentHeroSlide - 1 + heroSlides.length) % heroSlides.length;
+            showHeroSlide(currentHeroSlide);
+        }
+
+        const heroPrev = document.getElementById('hero-prev');
+        const heroNext = document.getElementById('hero-next');
+
+        if(heroSlides.length > 0 && heroDots.length > 0) {
+            heroDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentHeroSlide = index;
+                    showHeroSlide(currentHeroSlide);
+                });
+            });
+            
+            if (heroPrev && heroNext) {
+                heroPrev.addEventListener('click', prevHeroSlide);
+                heroNext.addEventListener('click', nextHeroSlide);
+            }
+            
+            setInterval(nextHeroSlide, 5000);
+        }
+
+        // Floating Navbar Scroll Logic
+        const leftFloatingNavbar = document.getElementById('left-floating-navbar');
+        if (leftFloatingNavbar) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 600) {
+                    leftFloatingNavbar.classList.remove('-translate-x-full', 'opacity-0', 'pointer-events-none');
+                    leftFloatingNavbar.classList.add('translate-x-0', 'opacity-100');
+                } else {
+                    leftFloatingNavbar.classList.add('-translate-x-full', 'opacity-0', 'pointer-events-none');
+                    leftFloatingNavbar.classList.remove('translate-x-0', 'opacity-100');
+                }
+            });
+            // Trigger once on load to set initial state correctly
+            window.dispatchEvent(new Event('scroll'));
+        }
+
+        // Most Sold Tabs Logic
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        if(tabBtns.length > 0 && tabContents.length > 0) {
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active tab styling
+                    tabBtns.forEach(b => {
+                        b.classList.remove('text-black');
+                        b.classList.add('text-gray-400');
+                    });
+                    btn.classList.remove('text-gray-400');
+                    btn.classList.add('text-black');
+
+                    // Show corresponding grid
+                    const targetId = btn.getAttribute('data-target');
+                    tabContents.forEach(content => {
+                        if (content.id === targetId) {
+                            content.classList.remove('hidden');
+                        } else {
+                            content.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+</body>
+</html>

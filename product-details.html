@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beats Studio Buds - Trands</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        background: '#f8f8f8',
+                        surface: '#f3f3f3',
+                        border: '#e5e5e5',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+        /* Custom Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="text-slate-900 antialiased">
+
+    <!-- Top Bar & Header Wrapper -->
+    <div class="bg-[#0b0b0b]">
+        <!-- Top Bar -->
+        <div class="text-white text-[11px] font-medium py-3">
+            <div class="container mx-auto px-4 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="hover:text-gray-300 transition">Order Tracking</a>
+                    <a href="about.html" class="hover:text-gray-300 transition">About Us</a>
+                    <a href="#" class="hover:text-gray-300 transition">FAQ</a>
+                </div>
+                <div class="text-center flex-1 mt-2 md:mt-0 text-gray-300 flex justify-center items-center relative overflow-hidden h-6">
+                    <i id="topbar-prev" data-lucide="chevron-left" stroke-width="1.5" width="16" height="16" class="mr-12 text-gray-500 cursor-pointer hover:text-white transition z-10 relative"></i>
+                    <div id="topbar-slider" class="relative w-full max-w-lg h-full flex justify-center items-center">
+                        <div class="topbar-slide absolute inset-0 flex justify-center items-center transition-opacity duration-500 opacity-100 z-10">
+                            <span class="truncate">Enjoy free shipping on all orders this week! <a href="#" class="text-white font-bold ml-1 hover:underline">Shop Now <i data-lucide="arrow-right" class="ml-1 inline" width="12" height="12"></i></a></span>
+                        </div>
+                        <div class="topbar-slide absolute inset-0 flex justify-center items-center transition-opacity duration-500 opacity-0 z-0 pointer-events-none">
+                            <span class="truncate">Get 20% off your first purchase! <a href="#" class="text-white font-bold ml-1 hover:underline">Use Code: WELCOME</a></span>
+                        </div>
+                        <div class="topbar-slide absolute inset-0 flex justify-center items-center transition-opacity duration-500 opacity-0 z-0 pointer-events-none">
+                            <span class="truncate">New arrivals are here! <a href="#" class="text-white font-bold ml-1 hover:underline">Explore Now</a></span>
+                        </div>
+                    </div>
+                    <i id="topbar-next" data-lucide="chevron-right" stroke-width="1.5" width="16" height="16" class="ml-12 text-gray-500 cursor-pointer hover:text-white transition z-10 relative"></i>
+                </div>
+                <div class="flex items-center space-x-4 mt-2 md:mt-0">
+                    <div class="flex items-center cursor-pointer hover:text-gray-300 transition">
+                        English <i data-lucide="chevron-down" class="ml-1" width="12" height="12"></i>
+                    </div>
+                    <div class="flex items-center cursor-pointer hover:text-gray-300 transition">
+                        USD <i data-lucide="chevron-down" class="ml-1" width="12" height="12"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <header class="bg-white py-5 rounded-t-[2.5rem] lg:rounded-t-[3rem] sticky top-0 z-50">
+            <div class="container mx-auto px-4 lg:px-12 flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#" class="text-[26px] font-extrabold text-[#111] flex items-center tracking-tight">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
+                        <path d="M5 16L10 9" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M11 20L16 13" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M12 12L15 8" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                    trands
+                </a>
+
+                <!-- Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-8 text-[14px] font-medium text-gray-800">
+                    <a href="#" class="flex items-center hover:text-black transition">Home <i data-lucide="chevron-down" class="ml-1.5 text-gray-400" stroke-width="2" width="12" height="12"></i></a>
+                    
+                    <!-- Shop Mega Menu -->
+                    <div class="group static">
+                        <a href="products.html" class="flex items-center hover:text-black transition py-4">
+                            Shop <i data-lucide="chevron-down" class="ml-1.5 text-gray-400 group-hover:rotate-180 transition-transform duration-300" stroke-width="2" width="12" height="12"></i>
+                        </a>
+                        
+                        <!-- Dropdown Container with Hover Bridge -->
+                        <div class="absolute left-0 right-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <!-- Invisible Bridge -->
+                            <div class="absolute -top-6 left-0 w-full h-6 bg-transparent"></div>
+                            
+                            <!-- Mega Menu Content -->
+                            <div class="bg-white rounded-b-[2.5rem] lg:rounded-b-[3rem] shadow-2xl border-t border-gray-100 transform origin-top -translate-y-2 group-hover:translate-y-0 transition-transform duration-300 relative">
+                                <div class="container mx-auto px-4 lg:px-12 py-10">
+                                    <div class="grid grid-cols-5 gap-8">
+                                        <!-- Shop Lists -->
+                                        <div>
+                                            <h4 class="font-bold text-black mb-5 text-[15px]">Shop Lists</h4>
+                                            <ul class="space-y-4 text-[13px] text-gray-600 font-normal">
+                                                <li><a href="#" class="hover:text-black transition block">Shop Default</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Shop Right Sidebar</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Shop Wide</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Filters Area</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">List Left Sidebar</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Load More Button</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Infinite Scrolling</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Image Hover – Zoom</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Image Hover – Slider</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Image Hover – Flip</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product Variable</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Sale Countdown</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- Product Detail -->
+                                        <div>
+                                            <h4 class="font-bold text-black mb-5 text-[15px]">Product Detail</h4>
+                                            <ul class="space-y-4 text-[13px] text-gray-600 font-normal">
+                                                <li><a href="#" class="hover:text-black transition block">Product Default</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product Variable</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product Grouped</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product External</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product Downloadable</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product Zoom Image</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Produt With Video</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Thumbnails Left</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Gallery 1 Column</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Gallery 2 Columns</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Carousel 2 Columns</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- Product Features -->
+                                        <div>
+                                            <h4 class="font-bold text-black mb-5 text-[15px]">Product Features</h4>
+                                            <ul class="space-y-4 text-[13px] text-gray-600 font-normal">
+                                                <li><a href="#" class="hover:text-black transition block">Buy Now Button</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Order on WhatsApp</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Stock Progress Bar</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Sale Countdown</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Sticky Add to Cart</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Sticky Tab Titles</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Reviews Without Tab</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product Full Width</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Sticky Description</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Vertical Tabs</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Accordion Tabs</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Accordion in Content</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- Shop Pages -->
+                                        <div>
+                                            <h4 class="font-bold text-black mb-5 text-[15px]">Shop Pages</h4>
+                                            <ul class="space-y-4 text-[13px] text-gray-600 font-normal">
+                                                <li><a href="#" class="hover:text-black transition block">Cart</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Checkout</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">My account</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Wishlist</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Compare</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Order Tracking</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Catalog Mode</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Featured Products</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Best Selling Products</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Stock Progress Bar</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Stock Status</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Shop by Brand</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- Shop Layouts -->
+                                        <div>
+                                            <h4 class="font-bold text-black mb-5 text-[15px]">Shop Layouts</h4>
+                                            <ul class="space-y-4 text-[13px] text-gray-600 font-normal">
+                                                <li><a href="#" class="hover:text-black transition block">Two Columns</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Three Columns</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Three Columns Wide</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Four Columns</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Four Columns Wide</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Five Columns Wide</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Bordered Shipping Class</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product SKU</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Additional Information</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Login to See Prices</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="headphones.html" class="hover:text-black transition">Headphones</a>
+                    <a href="#" class="hover:text-black transition">Accessories</a>
+                    <a href="#" class="hover:text-black transition">Blog</a>
+                    <a href="#" class="hover:text-black transition">Contact</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="flex items-center space-x-6 text-gray-800">
+                    <button class="hover:text-black transition"><i data-lucide="search" stroke-width="1.5" width="22" height="22"></i></button>
+                    <a href="#" class="hidden sm:flex items-center hover:text-black transition">
+                        <i data-lucide="user" stroke-width="1.5" width="22" height="22"></i>
+                        <span class="ml-2 text-sm font-medium">Account</span>
+                    </a>
+                    <a href="#" class="relative hover:text-black transition">
+                        <i data-lucide="heart" stroke-width="1.5" width="22" height="22"></i>
+                        <span class="absolute -top-1.5 -right-2 bg-black text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </a>
+                    <button class="hover:text-black transition"><i data-lucide="refresh-cw" stroke-width="1.5" width="22" height="22"></i></button>
+                    <a href="#" class="relative hover:text-black transition">
+                        <i data-lucide="shopping-cart" stroke-width="1.5" width="22" height="22"></i>
+                        <span class="absolute -top-1.5 -right-2 bg-black text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </a>
+                    <!-- Mobile Menu Toggle Button -->
+                    <button id="mobile-menu-btn" class="lg:hidden hover:text-black transition ml-4">
+                        <i data-lucide="menu" stroke-width="1.5" width="24" height="24"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+    </div>
+
+        <main>
+        <!-- Breadcrumbs -->
+        <div class="bg-white py-4 border-b border-gray-100">
+            <div class="container mx-auto px-4 lg:px-8 flex items-center text-xs text-gray-500 font-medium">
+                <a href="index.html" class="hover:text-black transition">Home</a>
+                <i data-lucide="chevron-right" width="12" height="12" class="mx-2"></i>
+                <a href="headphones.html" class="hover:text-black transition">Earphones</a>
+                <i data-lucide="chevron-right" width="12" height="12" class="mx-2"></i>
+                <a href="#" class="hover:text-black transition">Bluetooth Earphones</a>
+                <i data-lucide="chevron-right" width="12" height="12" class="mx-2"></i>
+                <span class="text-black">Beats Studio Buds</span>
+            </div>
+        </div>
+
+        <!-- Product Hero Section -->
+        <section class="container mx-auto px-4 lg:px-8 py-12 flex flex-col lg:flex-row gap-12 lg:gap-16">
+            <!-- Left: Gallery -->
+            <div class="w-full lg:w-1/2">
+                <!-- Main Image -->
+                <div class="relative bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef] rounded-[2rem] aspect-square flex items-center justify-center p-8 mb-4 shadow-sm overflow-hidden">
+                    <div class="absolute top-6 left-6 bg-black/80 backdrop-blur-md border border-white/20 text-white text-xs font-bold px-4 py-2 rounded-full z-10 shadow-lg">22% OFF</div>
+                    <img id="main-product-image" src="https://images.unsplash.com/photo-1606220838315-056192d5e927?auto=format&fit=crop&q=80&w=800" alt="Beats Studio Buds" class="w-full h-full object-contain mix-blend-multiply transition-opacity duration-300 animate-float">
+                </div>
+                <!-- Thumbnails -->
+                <div class="flex space-x-4">
+                    <div class="w-20 h-20 bg-[#f5f5f5] rounded-xl cursor-pointer border-2 border-black p-2 flex items-center justify-center" onclick="changeMainImage(this, 'https://images.unsplash.com/photo-1606220838315-056192d5e927?auto=format&fit=crop&q=80&w=800')">
+                        <img src="https://images.unsplash.com/photo-1606220838315-056192d5e927?auto=format&fit=crop&q=80&w=200" alt="Thumb 1" class="w-full h-full object-contain mix-blend-multiply">
+                    </div>
+                    <div class="w-20 h-20 bg-[#f5f5f5] rounded-xl cursor-pointer border-2 border-transparent hover:border-gray-300 p-2 flex items-center justify-center transition opacity-60" onclick="changeMainImage(this, 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&q=80&w=800')">
+                        <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&q=80&w=200" alt="Thumb 2" class="w-full h-full object-contain mix-blend-multiply">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Product Info -->
+            <div class="w-full lg:w-1/2 flex flex-col justify-center">
+                <p class="text-xs text-gray-500 font-medium mb-2">Bluetooth Earphones</p>
+                <h1 class="text-3xl lg:text-[40px] font-extrabold text-[#111] leading-tight mb-4 tracking-tighter">Beats Studio Buds</h1>
+                
+                <!-- Ratings & SKU -->
+                <div class="flex items-center space-x-6 mb-6">
+                    <div class="flex items-center">
+                        <div class="flex text-black mr-2">
+                            <i data-lucide="star" class="fill-current" width="14" height="14"></i>
+                            <i data-lucide="star" class="fill-current" width="14" height="14"></i>
+                            <i data-lucide="star" class="fill-current" width="14" height="14"></i>
+                            <i data-lucide="star" class="fill-current" width="14" height="14"></i>
+                            <i data-lucide="star" class="fill-gray-300 text-gray-300" width="14" height="14"></i>
+                        </div>
+                        <span class="text-xs text-gray-500 font-medium">3</span>
+                    </div>
+                    <div class="text-xs text-gray-500 font-medium">SKU: <span class="text-black font-semibold">F8H3M5V7S2</span></div>
+                </div>
+
+                <!-- Price and Stock -->
+                <div class="border-t border-gray-100 py-6 flex items-center justify-between">
+                    <div class="flex items-end">
+                        <span class="text-3xl font-bold text-[#111] mr-3">$35.99</span>
+                        <span class="text-lg text-gray-400 line-through font-medium mb-1">$45.99</span>
+                    </div>
+                    <span class="text-xs font-semibold text-[#111]">In Stock</span>
+                </div>
+
+                <!-- Description -->
+                <p class="text-sm text-gray-500 leading-relaxed mb-8">Enjoy premium sound quality with Beats Studio Buds, featuring active noise cancellation, transparency mode, ergonomic fit, and seamless compatibility for an immersive audio experience.</p>
+
+
+
+                <!-- Meta Info & Share -->
+                <div class="border-t border-gray-100 pt-6 flex flex-wrap items-center justify-between gap-4 text-xs font-semibold text-gray-700">
+                    <div class="flex items-center space-x-6">
+                        <a href="#" class="flex items-center hover:text-black transition"><i data-lucide="help-circle" width="16" height="16" class="mr-2 text-gray-500"></i> Ask a question</a>
+                        <a href="#" class="flex items-center hover:text-black transition"><i data-lucide="box" width="16" height="16" class="mr-2 text-gray-500"></i> Delivery Return</a>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <span class="text-gray-400 font-medium">Share:</span>
+                        <a href="#" class="hover:text-black transition"><i data-lucide="facebook" width="14" height="14"></i></a>
+                        <a href="#" class="hover:text-black transition"><i data-lucide="twitter" width="14" height="14"></i></a>
+                        <a href="#" class="hover:text-black transition">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </a>
+                        <a href="#" class="hover:text-black transition"><i data-lucide="linkedin" width="14" height="14"></i></a>
+                        <a href="#" class="hover:text-black transition"><i data-lucide="smartphone" width="14" height="14"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product Highlights -->
+                <div class="border-t border-gray-100 mt-6 pt-6">
+                    <h3 class="font-bold text-[#111] mb-4 text-sm">Product Highlights</h3>
+                    <ul class="text-xs text-gray-600 space-y-3">
+                        <li class="flex items-start"><i data-lucide="check-circle-2" class="mr-2 text-green-500 flex-shrink-0 mt-0.5" width="14" height="14"></i><span class="font-bold text-gray-800">Active Noise Cancellation:</span> Eliminates distractions for focused listening.</li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2" class="mr-2 text-green-500 flex-shrink-0 mt-0.5" width="14" height="14"></i><span class="font-bold text-gray-800">Transparency Mode:</span> Allows awareness of surroundings when needed.</li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2" class="mr-2 text-green-500 flex-shrink-0 mt-0.5" width="14" height="14"></i><span class="font-bold text-gray-800">Ergonomic Design:</span> Lightweight with customizable ear tips for comfort.</li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2" class="mr-2 text-green-500 flex-shrink-0 mt-0.5" width="14" height="14"></i><span class="font-bold text-gray-800">Long Battery Life:</span> Up to 24 hours with the charging case.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Information Tabs -->
+        <section class="container mx-auto px-4 lg:px-8 py-16 border-t border-gray-100">
+            <div class="flex space-x-2 bg-gray-50 p-2 rounded-2xl mb-8 overflow-x-auto hide-scrollbar w-max max-w-full">
+                <button class="detail-tab-btn bg-white shadow-sm text-black font-bold px-6 py-2.5 rounded-xl whitespace-nowrap transition" data-target="tab-description">Description</button>
+                <button class="detail-tab-btn text-gray-500 font-medium hover:text-black hover:bg-gray-100 px-6 py-2.5 rounded-xl whitespace-nowrap transition" data-target="tab-additional">Additional Information</button>
+                <button class="detail-tab-btn text-gray-500 font-medium hover:text-black hover:bg-gray-100 px-6 py-2.5 rounded-xl whitespace-nowrap transition" data-target="tab-reviews">Reviews (3)</button>
+            </div>
+
+            <div id="tab-description" class="detail-tab-content animate-fade-in text-sm text-gray-500 leading-relaxed max-w-4xl">
+                <p class="mb-4">Experience sound exactly as it was intended. Beats Studio Buds are engineered to deliver powerful, balanced sound in a compact design. Through an entirely custom acoustic platform, the two-piece diaphragm driver resides within a dual-chamber housing, resulting in clear sound with outstanding stereo separation.</p>
+                <p>An advanced digital processor then optimizes audio performance for loudness and clarity, while simultaneously ensuring clean noise cancellation. Control the noise: Active Noise Cancelling (ANC) dynamically blocks unwanted external noise. Switch to Transparency mode when you need to hear the world around you. Microphones outside the earbuds mix the sounds of your surroundings back in with your music for a natural, ‘open’ listening experience.</p>
+            </div>
+
+            <div id="tab-additional" class="detail-tab-content hidden animate-fade-in text-sm text-gray-500 max-w-4xl">
+                <table class="w-full text-left border-collapse">
+                    <tbody>
+                        <tr class="border-b border-gray-100">
+                            <th class="py-4 font-bold text-gray-800 w-1/3">Weight</th>
+                            <td class="py-4">0.15 kg</td>
+                        </tr>
+                        <tr class="border-b border-gray-100">
+                            <th class="py-4 font-bold text-gray-800">Dimensions</th>
+                            <td class="py-4">5 × 5 × 2.5 cm</td>
+                        </tr>
+                        <tr class="border-b border-gray-100">
+                            <th class="py-4 font-bold text-gray-800">Color</th>
+                            <td class="py-4">Black, White, Red</td>
+                        </tr>
+                        <tr class="border-b border-gray-100">
+                            <th class="py-4 font-bold text-gray-800">Connectivity</th>
+                            <td class="py-4">Bluetooth 5.2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="tab-reviews" class="detail-tab-content hidden animate-fade-in text-sm text-gray-500 max-w-4xl">
+                <h3 class="font-bold text-black text-lg mb-6">3 reviews for Beats Studio Buds</h3>
+                <!-- Reviews List -->
+                <div class="space-y-6 mb-10">
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex-shrink-0"></div>
+                        <div>
+                            <div class="flex text-black mb-1"><i data-lucide="star" class="fill-current" width="12" height="12"></i><i data-lucide="star" class="fill-current" width="12" height="12"></i><i data-lucide="star" class="fill-current" width="12" height="12"></i><i data-lucide="star" class="fill-current" width="12" height="12"></i><i data-lucide="star" class="fill-current" width="12" height="12"></i></div>
+                            <p class="font-bold text-[#111] text-xs mb-2">John Doe <span class="text-gray-400 font-normal ml-2">April 15, 2026</span></p>
+                            <p>Excellent sound quality and the ANC is surprisingly good for the size. Highly recommend.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex-shrink-0"></div>
+                        <div>
+                            <div class="flex text-black mb-1"><i data-lucide="star" class="fill-current" width="12" height="12"></i><i data-lucide="star" class="fill-current" width="12" height="12"></i><i data-lucide="star" class="fill-current" width="12" height="12"></i><i data-lucide="star" class="fill-current" width="12" height="12"></i><i data-lucide="star" class="fill-gray-300 text-gray-300" width="12" height="12"></i></div>
+                            <p class="font-bold text-[#111] text-xs mb-2">Jane Smith <span class="text-gray-400 font-normal ml-2">March 22, 2026</span></p>
+                            <p>Very comfortable. Battery life is decent, but could be slightly better.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Review Form -->
+                <h4 class="font-bold text-black text-base mb-4">Add a review</h4>
+                <p class="mb-4">Your email address will not be published. Required fields are marked *</p>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block font-semibold text-gray-800 text-xs mb-2">Your rating *</label>
+                        <div class="flex text-gray-300 cursor-pointer hover:text-black transition">
+                            <i data-lucide="star" class="fill-current" width="16" height="16"></i>
+                            <i data-lucide="star" class="fill-current" width="16" height="16"></i>
+                            <i data-lucide="star" class="fill-current" width="16" height="16"></i>
+                            <i data-lucide="star" class="fill-current" width="16" height="16"></i>
+                            <i data-lucide="star" class="fill-current" width="16" height="16"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-gray-800 text-xs mb-2">Your review *</label>
+                        <textarea class="w-full bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm focus:border-black outline-none transition" rows="4"></textarea>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block font-semibold text-gray-800 text-xs mb-2">Name *</label>
+                            <input type="text" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:border-black outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-gray-800 text-xs mb-2">Email *</label>
+                            <input type="email" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:border-black outline-none transition">
+                        </div>
+                    </div>
+                    <button type="submit" class="bg-black text-white font-bold rounded-full px-8 py-3.5 hover:bg-gray-800 transition shadow-md text-sm mt-2">Submit Review</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Related Products -->
+        <section class="bg-[#f5f5f5] py-16">
+            <div class="container mx-auto px-4 lg:px-8">
+                <h2 class="text-2xl font-bold text-[#111] mb-8">Related Products</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Product 1 -->
+                    <div class="bg-white rounded-[1.25rem] p-6 group cursor-pointer transition relative hover:shadow-lg">
+                        <div class="relative h-64 mb-6 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400" alt="Headphones" class="h-[90%] object-contain group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div>
+                            <p class="text-[12px] text-gray-500 mb-2">Headphones</p>
+                            <h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px]">Wireless Gaming Headphones MS920</h3>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center text-[13px]">
+                                    <span class="font-bold text-[#111] mr-2">$75.66</span>
+                                </div>
+                                <button class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center shadow-sm hover:bg-[#111] hover:text-white transition group-hover:shadow-md text-[#111]">
+                                    <i data-lucide="shopping-cart" width="14" height="14"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="bg-white rounded-[1.25rem] p-6 group cursor-pointer transition relative hover:shadow-lg">
+                        <div class="relative h-64 mb-6 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=400" alt="Headphones" class="h-[90%] object-contain group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div>
+                            <p class="text-[12px] text-gray-500 mb-2">Headphones</p>
+                            <h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px]">Wireless Gaming Headphones DM420</h3>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center text-[13px]">
+                                    <span class="font-bold text-[#111]">$117.88</span>
+                                </div>
+                                <button class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center shadow-sm hover:bg-[#111] hover:text-white transition group-hover:shadow-md text-[#111]">
+                                    <i data-lucide="shopping-cart" width="14" height="14"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="bg-white rounded-[1.25rem] p-6 group cursor-pointer transition relative hover:shadow-lg">
+                        <div class="relative h-64 mb-6 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=400" alt="Headphones" class="h-[90%] object-contain group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div>
+                            <p class="text-[12px] text-gray-500 mb-2">Headphones</p>
+                            <h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px]">Premium Studio Headphones</h3>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center text-[13px]">
+                                    <span class="font-bold text-[#111]">$299.99</span>
+                                </div>
+                                <button class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center shadow-sm hover:bg-[#111] hover:text-white transition group-hover:shadow-md text-[#111]">
+                                    <i data-lucide="shopping-cart" width="14" height="14"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="bg-white rounded-[1.25rem] p-6 group cursor-pointer transition relative hover:shadow-lg">
+                        <div class="relative h-64 mb-6 flex items-center justify-center">
+                            <div class="absolute top-0 left-0 bg-[#111] text-white text-[11px] font-bold px-3 py-1 rounded-full">19%</div>
+                            <img src="https://images.unsplash.com/photo-1612444530582-fc66184b156b?auto=format&fit=crop&q=80&w=400" alt="Headphones" class="h-[90%] object-contain group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div>
+                            <p class="text-[12px] text-gray-500 mb-2">Headphones</p>
+                            <h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px]">W75 Automobili Lamborghini</h3>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center text-[13px]">
+                                    <span class="font-bold text-[#111] mr-2">$247.55</span>
+                                </div>
+                                <button class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center shadow-sm hover:bg-[#111] hover:text-white transition group-hover:shadow-md text-[#111]">
+                                    <i data-lucide="shopping-cart" width="14" height="14"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Floating Left Navbar -->
+    <div id="left-floating-navbar" class="fixed left-0 top-1/2 transform -translate-y-1/2 -translate-x-full opacity-0 pointer-events-none z-40 bg-white rounded-r-[3rem] shadow-[4px_0_24px_rgba(0,0,0,0.08)] border border-l-0 border-gray-100 py-10 px-4 flex flex-col items-center space-y-8 hidden 2xl:flex transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
+        <a href="#" class="text-black transition hover:scale-110 transform" title="Speakers"><i data-lucide="speaker" stroke-width="2" width="26" height="26"></i></a>
+        <a href="headphones.html" class="text-black transition hover:scale-110 transform" title="Headphones"><i data-lucide="headphones" stroke-width="2" width="26" height="26"></i></a>
+        <a href="#" class="text-black transition hover:scale-110 transform" title="Earbuds">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 16v-5c0-1.66-1.34-3-3-3H6a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h1v2a1.5 1.5 0 0 0 3 0z" />
+                <circle cx="6.5" cy="10.5" r="1.5" fill="currentColor" stroke="none" />
+                <path d="M14 16v-5c0-1.66 1.34-3 3-3h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1v2a1.5 1.5 0 0 1-3 0z" />
+                <circle cx="17.5" cy="10.5" r="1.5" fill="currentColor" stroke="none" />
+            </svg>
+        </a>
+        <a href="#" class="text-black transition hover:scale-110 transform" title="Microphone"><i data-lucide="mic" stroke-width="2" width="26" height="26"></i></a>
+        <a href="#" class="text-black transition hover:scale-110 transform" title="Smartwatch"><i data-lucide="watch" stroke-width="2" width="26" height="26"></i></a>
+        <a href="#" class="text-black transition hover:scale-110 transform" title="Accessories"><i data-lucide="plug" stroke-width="2" width="26" height="26"></i></a>
+    </div>
+
+    <!-- Mobile Bottom Navbar -->
+    <div class="fixed bottom-0 left-0 w-full bg-white z-40 border-t border-gray-100 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] rounded-t-[2rem] py-4 px-8 flex justify-between items-center 2xl:hidden">
+        <a href="#" class="text-gray-500 hover:text-black transition transform hover:scale-110"><i data-lucide="speaker" stroke-width="2" width="24" height="24"></i></a>
+        <a href="headphones.html" class="text-black transition transform hover:scale-110"><i data-lucide="headphones" stroke-width="2" width="24" height="24"></i></a>
+        <a href="#" class="text-gray-500 hover:text-black transition transform hover:scale-110">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 16v-5c0-1.66-1.34-3-3-3H6a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h1v2a1.5 1.5 0 0 0 3 0z" />
+                <circle cx="6.5" cy="10.5" r="1.5" fill="currentColor" stroke="none" />
+                <path d="M14 16v-5c0-1.66 1.34-3 3-3h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1v2a1.5 1.5 0 0 1-3 0z" />
+                <circle cx="17.5" cy="10.5" r="1.5" fill="currentColor" stroke="none" />
+            </svg>
+        </a>
+        <a href="#" class="text-gray-500 hover:text-black transition transform hover:scale-110"><i data-lucide="mic" stroke-width="2" width="24" height="24"></i></a>
+        <a href="#" class="text-gray-500 hover:text-black transition transform hover:scale-110"><i data-lucide="watch" stroke-width="2" width="24" height="24"></i></a>
+        <a href="#" class="text-gray-500 hover:text-black transition transform hover:scale-110"><i data-lucide="plug" stroke-width="2" width="24" height="24"></i></a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#0b0b0b] text-white pt-20 pb-28 2xl:pb-8">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Company Info -->
+                <div>
+                    <a href="#" class="text-2xl font-extrabold text-white flex items-center mb-8">
+                        <i data-lucide="zap" class="mr-2 fill-white" width="24" height="24"></i>
+                        trands
+                    </a>
+                    <div class="text-xs text-gray-400 space-y-3">
+                        <p><span class="text-white font-semibold">Address:</span> 1234 Fashion Street, Suite 567, New York, NY</p>
+                        <p><span class="text-white font-semibold">Phone:</span> +123 456 7890</p>
+                        <p><span class="text-white font-semibold">Email:</span> info@example.com</p>
+                    </div>
+                </div>
+
+                <!-- Let Us Help You -->
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-6">Let Us Help You</h4>
+                    <ul class="text-xs text-gray-400 space-y-3">
+                        <li><a href="#" class="hover:text-white transition">Accessibility Statement</a></li>
+                        <li><a href="#" class="hover:text-white transition">Your Orders</a></li>
+                        <li><a href="service.html" class="hover:text-white transition">Returns & Replacements</a></li>
+                        <li><a href="#" class="hover:text-white transition">Shipping Rates & Policies</a></li>
+                        <li><a href="#" class="hover:text-white transition">Refund and Returns Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms and Conditions</a></li>
+                        <li><a href="#" class="hover:text-white transition">Cookie Settings</a></li>
+                        <li><a href="#" class="hover:text-white transition">Help Center</a></li>
+                    </ul>
+                </div>
+
+                <!-- Get to Know Us -->
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-6">Get to Know Us</h4>
+                    <ul class="text-xs text-gray-400 space-y-3">
+                        <li><a href="#" class="hover:text-white transition">Careers for Trands</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">About Trands</a></li>
+                        <li><a href="#" class="hover:text-white transition">Investor Relations</a></li>
+                        <li><a href="#" class="hover:text-white transition">Trands Devices</a></li>
+                        <li><a href="#" class="hover:text-white transition">Customer reviews</a></li>
+                        <li><a href="#" class="hover:text-white transition">Social Responsibility</a></li>
+                        <li><a href="#" class="hover:text-white transition">Store Locations</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-6">Sign Up for Email</h4>
+                    <p class="text-xs text-gray-400 mb-4">Sign up to get first dibs on new arrivals, sales, exclusive content, events and more!</p>
+                    <form class="flex flex-col space-y-3 relative mb-4">
+                        <input type="email" placeholder="Enter your email address" class="w-full px-4 py-3 bg-[#1a1a1a] border border-gray-800 rounded-md text-white text-xs outline-none focus:border-gray-500 transition pr-20">
+                        <button type="submit" class="absolute right-1 top-1 bottom-1 bg-black hover:bg-gray-800 text-white text-[10px] font-bold px-4 rounded transition">SEND</button>
+                    </form>
+                    <p class="text-[10px] text-gray-500">By subscribing you agree to our <a href="#" class="underline hover:text-white">Terms & Conditions and Privacy & Cookies Policy.</a></p>
+                </div>
+            </div>
+
+            <!-- Copyright Bar -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>Copyright &copy; 2026 <a href="#" class="text-white hover:underline">Trands</a>. All rights reserved.</p>
+                <div class="flex items-center space-x-2 mt-4 md:mt-0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa" class="h-4 bg-white rounded px-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Mastercard" class="h-4 bg-white rounded px-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/2560px-PayPal.svg.png" alt="PayPal" class="h-4 bg-white rounded px-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Skrill_logo.svg/2560px-Skrill_logo.svg.png" alt="Skrill" class="h-4 bg-white rounded px-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Klarna_logo_%282019%29.svg/2560px-Klarna_logo_%282019%29.svg.png" alt="Klarna" class="h-4 bg-white rounded px-1">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <!-- Mobile Full Screen Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[100] flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
+        <div class="p-5 flex justify-between items-center border-b border-gray-100">
+            <a href="#" class="text-[26px] font-extrabold text-[#111] flex items-center tracking-tight">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
+                    <path d="M5 16L10 9" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M11 20L16 13" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M12 12L15 8" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+                trands
+            </a>
+            <button id="close-menu-btn" class="text-gray-500 hover:text-black transition p-2 rounded-full bg-gray-100">
+                <i data-lucide="x" stroke-width="2" width="24" height="24"></i>
+            </button>
+        </div>
+        <div class="flex-1 overflow-y-auto px-6 py-8">
+            <nav class="flex flex-col space-y-6 text-xl font-bold text-gray-800">
+                <a href="#" class="flex justify-between items-center border-b border-gray-50 pb-4">Home <i data-lucide="chevron-right" width="20" height="20" class="text-gray-300"></i></a>
+                <a href="products.html" class="flex justify-between items-center border-b border-gray-50 pb-4">Shop <i data-lucide="chevron-right" width="20" height="20" class="text-gray-300"></i></a>
+                <a href="headphones.html" class="flex justify-between items-center border-b border-gray-50 pb-4">Headphones</a>
+                <a href="#" class="flex justify-between items-center border-b border-gray-50 pb-4">Accessories</a>
+                <a href="#" class="flex justify-between items-center border-b border-gray-50 pb-4">Blog</a>
+                <a href="#" class="flex justify-between items-center border-b border-gray-50 pb-4">Contact</a>
+            </nav>
+            <div class="mt-12">
+                <p class="text-sm text-gray-500 mb-4 uppercase font-semibold tracking-wider">Need Help?</p>
+                <div class="space-y-4 font-medium text-gray-700">
+                    <a href="#" class="block">Order Tracking</a>
+                    <a href="#" class="block">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Initialize Lucide Icons & Scripts -->
+    <script>
+        lucide.createIcons();
+        
+        // Mobile Menu Toggle logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if(mobileMenuBtn && closeMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full');
+                document.body.classList.add('overflow-hidden');
+            });
+
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.classList.remove('overflow-hidden');
+            });
+        }
+
+        // Topbar Slider Logic
+        const topbarSlides = document.querySelectorAll('.topbar-slide');
+        const topbarPrev = document.getElementById('topbar-prev');
+        const topbarNext = document.getElementById('topbar-next');
+        let currentTopbarSlide = 0;
+
+        function showTopbarSlide(index) {
+            topbarSlides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.remove('opacity-0', 'pointer-events-none', 'z-0');
+                    slide.classList.add('opacity-100', 'z-10');
+                } else {
+                    slide.classList.remove('opacity-100', 'z-10');
+                    slide.classList.add('opacity-0', 'pointer-events-none', 'z-0');
+                }
+            });
+        }
+
+        function nextTopbarSlide() {
+            currentTopbarSlide = (currentTopbarSlide + 1) % topbarSlides.length;
+            showTopbarSlide(currentTopbarSlide);
+        }
+
+        function prevTopbarSlide() {
+            currentTopbarSlide = (currentTopbarSlide - 1 + topbarSlides.length) % topbarSlides.length;
+            showTopbarSlide(currentTopbarSlide);
+        }
+
+        if(topbarNext && topbarPrev && topbarSlides.length > 0) {
+            topbarNext.addEventListener('click', nextTopbarSlide);
+            topbarPrev.addEventListener('click', prevTopbarSlide);
+            setInterval(nextTopbarSlide, 4000);
+        }
+
+        // Hero Slider Logic
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        const heroDots = document.querySelectorAll('.hero-dot');
+        let currentHeroSlide = 0;
+
+        function showHeroSlide(index) {
+            heroSlides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.remove('opacity-0', 'pointer-events-none', 'z-0');
+                    slide.classList.add('opacity-100', 'z-10');
+                } else {
+                    slide.classList.remove('opacity-100', 'z-10');
+                    slide.classList.add('opacity-0', 'pointer-events-none', 'z-0');
+                }
+            });
+            
+            heroDots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.remove('bg-white/40');
+                    dot.classList.add('bg-white');
+                } else {
+                    dot.classList.remove('bg-white');
+                    dot.classList.add('bg-white/40');
+                }
+            });
+        }
+
+        function nextHeroSlide() {
+            currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
+            showHeroSlide(currentHeroSlide);
+        }
+
+        function prevHeroSlide() {
+            currentHeroSlide = (currentHeroSlide - 1 + heroSlides.length) % heroSlides.length;
+            showHeroSlide(currentHeroSlide);
+        }
+
+        const heroPrev = document.getElementById('hero-prev');
+        const heroNext = document.getElementById('hero-next');
+
+        if(heroSlides.length > 0 && heroDots.length > 0) {
+            heroDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentHeroSlide = index;
+                    showHeroSlide(currentHeroSlide);
+                });
+            });
+            
+            if (heroPrev && heroNext) {
+                heroPrev.addEventListener('click', prevHeroSlide);
+                heroNext.addEventListener('click', nextHeroSlide);
+            }
+            
+            setInterval(nextHeroSlide, 5000);
+        }
+
+        // Floating Navbar Scroll Logic
+        const leftFloatingNavbar = document.getElementById('left-floating-navbar');
+        if (leftFloatingNavbar) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 600) {
+                    leftFloatingNavbar.classList.remove('-translate-x-full', 'opacity-0', 'pointer-events-none');
+                    leftFloatingNavbar.classList.add('translate-x-0', 'opacity-100');
+                } else {
+                    leftFloatingNavbar.classList.add('-translate-x-full', 'opacity-0', 'pointer-events-none');
+                    leftFloatingNavbar.classList.remove('translate-x-0', 'opacity-100');
+                }
+            });
+            // Trigger once on load to set initial state correctly
+            window.dispatchEvent(new Event('scroll'));
+        }
+
+        // Most Sold Tabs Logic
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        if(tabBtns.length > 0 && tabContents.length > 0) {
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active tab styling
+                    tabBtns.forEach(b => {
+                        b.classList.remove('text-black');
+                        b.classList.add('text-gray-400');
+                    });
+                    btn.classList.remove('text-gray-400');
+                    btn.classList.add('text-black');
+
+                    // Show corresponding grid
+                    const targetId = btn.getAttribute('data-target');
+                    tabContents.forEach(content => {
+                        if (content.id === targetId) {
+                            content.classList.remove('hidden');
+                        } else {
+                            content.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        }
+    
+        // Product Details Image Gallery
+        function changeMainImage(element, src) {
+            const mainImg = document.getElementById('main-product-image');
+            mainImg.classList.add('opacity-0');
+            setTimeout(() => {
+                mainImg.src = src;
+                mainImg.classList.remove('opacity-0');
+            }, 150);
+            
+            // Update active thumbnail border
+            const thumbs = element.parentElement.children;
+            for(let i=0; i<thumbs.length; i++) {
+                thumbs[i].classList.remove('border-black', 'opacity-100');
+                thumbs[i].classList.add('border-transparent', 'opacity-60');
+            }
+            element.classList.remove('border-transparent', 'opacity-60');
+            element.classList.add('border-black', 'opacity-100');
+        }
+
+        // Product Details Tabs
+        const detailTabBtns = document.querySelectorAll('.detail-tab-btn');
+        const detailTabContents = document.querySelectorAll('.detail-tab-content');
+
+        if(detailTabBtns.length > 0) {
+            detailTabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active tab styling
+                    detailTabBtns.forEach(b => {
+                        b.classList.remove('bg-white', 'shadow-sm', 'text-black', 'font-bold');
+                        b.classList.add('text-gray-500', 'font-medium', 'hover:text-black', 'hover:bg-gray-100');
+                    });
+                    btn.classList.remove('text-gray-500', 'font-medium', 'hover:text-black', 'hover:bg-gray-100');
+                    btn.classList.add('bg-white', 'shadow-sm', 'text-black', 'font-bold');
+
+                    // Show corresponding content
+                    const targetId = btn.getAttribute('data-target');
+                    detailTabContents.forEach(content => {
+                        if (content.id === targetId) {
+                            content.classList.remove('hidden');
+                        } else {
+                            content.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        }
+</script>
+</body>
+</html>
