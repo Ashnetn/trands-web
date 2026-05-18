@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trands - High Performance Electronics</title>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -28,7 +29,7 @@
             }
         }
     </script>
-    
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -37,9 +38,11 @@
             font-family: 'Inter', sans-serif;
             background-color: #ffffff;
         }
+
         .hide-scrollbar::-webkit-scrollbar {
             display: none;
         }
+
         .hide-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
@@ -47,17 +50,25 @@
 
         /* Marquee Animation */
         @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
+
         .animate-marquee {
             animation: marquee 30s linear infinite;
         }
+
         .animate-marquee:hover {
             animation-play-state: paused;
         }
     </style>
 </head>
+
 <body class="text-slate-900 antialiased">
 
     <!-- Top Bar & Header Wrapper -->
@@ -70,20 +81,31 @@
                     <a href="about.html" class="hover:text-gray-300 transition">About Us</a>
                     <a href="#" class="hover:text-gray-300 transition">FAQ</a>
                 </div>
-                <div class="text-center flex-1 mt-2 md:mt-0 text-gray-300 flex justify-center items-center relative overflow-hidden h-6">
-                    <i id="topbar-prev" data-lucide="chevron-left" stroke-width="1.5" width="16" height="16" class="mr-12 text-gray-500 cursor-pointer hover:text-white transition z-10 relative"></i>
+                <div
+                    class="text-center flex-1 mt-2 md:mt-0 text-gray-300 flex justify-center items-center relative overflow-hidden h-6">
+                    <i id="topbar-prev" data-lucide="chevron-left" stroke-width="1.5" width="16" height="16"
+                        class="mr-12 text-gray-500 cursor-pointer hover:text-white transition z-10 relative"></i>
                     <div id="topbar-slider" class="relative w-full max-w-lg h-full flex justify-center items-center">
-                        <div class="topbar-slide absolute inset-0 flex justify-center items-center transition-opacity duration-500 opacity-100 z-10">
-                            <span class="truncate">Enjoy free shipping on all orders this week! <a href="#" class="text-white font-bold ml-1 hover:underline">Shop Now <i data-lucide="arrow-right" class="ml-1 inline" width="12" height="12"></i></a></span>
+                        <div
+                            class="topbar-slide absolute inset-0 flex justify-center items-center transition-opacity duration-500 opacity-100 z-10">
+                            <span class="truncate">Enjoy free shipping on all orders this week! <a href="#"
+                                    class="text-white font-bold ml-1 hover:underline">Shop Now <i
+                                        data-lucide="arrow-right" class="ml-1 inline" width="12"
+                                        height="12"></i></a></span>
                         </div>
-                        <div class="topbar-slide absolute inset-0 flex justify-center items-center transition-opacity duration-500 opacity-0 z-0 pointer-events-none">
-                            <span class="truncate">Get 20% off your first purchase! <a href="#" class="text-white font-bold ml-1 hover:underline">Use Code: WELCOME</a></span>
+                        <div
+                            class="topbar-slide absolute inset-0 flex justify-center items-center transition-opacity duration-500 opacity-0 z-0 pointer-events-none">
+                            <span class="truncate">Get 20% off your first purchase! <a href="#"
+                                    class="text-white font-bold ml-1 hover:underline">Use Code: WELCOME</a></span>
                         </div>
-                        <div class="topbar-slide absolute inset-0 flex justify-center items-center transition-opacity duration-500 opacity-0 z-0 pointer-events-none">
-                            <span class="truncate">New arrivals are here! <a href="#" class="text-white font-bold ml-1 hover:underline">Explore Now</a></span>
+                        <div
+                            class="topbar-slide absolute inset-0 flex justify-center items-center transition-opacity duration-500 opacity-0 z-0 pointer-events-none">
+                            <span class="truncate">New arrivals are here! <a href="#"
+                                    class="text-white font-bold ml-1 hover:underline">Explore Now</a></span>
                         </div>
                     </div>
-                    <i id="topbar-next" data-lucide="chevron-right" stroke-width="1.5" width="16" height="16" class="ml-12 text-gray-500 cursor-pointer hover:text-white transition z-10 relative"></i>
+                    <i id="topbar-next" data-lucide="chevron-right" stroke-width="1.5" width="16" height="16"
+                        class="ml-12 text-gray-500 cursor-pointer hover:text-white transition z-10 relative"></i>
                 </div>
                 <div class="flex items-center space-x-4 mt-2 md:mt-0">
                     <div class="flex items-center cursor-pointer hover:text-gray-300 transition">
@@ -101,84 +123,125 @@
             <div class="container mx-auto px-4 lg:px-12 flex justify-between items-center">
                 <!-- Logo -->
                 <a href="#" class="text-[26px] font-extrabold text-[#111] flex items-center tracking-tight">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
-                        <path d="M5 16L10 9" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
-                        <path d="M11 20L16 13" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
-                        <path d="M12 12L15 8" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="mr-2">
+                        <path d="M5 16L10 9" stroke="#9ca3af" stroke-width="4" stroke-linecap="round" />
+                        <path d="M11 20L16 13" stroke="#9ca3af" stroke-width="4" stroke-linecap="round" />
+                        <path d="M12 12L15 8" stroke="#9ca3af" stroke-width="4" stroke-linecap="round" />
                     </svg>
-                    trands
+                    Ashnet
                 </a>
 
                 <!-- Navigation Links -->
                 <nav class="hidden lg:flex items-center space-x-8 text-[14px] font-medium text-gray-800">
-                    <a href="#" class="flex items-center hover:text-black transition">Home <i data-lucide="chevron-down" class="ml-1.5 text-gray-400" stroke-width="2" width="12" height="12"></i></a>
-                    
+                    <a href="#" class="flex items-center hover:text-black transition">Home <i data-lucide="chevron-down"
+                            class="ml-1.5 text-gray-400" stroke-width="2" width="12" height="12"></i></a>
+
                     <!-- Shop Mega Menu -->
                     <div class="group static">
                         <a href="products.html" class="flex items-center hover:text-black transition py-4">
-                            Shop <i data-lucide="chevron-down" class="ml-1.5 text-gray-400 group-hover:rotate-180 transition-transform duration-300" stroke-width="2" width="12" height="12"></i>
+                            Shop <i data-lucide="chevron-down"
+                                class="ml-1.5 text-gray-400 group-hover:rotate-180 transition-transform duration-300"
+                                stroke-width="2" width="12" height="12"></i>
                         </a>
-                        
+
                         <!-- Dropdown Container with Hover Bridge -->
-                        <div class="absolute left-0 right-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <div
+                            class="absolute left-0 right-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                             <!-- Invisible Bridge -->
                             <div class="absolute -top-6 left-0 w-full h-6 bg-transparent"></div>
-                            
+
                             <!-- Mega Menu Content -->
-                            <div class="bg-white rounded-b-[2.5rem] lg:rounded-b-[3rem] shadow-2xl border-t border-gray-100 transform origin-top -translate-y-2 group-hover:translate-y-0 transition-transform duration-300 relative">
+                            <div
+                                class="bg-white rounded-b-[2.5rem] lg:rounded-b-[3rem] shadow-2xl border-t border-gray-100 transform origin-top -translate-y-2 group-hover:translate-y-0 transition-transform duration-300 relative">
                                 <div class="container mx-auto px-4 lg:px-12 py-10">
                                     <div class="grid grid-cols-5 gap-8">
                                         <!-- Shop Lists -->
                                         <div>
                                             <h4 class="font-bold text-black mb-5 text-[15px]">Shop Lists</h4>
                                             <ul class="space-y-4 text-[13px] text-gray-600 font-normal">
-                                                <li><a href="#" class="hover:text-black transition block">Shop Default</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Shop Right Sidebar</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Shop Wide</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Filters Area</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">List Left Sidebar</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Load More Button</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Infinite Scrolling</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Image Hover – Zoom</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Image Hover – Slider</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Image Hover – Flip</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Product Variable</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Sale Countdown</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Shop
+                                                        Default</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Shop Right
+                                                        Sidebar</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Shop Wide</a>
+                                                </li>
+                                                <li><a href="#" class="hover:text-black transition block">Filters
+                                                        Area</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">List Left
+                                                        Sidebar</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Load More
+                                                        Button</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Infinite
+                                                        Scrolling</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Image Hover –
+                                                        Zoom</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Image Hover –
+                                                        Slider</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Image Hover –
+                                                        Flip</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product
+                                                        Variable</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Sale
+                                                        Countdown</a></li>
                                             </ul>
                                         </div>
                                         <!-- Product Detail -->
                                         <div>
                                             <h4 class="font-bold text-black mb-5 text-[15px]">Product Detail</h4>
                                             <ul class="space-y-4 text-[13px] text-gray-600 font-normal">
-                                                <li><a href="#" class="hover:text-black transition block">Product Default</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Product Variable</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Product Grouped</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Product External</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Product Downloadable</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Product Zoom Image</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Produt With Video</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Thumbnails Left</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Gallery 1 Column</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Gallery 2 Columns</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Carousel 2 Columns</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product
+                                                        Default</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product
+                                                        Variable</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product
+                                                        Grouped</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product
+                                                        External</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product
+                                                        Downloadable</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product Zoom
+                                                        Image</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Produt With
+                                                        Video</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Thumbnails
+                                                        Left</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Gallery 1
+                                                        Column</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Gallery 2
+                                                        Columns</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Carousel 2
+                                                        Columns</a></li>
                                             </ul>
                                         </div>
                                         <!-- Product Features -->
                                         <div>
                                             <h4 class="font-bold text-black mb-5 text-[15px]">Product Features</h4>
                                             <ul class="space-y-4 text-[13px] text-gray-600 font-normal">
-                                                <li><a href="#" class="hover:text-black transition block">Buy Now Button</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Order on WhatsApp</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Stock Progress Bar</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Sale Countdown</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Sticky Add to Cart</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Sticky Tab Titles</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Reviews Without Tab</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Product Full Width</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Sticky Description</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Vertical Tabs</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Accordion Tabs</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Accordion in Content</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Buy Now
+                                                        Button</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Order on
+                                                        WhatsApp</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Stock Progress
+                                                        Bar</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Sale
+                                                        Countdown</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Sticky Add to
+                                                        Cart</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Sticky Tab
+                                                        Titles</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Reviews
+                                                        Without Tab</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product Full
+                                                        Width</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Sticky
+                                                        Description</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Vertical
+                                                        Tabs</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Accordion
+                                                        Tabs</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Accordion in
+                                                        Content</a></li>
                                             </ul>
                                         </div>
                                         <!-- Shop Pages -->
@@ -186,33 +249,54 @@
                                             <h4 class="font-bold text-black mb-5 text-[15px]">Shop Pages</h4>
                                             <ul class="space-y-4 text-[13px] text-gray-600 font-normal">
                                                 <li><a href="#" class="hover:text-black transition block">Cart</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Checkout</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">My account</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Wishlist</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Compare</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Order Tracking</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Catalog Mode</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Featured Products</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Best Selling Products</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Stock Progress Bar</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Stock Status</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Shop by Brand</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Checkout</a>
+                                                </li>
+                                                <li><a href="#" class="hover:text-black transition block">My account</a>
+                                                </li>
+                                                <li><a href="#" class="hover:text-black transition block">Wishlist</a>
+                                                </li>
+                                                <li><a href="#" class="hover:text-black transition block">Compare</a>
+                                                </li>
+                                                <li><a href="#" class="hover:text-black transition block">Order
+                                                        Tracking</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Catalog
+                                                        Mode</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Featured
+                                                        Products</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Best Selling
+                                                        Products</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Stock Progress
+                                                        Bar</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Stock
+                                                        Status</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Shop by
+                                                        Brand</a></li>
                                             </ul>
                                         </div>
                                         <!-- Shop Layouts -->
                                         <div>
                                             <h4 class="font-bold text-black mb-5 text-[15px]">Shop Layouts</h4>
                                             <ul class="space-y-4 text-[13px] text-gray-600 font-normal">
-                                                <li><a href="#" class="hover:text-black transition block">Two Columns</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Three Columns</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Three Columns Wide</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Four Columns</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Four Columns Wide</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Five Columns Wide</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Bordered Shipping Class</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Product SKU</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Additional Information</a></li>
-                                                <li><a href="#" class="hover:text-black transition block">Login to See Prices</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Two
+                                                        Columns</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Three
+                                                        Columns</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Three Columns
+                                                        Wide</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Four
+                                                        Columns</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Four Columns
+                                                        Wide</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Five Columns
+                                                        Wide</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Bordered
+                                                        Shipping Class</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Product
+                                                        SKU</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Additional
+                                                        Information</a></li>
+                                                <li><a href="#" class="hover:text-black transition block">Login to See
+                                                        Prices</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -228,20 +312,22 @@
                 </nav>
 
                 <!-- Header Actions -->
-                <div class="flex items-center space-x-6 text-gray-800">
-                    <button class="hover:text-black transition"><i data-lucide="search" stroke-width="1.5" width="22" height="22"></i></button>
+                <div class="flex items-center space-x-6 text-gray-800">                    <button class="offcanvas-search-trigger hover:text-black transition flex items-center justify-center p-1 rounded-full text-gray-800"><i data-lucide="search" stroke-width="1.5" width="22" height="22"></i></button>
                     <a href="#" class="hidden sm:flex items-center hover:text-black transition">
                         <i data-lucide="user" stroke-width="1.5" width="22" height="22"></i>
                         <span class="ml-2 text-sm font-medium">Account</span>
                     </a>
                     <a href="#" class="relative hover:text-black transition">
                         <i data-lucide="heart" stroke-width="1.5" width="22" height="22"></i>
-                        <span class="absolute -top-1.5 -right-2 bg-black text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                        <span
+                            class="absolute -top-1.5 -right-2 bg-black text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
                     </a>
-                    <button class="hover:text-black transition"><i data-lucide="refresh-cw" stroke-width="1.5" width="22" height="22"></i></button>
+                    <button class="hover:text-black transition"><i data-lucide="refresh-cw" stroke-width="1.5"
+                            width="22" height="22"></i></button>
                     <a href="#" class="relative hover:text-black transition">
                         <i data-lucide="shopping-cart" stroke-width="1.5" width="22" height="22"></i>
-                        <span class="absolute -top-1.5 -right-2 bg-black text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                        <span
+                            class="absolute -top-1.5 -right-2 bg-black text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
                     </a>
                     <!-- Mobile Menu Toggle Button -->
                     <button id="mobile-menu-btn" class="lg:hidden hover:text-black transition ml-4">
@@ -257,58 +343,76 @@
         <section class="relative h-[600px] lg:h-[700px] w-full bg-black overflow-hidden group" id="hero-slider">
             <!-- Slide 1 -->
             <div class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-100 z-10">
-                <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=2000" alt="Hero Background 1" class="absolute inset-0 w-full h-full object-cover opacity-60">
+                <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=2000"
+                    alt="Hero Background 1" class="absolute inset-0 w-full h-full object-cover opacity-60">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/50"></div>
-                <div class="relative h-full container mx-auto px-4 flex flex-col justify-center items-center text-center text-white pb-16">
+                <div
+                    class="relative h-full container mx-auto px-4 flex flex-col justify-center items-center text-center text-white pb-16">
                     <span class="text-sm font-semibold tracking-wider uppercase mb-4 opacity-90">Highest Quality</span>
-                    <h1 class="text-5xl lg:text-[72px] font-bold mb-6 leading-tight max-w-4xl tracking-tight">High Performance and <br/> Elegant Design</h1>
-                    <p class="text-lg lg:text-xl text-gray-300 mb-10 max-w-2xl font-light">Sleek designs, cutting-edge tech, unmatched performance for modern living</p>
-                    <a href="headphones.html" class="inline-flex items-center justify-center bg-white text-black font-semibold px-8 py-3.5 rounded-full hover:bg-gray-100 transition shadow-lg text-sm">
+                    <h1 class="text-5xl lg:text-[72px] font-bold mb-6 leading-tight max-w-4xl tracking-tight">High
+                        Performance and <br /> Elegant Design</h1>
+                    <p class="text-lg lg:text-xl text-gray-300 mb-10 max-w-2xl font-light">Sleek designs, cutting-edge
+                        tech, unmatched performance for modern living</p>
+                    <a href="headphones.html"
+                        class="inline-flex items-center justify-center bg-white text-black font-semibold px-8 py-3.5 rounded-full hover:bg-gray-100 transition shadow-lg text-sm">
                         View Headphones
                     </a>
                 </div>
             </div>
-            
+
             <!-- Slide 2 -->
             <div class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-0 z-0 pointer-events-none">
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=2000" alt="Hero Background 2" class="absolute inset-0 w-full h-full object-cover opacity-60">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=2000"
+                    alt="Hero Background 2" class="absolute inset-0 w-full h-full object-cover opacity-60">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/50"></div>
-                <div class="relative h-full container mx-auto px-4 flex flex-col justify-center items-center text-center text-white pb-16">
+                <div
+                    class="relative h-full container mx-auto px-4 flex flex-col justify-center items-center text-center text-white pb-16">
                     <span class="text-sm font-semibold tracking-wider uppercase mb-4 opacity-90">New Collection</span>
-                    <h1 class="text-5xl lg:text-[72px] font-bold mb-6 leading-tight max-w-4xl tracking-tight">Studio Quality <br/> Sound Everywhere</h1>
-                    <p class="text-lg lg:text-xl text-gray-300 mb-10 max-w-2xl font-light">Experience the ultimate sound clarity with our latest noise-cancelling series.</p>
-                    <a href="#" class="inline-flex items-center justify-center bg-white text-black font-semibold px-8 py-3.5 rounded-full hover:bg-gray-100 transition shadow-lg text-sm">
+                    <h1 class="text-5xl lg:text-[72px] font-bold mb-6 leading-tight max-w-4xl tracking-tight">Studio
+                        Quality <br /> Sound Everywhere</h1>
+                    <p class="text-lg lg:text-xl text-gray-300 mb-10 max-w-2xl font-light">Experience the ultimate sound
+                        clarity with our latest noise-cancelling series.</p>
+                    <a href="#"
+                        class="inline-flex items-center justify-center bg-white text-black font-semibold px-8 py-3.5 rounded-full hover:bg-gray-100 transition shadow-lg text-sm">
                         Discover Now
                     </a>
                 </div>
             </div>
-            
+
             <!-- Slide 3 -->
             <div class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-0 z-0 pointer-events-none">
-                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=2000" alt="Hero Background 3" class="absolute inset-0 w-full h-full object-cover opacity-60">
+                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=2000"
+                    alt="Hero Background 3" class="absolute inset-0 w-full h-full object-cover opacity-60">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/50"></div>
-                <div class="relative h-full container mx-auto px-4 flex flex-col justify-center items-center text-center text-white pb-16">
-                    <span class="text-sm font-semibold tracking-wider uppercase mb-4 opacity-90">Premium Accessories</span>
-                    <h1 class="text-5xl lg:text-[72px] font-bold mb-6 leading-tight max-w-4xl tracking-tight">Elevate Your <br/> Daily Setup</h1>
-                    <p class="text-lg lg:text-xl text-gray-300 mb-10 max-w-2xl font-light">Minimalist design meets maximum functionality in our new accessory line.</p>
-                    <a href="#" class="inline-flex items-center justify-center bg-white text-black font-semibold px-8 py-3.5 rounded-full hover:bg-gray-100 transition shadow-lg text-sm">
+                <div
+                    class="relative h-full container mx-auto px-4 flex flex-col justify-center items-center text-center text-white pb-16">
+                    <span class="text-sm font-semibold tracking-wider uppercase mb-4 opacity-90">Premium
+                        Accessories</span>
+                    <h1 class="text-5xl lg:text-[72px] font-bold mb-6 leading-tight max-w-4xl tracking-tight">Elevate
+                        Your <br /> Daily Setup</h1>
+                    <p class="text-lg lg:text-xl text-gray-300 mb-10 max-w-2xl font-light">Minimalist design meets
+                        maximum functionality in our new accessory line.</p>
+                    <a href="#"
+                        class="inline-flex items-center justify-center bg-white text-black font-semibold px-8 py-3.5 rounded-full hover:bg-gray-100 transition shadow-lg text-sm">
                         Shop Accessories
                     </a>
                 </div>
             </div>
-            
+
             <!-- Slider Dots -->
             <div class="absolute bottom-6 left-0 right-0 flex justify-center space-x-2 z-20" id="hero-dots">
                 <button class="hero-dot w-2 h-2 rounded-full bg-white transition-all"></button>
                 <button class="hero-dot w-2 h-2 rounded-full bg-white/40 transition-all"></button>
                 <button class="hero-dot w-2 h-2 rounded-full bg-white/40 transition-all"></button>
             </div>
-            
+
             <!-- Slider Navigation Arrows -->
-            <button id="hero-prev" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex justify-center items-center text-black z-20 shadow-md opacity-0 group-hover:opacity-100 hover:bg-gray-100 transition-all">
+            <button id="hero-prev"
+                class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex justify-center items-center text-black z-20 shadow-md opacity-0 group-hover:opacity-100 hover:bg-gray-100 transition-all">
                 <i data-lucide="chevron-left" stroke-width="1.5" width="24" height="24"></i>
             </button>
-            <button id="hero-next" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex justify-center items-center text-black z-20 shadow-md opacity-0 group-hover:opacity-100 hover:bg-gray-100 transition-all">
+            <button id="hero-next"
+                class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex justify-center items-center text-black z-20 shadow-md opacity-0 group-hover:opacity-100 hover:bg-gray-100 transition-all">
                 <i data-lucide="chevron-right" stroke-width="1.5" width="24" height="24"></i>
             </button>
         </section>
@@ -316,21 +420,20 @@
         <!-- Brand Logos Strip -->
         <section class="border-b border-gray-100 py-10 overflow-hidden bg-white">
             <div class="w-full relative flex items-center">
-                <div class="flex items-center gap-16 md:gap-32 w-max animate-marquee opacity-70 grayscale hover:grayscale-0 transition duration-500 pr-16 md:pr-32">
+                <div
+                    class="flex items-center gap-16 md:gap-32 w-max animate-marquee opacity-70 grayscale hover:grayscale-0 transition duration-500 pr-16 md:pr-32">
                     <!-- First Set -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Sennheiser_logo.svg/2560px-Sennheiser_logo.svg.png" alt="Sennheiser" class="h-6 object-contain">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Logitech_logo.svg/2560px-Logitech_logo.svg.png" alt="Logitech" class="h-6 object-contain">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Beats_Electronics_logo.svg/2560px-Beats_Electronics_logo.svg.png" alt="Beats" class="h-6 object-contain">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Sony_logo.svg/2560px-Sony_logo.svg.png" alt="Sony" class="h-5 object-contain">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Skullcandy_Logo.svg/2560px-Skullcandy_Logo.svg.png" alt="Skullcandy" class="h-8 object-contain">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Bose_logo.svg/2560px-Bose_logo.svg.png" alt="Bose" class="h-5 object-contain">
+                    <img src="images/brand-1.png" alt="Brand Logo" class="w-[200px] object-contain mix-blend-multiply">
+                    <img src="images/brand-2.png" alt="Brand Logo" class="w-[200px] object-contain mix-blend-multiply">
+                    <img src="images/brand-3.png" alt="Brand Logo" class="w-[200px] object-contain mix-blend-multiply">
+                    <img src="images/brand-4.png" alt="Brand Logo" class="w-[200px] object-contain mix-blend-multiply">
+                    <img src="images/brand-5.png" alt="Brand Logo" class="w-[200px] object-contain mix-blend-multiply">
                     <!-- Duplicate Set for Seamless Looping -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Sennheiser_logo.svg/2560px-Sennheiser_logo.svg.png" alt="Sennheiser" class="h-6 object-contain">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Logitech_logo.svg/2560px-Logitech_logo.svg.png" alt="Logitech" class="h-6 object-contain">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Beats_Electronics_logo.svg/2560px-Beats_Electronics_logo.svg.png" alt="Beats" class="h-6 object-contain">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Sony_logo.svg/2560px-Sony_logo.svg.png" alt="Sony" class="h-5 object-contain">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Skullcandy_Logo.svg/2560px-Skullcandy_Logo.svg.png" alt="Skullcandy" class="h-8 object-contain">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Bose_logo.svg/2560px-Bose_logo.svg.png" alt="Bose" class="h-5 object-contain">
+                    <img src="images/brand-1.png" alt="Brand Logo" class="w-[200px] object-contain mix-blend-multiply">
+                    <img src="images/brand-2.png" alt="Brand Logo" class="w-[200px] object-contain mix-blend-multiply">
+                    <img src="images/brand-3.png" alt="Brand Logo" class="w-[200px] object-contain mix-blend-multiply">
+                    <img src="images/brand-4.png" alt="Brand Logo" class="w-[200px] object-contain mix-blend-multiply">
+                    <img src="images/brand-5.png" alt="Brand Logo" class="w-[200px] object-contain mix-blend-multiply">
                 </div>
             </div>
         </section>
@@ -339,58 +442,78 @@
         <section class="container mx-auto px-4 lg:px-8 py-16">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Earphones -->
-                <div class="bg-surface rounded-2xl p-8 flex flex-col relative overflow-hidden group hover:shadow-lg transition">
+                <div
+                    class="bg-surface rounded-2xl p-8 flex flex-col relative overflow-hidden group hover:shadow-lg transition">
                     <div class="z-10">
                         <h3 class="text-xl font-bold text-black">Earphones</h3>
                         <p class="text-sm text-gray-500 mt-1">10 Products</p>
                     </div>
                     <div class="mt-8 mb-12 flex justify-center h-40">
-                        <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&q=80&w=400&h=400" alt="Earphones" class="object-contain h-full mix-blend-multiply group-hover:scale-105 transition duration-500">
+                        <img src="images/category-1.png"
+                            alt="Earphones"
+                            class="object-contain h-full mix-blend-multiply group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="absolute bottom-8 left-8 z-10">
-                        <a href="#" class="inline-flex bg-white text-black text-xs font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition">View Products</a>
+                        <a href="#"
+                            class="inline-flex bg-white text-black text-xs font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition">View
+                            Products</a>
                     </div>
                 </div>
 
                 <!-- Headphones -->
-                <div class="bg-surface rounded-2xl p-8 flex flex-col relative overflow-hidden group hover:shadow-lg transition">
+                <div
+                    class="bg-surface rounded-2xl p-8 flex flex-col relative overflow-hidden group hover:shadow-lg transition">
                     <div class="z-10">
                         <h3 class="text-xl font-bold text-black">Headphones</h3>
                         <p class="text-sm text-gray-500 mt-1">8 Products</p>
                     </div>
                     <div class="mt-8 mb-12 flex justify-center h-40">
-                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400&h=400" alt="Headphones" class="object-contain h-full mix-blend-multiply group-hover:scale-105 transition duration-500">
+                        <img src="images/category-2.png"
+                            alt="Headphones"
+                            class="object-contain h-full mix-blend-multiply group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="absolute bottom-8 left-8 z-10">
-                        <a href="#" class="inline-flex bg-white text-black text-xs font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition">View Products</a>
+                        <a href="#"
+                            class="inline-flex bg-white text-black text-xs font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition">View
+                            Products</a>
                     </div>
                 </div>
 
                 <!-- Microphones -->
-                <div class="bg-surface rounded-2xl p-8 flex flex-col relative overflow-hidden group hover:shadow-lg transition">
+                <div
+                    class="bg-surface rounded-2xl p-8 flex flex-col relative overflow-hidden group hover:shadow-lg transition">
                     <div class="z-10">
                         <h3 class="text-xl font-bold text-black">Microphones</h3>
                         <p class="text-sm text-gray-500 mt-1">8 Products</p>
                     </div>
                     <div class="mt-8 mb-12 flex justify-center h-40">
-                        <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&q=80&w=400&h=400" alt="Microphones" class="object-contain h-full mix-blend-multiply group-hover:scale-105 transition duration-500">
+                        <img src="images/category-3.png"
+                            alt="Microphones"
+                            class="object-contain h-full mix-blend-multiply group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="absolute bottom-8 left-8 z-10">
-                        <a href="#" class="inline-flex bg-white text-black text-xs font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition">View Products</a>
+                        <a href="#"
+                            class="inline-flex bg-white text-black text-xs font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition">View
+                            Products</a>
                     </div>
                 </div>
 
                 <!-- Smartwatches -->
-                <div class="bg-surface rounded-2xl p-8 flex flex-col relative overflow-hidden group hover:shadow-lg transition">
+                <div
+                    class="bg-surface rounded-2xl p-8 flex flex-col relative overflow-hidden group hover:shadow-lg transition">
                     <div class="z-10">
                         <h3 class="text-xl font-bold text-black">Smartwatches</h3>
                         <p class="text-sm text-gray-500 mt-1">7 Products</p>
                     </div>
                     <div class="mt-8 mb-12 flex justify-center h-40">
-                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&q=80&w=400&h=400" alt="Smartwatches" class="object-contain h-full mix-blend-multiply group-hover:scale-105 transition duration-500">
+                        <img src="images/category-4.png"
+                            alt="Smartwatches"
+                            class="object-contain h-full mix-blend-multiply group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="absolute bottom-8 left-8 z-10">
-                        <a href="#" class="inline-flex bg-white text-black text-xs font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition">View Products</a>
+                        <a href="#"
+                            class="inline-flex bg-white text-black text-xs font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition">View
+                            Products</a>
                     </div>
                 </div>
             </div>
@@ -398,17 +521,23 @@
 
         <!-- Promo Banner 1 (Sony) -->
         <section class="container mx-auto px-4 lg:px-8 pb-8">
-            <div class="bg-[#111111] rounded-2xl overflow-hidden relative flex flex-col md:flex-row items-center min-h-[400px]">
+            <div
+                class="bg-[#111111] rounded-2xl overflow-hidden relative flex flex-col md:flex-row items-center min-h-[400px]">
                 <div class="p-10 md:p-16 z-10 w-full md:w-1/2">
-                    <span class="text-gray-400 text-sm font-semibold tracking-wider uppercase mb-4 block">Premium Standards</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white leading-tight mb-4">Elevate Your Audio Experience with Sony Headphones</h2>
-                    <p class="text-gray-400 text-lg mb-8 max-w-md">Elevate your life with electronics designed for style and performance.</p>
-                    <a href="#" class="inline-flex items-center bg-white text-black text-sm font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition">
+                    <span class="text-gray-400 text-sm font-semibold tracking-wider uppercase mb-4 block">Premium
+                        Standards</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white leading-tight mb-4">Elevate Your Audio
+                        Experience with Sony Headphones</h2>
+                    <p class="text-gray-400 text-lg mb-8 max-w-md">Elevate your life with electronics designed for style
+                        and performance.</p>
+                    <a href="#"
+                        class="inline-flex items-center bg-white text-black text-sm font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition">
                         Shop Now <i data-lucide="arrow-right" class="ml-2" width="16" height="16"></i>
                     </a>
                 </div>
                 <div class="absolute right-0 top-0 bottom-0 w-full md:w-3/5 h-full opacity-50 md:opacity-100">
-                    <img src="https://images.unsplash.com/photo-1612444530582-fc66184b156b?auto=format&fit=crop&q=80&w=1200" alt="Sony Headphones" class="w-full h-full object-cover object-right mix-blend-lighten">
+                    <img src="images/premium-bg.png"
+                        alt="Sony Headphones" class="w-full h-full object-cover object-right mix-blend-lighten">
                 </div>
             </div>
         </section>
@@ -417,28 +546,40 @@
         <section class="container mx-auto px-4 lg:px-8 pb-16">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Sonos Banner -->
-                <div class="bg-surface rounded-2xl p-10 md:p-16 flex flex-col items-center text-center relative overflow-hidden group min-h-[500px]">
-                    <span class="text-black text-sm font-semibold tracking-wider uppercase mb-3 block">Unrivaled Precision</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-black mb-4 leading-tight">Where Innovation Meets Immersive Sound</h2>
+                <div
+                    class="bg-surface rounded-2xl p-10 md:p-16 flex flex-col items-center text-center relative overflow-hidden group min-h-[500px]">
+                    <span class="text-black text-sm font-semibold tracking-wider uppercase mb-3 block">Unrivaled
+                        Precision</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-black mb-4 leading-tight">Where Innovation Meets
+                        Immersive Sound</h2>
                     <p class="text-gray-600 mb-8">Power meets precision in every detail.</p>
-                    <a href="#" class="inline-flex items-center bg-white text-black text-sm font-semibold px-6 py-3 rounded-full shadow-sm hover:shadow-md transition relative z-10">
+                    <a href="#"
+                        class="inline-flex items-center bg-white text-black text-sm font-semibold px-6 py-3 rounded-full shadow-sm hover:shadow-md transition relative z-10">
                         Shop Now <i data-lucide="arrow-right" class="ml-2" width="16" height="16"></i>
                     </a>
-                    <div class="mt-auto w-full max-w-xs absolute bottom-0 translate-y-12 group-hover:translate-y-8 transition duration-500">
-                        <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&q=80&w=800" alt="Sonos Speaker" class="w-full h-auto mix-blend-multiply">
+                    <div
+                        class="mt-auto w-full max-w-xs absolute bottom-0 translate-y-12 group-hover:translate-y-8 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&q=80&w=800"
+                            alt="Sonos Speaker" class="w-full h-auto mix-blend-multiply">
                     </div>
                 </div>
 
                 <!-- White Tech Banner -->
-                <div class="bg-surface rounded-2xl p-10 md:p-16 flex flex-col items-center text-center relative overflow-hidden group min-h-[500px]">
-                    <div class="w-full max-w-sm mb-auto absolute top-0 -translate-y-8 group-hover:-translate-y-4 transition duration-500">
-                        <img src="https://images.unsplash.com/photo-1585565804112-f201f68c48b4?auto=format&fit=crop&q=80&w=800" alt="Smart Device" class="w-full h-auto mix-blend-multiply">
+                <div
+                    class="bg-surface rounded-2xl p-10 md:p-16 flex flex-col items-center text-center relative overflow-hidden group min-h-[500px]">
+                    <div
+                        class="w-full max-w-sm mb-auto absolute top-0 -translate-y-8 group-hover:-translate-y-4 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1585565804112-f201f68c48b4?auto=format&fit=crop&q=80&w=800"
+                            alt="Smart Device" class="w-full h-auto mix-blend-multiply">
                     </div>
                     <div class="mt-auto relative z-10 pt-64">
-                        <span class="text-black text-sm font-semibold tracking-wider uppercase mb-3 block">Peak Perfection</span>
-                        <h2 class="text-3xl md:text-4xl font-bold text-black mb-4 leading-tight">Smart Solutions, Sleek Designs</h2>
+                        <span class="text-black text-sm font-semibold tracking-wider uppercase mb-3 block">Peak
+                            Perfection</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-black mb-4 leading-tight">Smart Solutions, Sleek
+                            Designs</h2>
                         <p class="text-gray-600 mb-8">Smart solutions for a connected world.</p>
-                        <a href="#" class="inline-flex items-center bg-white text-black text-sm font-semibold px-6 py-3 rounded-full shadow-sm hover:shadow-md transition">
+                        <a href="#"
+                            class="inline-flex items-center bg-white text-black text-sm font-semibold px-6 py-3 rounded-full shadow-sm hover:shadow-md transition">
                             Shop Now <i data-lucide="arrow-right" class="ml-2" width="16" height="16"></i>
                         </a>
                     </div>
@@ -448,107 +589,437 @@
 
         <!-- Product Grid ("Most sold this week") -->
         <section class="container mx-auto px-4 lg:px-8 py-10">
-            <div class="flex flex-col md:flex-row items-center mb-10 space-y-4 md:space-y-0 md:space-x-6">
-                <h2 class="text-[28px] md:text-[32px] font-bold text-[#111] tracking-tight">Most sold this week</h2>
-                <div class="flex flex-wrap items-center space-x-3 text-[15px] font-semibold pt-1" id="most-sold-tabs">
-                    <button class="tab-btn text-black hover:opacity-80 transition" data-target="grid-headphones">Headphones</button>
-                    <span class="text-gray-300 font-normal">·</span>
-                    <button class="tab-btn text-gray-400 hover:text-black transition" data-target="grid-microphones">Microphones</button>
-                    <span class="text-gray-300 font-normal">·</span>
-                    <button class="tab-btn text-gray-400 hover:text-black transition" data-target="grid-smartwatches">Smartwatches</button>
-                    <span class="text-gray-300 font-normal">·</span>
-                    <button class="tab-btn text-gray-400 hover:text-black transition" data-target="grid-speakers">Speakers</button>
+            <div class="flex flex-col lg:flex-row items-center justify-between mb-10 space-y-4 lg:space-y-0">
+                <div class="flex flex-col md:flex-row items-center md:space-x-8">
+                    <h2 class="text-[26px] md:text-[42px] font-medium text-[#111] tracking-tight">Most sold this week
+                    </h2>
+                    <div class="flex flex-wrap items-center space-x-4 text-[14px]" id="most-sold-tabs">
+                        <button class="tab-btn font-medium text-black md:text-[20px] hover:opacity-80 transition"
+                            data-target="grid-headphones">Headphones</button>
+                        <span class="text-gray-300 font-bold">·</span>
+                        <button class="tab-btn font-medium text-gray-400 md:text-[20px] hover:text-black transition"
+                            data-target="grid-microphones">Microphones</button>
+                        <span class="text-gray-300 font-bold">·</span>
+                        <button class="tab-btn font-medium text-gray-400 md:text-[20px] hover:text-black transition"
+                            data-target="grid-smartwatches">Smartwatches</button>
+                        <span class="text-gray-300 font-bold">·</span>
+                        <button class="tab-btn font-medium text-gray-400 md:text-[20px] hover:text-black transition"
+                            data-target="grid-speakers">Speakers</button>
+                    </div>
                 </div>
+
             </div>
 
-            <div id="grid-headphones" class="tab-content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Product 1 -->
-                <div class="bg-[#f5f5f5] rounded-[1.25rem] p-6 group cursor-pointer transition">
-                    <div class="relative h-64 mb-6 flex items-center justify-center">
-                        <div class="absolute top-0 left-0 bg-[#111] text-white text-[11px] font-bold px-3 py-1 rounded-full">12%</div>
-                        <div class="absolute top-0 right-0 bg-white text-[#111] text-[11px] font-bold px-3 py-1 rounded-full flex items-center shadow-sm">
-                            <i data-lucide="star" class="fill-yellow-400 text-yellow-400 mr-1" width="10" height="10"></i> 4.67
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400" alt="Headphones" class="h-[90%] object-contain mix-blend-multiply group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div>
-                        <p class="text-[12px] text-gray-500 mb-2">Headphones</p>
-                        <a href="product-details.html"><h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px] hover:underline">Wireless Gaming Headphones MS920</h3></a>
-                        <div class="flex items-center text-[13px]">
-                            <span class="font-bold text-[#111] mr-2">$75.66</span>
-                            <span class="text-gray-400 line-through">$85.66</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="relative group/carousel -mr-[calc(50vw-50%)]">
+                <div id="grid-headphones"
+                    class="tab-content flex overflow-x-auto gap-6 snap-x snap-mandatory pb-4 [&::-webkit-scrollbar]:hidden"
+                    style="scrollbar-width: none;">
 
-                <!-- Product 2 -->
-                <div class="bg-[#f5f5f5] rounded-[1.25rem] p-6 group cursor-pointer transition">
-                    <div class="relative h-64 mb-6 flex items-center justify-center">
-                        <div class="absolute top-0 left-0 bg-[#111] text-white text-[11px] font-bold px-3 py-1 rounded-full">8%</div>
-                        <div class="absolute top-0 right-0 bg-white text-[#111] text-[11px] font-bold px-3 py-1 rounded-full flex items-center shadow-sm">
-                            <i data-lucide="star" class="fill-yellow-400 text-yellow-400 mr-1" width="10" height="10"></i> 3.67
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=400" alt="Headphones" class="h-[90%] object-contain mix-blend-multiply group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div>
-                        <p class="text-[12px] text-gray-500 mb-2">Headphones</p>
-                        <h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px]">Wireless Gaming Headphones DM420</h3>
-                        <div class="flex items-center text-[13px]">
-                            <span class="font-bold text-[#111]">$117.88 – $147.88</span>
-                        </div>
-                    </div>
-                </div>
+                    <!-- Product 1 -->
+                    <div
+                        class="bg-[#f4f4f4] rounded-[1.25rem] p-6 group cursor-pointer transition min-w-[300px] w-[85vw] md:w-[calc(45%-12px)] lg:w-[calc(31%-18px)] flex-none snap-start">
+                        <div class="relative h-[440px] mb-8 flex flex-col items-center justify-center overflow-hidden">
+                            <div
+                                class="absolute top-0 left-0 bg-[#111] text-white text-[13px] font-bold px-3.5 py-1.5 rounded-full z-10">
+                                12%</div>
+                            <div
+                                class="absolute top-0 right-0 bg-white text-[#111] text-[13px] font-bold px-3.5 py-1.5 rounded-full flex items-center shadow-sm group-hover:opacity-0 transition-opacity duration-300 z-10">
+                                <i data-lucide="star" class="fill-yellow-400 text-yellow-400 mr-1" width="12"
+                                    height="12"></i> 4.67
+                            </div>
+                            <div
+                                class="absolute top-0 right-0 flex flex-col space-y-2 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                                <button
+                                    class="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-black hover:text-white transition text-black"><i
+                                        data-lucide="eye" width="16" height="16"></i></button>
+                                <button
+                                    class="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-black hover:text-white transition text-black"><i
+                                        data-lucide="arrow-left-right" width="16" height="16"></i></button>
+                            </div>
+                            <img src="images/most-sold-1.png"
+                                data-images='["images/most-sold-1.png", "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=400", "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=400"]'
+                                alt="Headphones"
+                                class="h-[90%] w-full object-contain mix-blend-multiply transition duration-500 mb-4 auto-slide-img">
 
-                <!-- Product 3 -->
-                <div class="bg-[#f5f5f5] rounded-[1.25rem] p-6 group cursor-pointer transition">
-                    <div class="relative h-64 mb-6 flex items-center justify-center">
-                        <div class="absolute top-0 left-0 bg-[#111] text-white text-[11px] font-bold px-3 py-1 rounded-full">19%</div>
-                        <div class="absolute top-0 right-0 bg-white text-[#111] text-[11px] font-bold px-3 py-1 rounded-full flex items-center shadow-sm">
-                            <i data-lucide="star" class="fill-yellow-400 text-yellow-400 mr-1" width="10" height="10"></i> 3.67
+                            <div
+                                class="absolute bottom-6 left-1/2 transform -translate-x-1/2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10 w-full px-4 flex justify-center">
+                                <button
+                                    class="bg-black text-white font-bold text-[13px] px-8 py-3 rounded-[2rem] shadow-lg hover:bg-gray-800 transition whitespace-nowrap">Add
+                                    to cart</button>
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex space-x-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 auto-slide-dots">
+                                <div class="w-2 h-2 rounded-full border-[2px] border-black"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                            </div>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1612444530582-fc66184b156b?auto=format&fit=crop&q=80&w=400" alt="Headphones" class="h-[90%] object-contain mix-blend-multiply group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div>
-                        <p class="text-[12px] text-gray-500 mb-2">Headphones</p>
-                        <h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px]">W75 Automobili Lamborghini Headphones</h3>
-                        <div class="flex items-center text-[13px]">
-                            <span class="font-bold text-[#111] mr-2">$247.55</span>
-                            <span class="text-gray-400 line-through">$303.45</span>
+                        <div>
+                            <p class="text-[14px] text-gray-500 mb-2 font-medium">Headphones</p>
+                            <a href="product-details.html">
+                                <h3
+                                    class="font-bold text-[#111] mb-4 line-clamp-2 text-[20px] leading-tight hover:underline">
+                                    Wireless
+                                    Gaming Headphones MS920</h3>
+                            </a>
+                            <div class="flex items-center text-[17px]"><span
+                                    class="text-[#111] font-medium mr-2">$75.66</span><span
+                                    class="text-[#999] line-through font-medium">$85.66</span></div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Product 4 -->
-                <div class="bg-[#f5f5f5] rounded-[1.25rem] p-6 group cursor-pointer transition">
-                    <div class="relative h-64 mb-6 flex items-center justify-center">
-                        <div class="absolute top-0 left-0 bg-[#111] text-white text-[11px] font-bold px-3 py-1 rounded-full">35%</div>
-                        <div class="absolute top-0 right-0 bg-white text-[#111] text-[11px] font-bold px-3 py-1 rounded-full flex items-center shadow-sm">
-                            <i data-lucide="star" class="fill-yellow-400 text-yellow-400 mr-1" width="10" height="10"></i> 4.80
+                    <!-- Product 2 -->
+                    <div
+                        class="bg-[#f4f4f4] rounded-[1.25rem] p-6 group cursor-pointer transition min-w-[300px] w-[85vw] md:w-[calc(45%-12px)] lg:w-[calc(31%-18px)] flex-none snap-start">
+                        <div class="relative h-[440px] mb-8 flex flex-col items-center justify-center overflow-hidden">
+                            <div
+                                class="absolute top-0 left-0 bg-[#111] text-white text-[13px] font-bold px-3.5 py-1.5 rounded-full z-10">
+                                8%</div>
+                            <div
+                                class="absolute top-0 right-0 bg-white text-[#111] text-[13px] font-bold px-3.5 py-1.5 rounded-full flex items-center shadow-sm group-hover:opacity-0 transition-opacity duration-300 z-10">
+                                <i data-lucide="star" class="fill-yellow-400 text-yellow-400 mr-1" width="12"
+                                    height="12"></i> 3.67
+                            </div>
+                            <div
+                                class="absolute top-0 right-0 flex flex-col space-y-2 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                                <button
+                                    class="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-black hover:text-white transition text-black"><i
+                                        data-lucide="eye" width="16" height="16"></i></button>
+                                <button
+                                    class="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-black hover:text-white transition text-black"><i
+                                        data-lucide="arrow-left-right" width="16" height="16"></i></button>
+                            </div>
+                            <img src="images/most-sold-2.png"
+                                data-images='["images/most-sold-2.png", "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400", "https://images.unsplash.com/photo-1612444530582-fc66184b156b?auto=format&fit=crop&q=80&w=400"]'
+                                alt="Headphones"
+                                class="h-[90%] w-full object-contain mix-blend-multiply transition duration-500 mb-4 auto-slide-img">
+
+                            <div
+                                class="absolute bottom-6 left-1/2 transform -translate-x-1/2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10 w-full px-4 flex justify-center">
+                                <button
+                                    class="bg-black text-white font-bold text-[13px] px-8 py-3 rounded-[2rem] shadow-lg hover:bg-gray-800 transition whitespace-nowrap">Add
+                                    to cart</button>
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex space-x-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 auto-slide-dots">
+                                <div class="w-2 h-2 rounded-full border-[2px] border-black"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                            </div>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=400" alt="Headphones" class="h-[90%] object-contain mix-blend-multiply group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div>
-                        <p class="text-[12px] text-gray-500 mb-2">Headphones</p>
-                        <h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px]">Smart Ergonomic Wireless Headphones</h3>
-                        <div class="flex items-center text-[13px]">
-                            <span class="font-bold text-[#111] mr-2">$48.90</span>
-                            <span class="text-gray-400 line-through">$75.90</span>
+                        <div>
+                            <p class="text-[14px] text-gray-500 mb-2 font-medium">Headphones</p>
+                            <h3 class="font-bold text-[#111] mb-4 line-clamp-2 text-[20px] leading-tight">Wireless
+                                Gaming Headphones
+                                DM420</h3>
+                            <div class="flex items-center text-[17px]"><span class="text-[#111] font-medium">$117.88 –
+                                    $147.88</span></div>
                         </div>
                     </div>
+
+                    <!-- Product 3 -->
+                    <div
+                        class="bg-[#f5f5f5] rounded-[1.25rem] p-6 group cursor-pointer transition min-w-[300px] w-[85vw] md:w-[calc(45%-12px)] lg:w-[calc(31%-18px)] flex-none snap-start">
+                        <div class="relative h-[440px] mb-8 flex flex-col items-center justify-center overflow-hidden">
+                            <div
+                                class="absolute top-0 left-0 bg-[#111] text-white text-[13px] font-bold px-3.5 py-1.5 rounded-full z-10">
+                                19%</div>
+                            <div
+                                class="absolute top-0 right-0 bg-white text-[#111] text-[13px] font-bold px-3.5 py-1.5 rounded-full flex items-center shadow-sm group-hover:opacity-0 transition-opacity duration-300 z-10">
+                                <i data-lucide="star" class="fill-yellow-400 text-yellow-400 mr-1" width="12"
+                                    height="12"></i> 4.67
+                            </div>
+                            <div
+                                class="absolute top-0 right-0 flex flex-col space-y-2 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                                <button
+                                    class="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-black hover:text-white transition text-black"><i
+                                        data-lucide="eye" width="16" height="16"></i></button>
+                                <button
+                                    class="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-black hover:text-white transition text-black"><i
+                                        data-lucide="arrow-left-right" width="16" height="16"></i></button>
+                            </div>
+                            <img src="images/most-sold-3.png"
+                                data-images='["images/most-sold-3.png", "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=400", "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400"]'
+                                alt="Headphones"
+                                class="h-[90%] w-full object-contain mix-blend-multiply transition duration-500 mb-4 auto-slide-img">
+
+                            <div
+                                class="absolute bottom-6 left-1/2 transform -translate-x-1/2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10 w-full px-4 flex justify-center">
+                                <button
+                                    class="bg-black text-white font-bold text-[13px] px-8 py-3 rounded-[2rem] shadow-lg hover:bg-gray-800 transition whitespace-nowrap">Add
+                                    to cart</button>
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex space-x-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 auto-slide-dots">
+                                <div class="w-2 h-2 rounded-full border-[2px] border-black"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-[14px] text-gray-500 mb-2 font-medium">Headphones</p>
+                            <h3 class="font-bold text-[#111] mb-4 line-clamp-2 text-[20px] leading-tight">W75 Automobili
+                                Lamborghini
+                                Headphones</h3>
+                            <div class="flex items-center text-[17px]"><span
+                                    class="text-[#111] font-medium mr-2">$247.55</span><span
+                                    class="text-[#999] line-through font-medium">$303.45</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div
+                        class="bg-[#f5f5f5] rounded-[1.25rem] p-6 group cursor-pointer transition min-w-[300px] w-[85vw] md:w-[calc(45%-12px)] lg:w-[calc(31%-18px)] flex-none snap-start">
+                        <div class="relative h-[440px] mb-8 flex flex-col items-center justify-center overflow-hidden">
+                            <div
+                                class="absolute top-0 left-0 bg-[#111] text-white text-[13px] font-bold px-3.5 py-1.5 rounded-full z-10">
+                                35%</div>
+                            <div
+                                class="absolute top-0 right-0 bg-white text-[#111] text-[13px] font-bold px-3.5 py-1.5 rounded-full flex items-center shadow-sm group-hover:opacity-0 transition-opacity duration-300 z-10">
+                                <i data-lucide="star" class="fill-yellow-400 text-yellow-400 mr-1" width="12"
+                                    height="12"></i> 3.67
+                            </div>
+                            <div
+                                class="absolute top-0 right-0 flex flex-col space-y-2 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                                <button
+                                    class="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-black hover:text-white transition text-black"><i
+                                        data-lucide="eye" width="16" height="16"></i></button>
+                                <button
+                                    class="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-black hover:text-white transition text-black"><i
+                                        data-lucide="arrow-left-right" width="16" height="16"></i></button>
+                            </div>
+                            <img src="images/most-sold-4.jpg"
+                                data-images='["images/most-sold-4.jpg", "https://images.unsplash.com/photo-1612444530582-fc66184b156b?auto=format&fit=crop&q=80&w=400", "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=400"]'
+                                alt="Headphones"
+                                class="h-[90%] w-full object-contain mix-blend-multiply transition duration-500 mb-4 auto-slide-img">
+
+                            <div
+                                class="absolute bottom-6 left-1/2 transform -translate-x-1/2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10 w-full px-4 flex justify-center">
+                                <button
+                                    class="bg-black text-white font-bold text-[13px] px-8 py-3 rounded-[2rem] shadow-lg hover:bg-gray-800 transition whitespace-nowrap">Add
+                                    to cart</button>
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex space-x-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 auto-slide-dots">
+                                <div class="w-2 h-2 rounded-full border-[2px] border-black"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-[14px] text-gray-500 mb-2 font-medium">Headphones</p>
+                            <h3 class="font-bold text-[#111] mb-4 line-clamp-2 text-[20px] leading-tight">Smart
+                                Ergonomic Wireless
+                                Headphones</h3>
+                            <div class="flex items-center text-[17px]"><span
+                                    class="text-[#111] font-medium mr-2">$48.90</span><span
+                                    class="text-[#999] line-through font-medium">$75.90</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 (Duplicate of 1) -->
+                    <div
+                        class="bg-[#f5f5f5] rounded-[1.25rem] p-6 group cursor-pointer transition min-w-[300px] w-[85vw] md:w-[calc(45%-12px)] lg:w-[calc(31%-18px)] flex-none snap-start">
+                        <div class="relative h-[440px] mb-8 flex flex-col items-center justify-center overflow-hidden">
+                            <div
+                                class="absolute top-0 left-0 bg-[#111] text-white text-[13px] font-bold px-3.5 py-1.5 rounded-full z-10">
+                                12%</div>
+                            <div
+                                class="absolute top-0 right-0 bg-white text-[#111] text-[13px] font-bold px-3.5 py-1.5 rounded-full flex items-center shadow-sm group-hover:opacity-0 transition-opacity duration-300 z-10">
+                                <i data-lucide="star" class="fill-yellow-400 text-yellow-400 mr-1" width="12"
+                                    height="12"></i> 4.67
+                            </div>
+                            <div
+                                class="absolute top-0 right-0 flex flex-col space-y-2 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                                <button
+                                    class="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-black hover:text-white transition text-black"><i
+                                        data-lucide="eye" width="16" height="16"></i></button>
+                                <button
+                                    class="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-black hover:text-white transition text-black"><i
+                                        data-lucide="arrow-left-right" width="16" height="16"></i></button>
+                            </div>
+                            <img src="images/most-sold-5.png"
+                                data-images='["images/most-sold-5.png", "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=400", "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=400"]'
+                                alt="Headphones"
+                                class="h-[90%] w-full object-contain mix-blend-multiply transition duration-500 mb-4 auto-slide-img">
+
+                            <div
+                                class="absolute bottom-6 left-1/2 transform -translate-x-1/2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10 w-full px-4 flex justify-center">
+                                <button
+                                    class="bg-black text-white font-bold text-[13px] px-8 py-3 rounded-[2rem] shadow-lg hover:bg-gray-800 transition whitespace-nowrap">Add
+                                    to cart</button>
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex space-x-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 auto-slide-dots">
+                                <div class="w-2 h-2 rounded-full border-[2px] border-black"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-[14px] text-gray-500 mb-2 font-medium">Headphones</p>
+                            <a href="product-details.html">
+                                <h3
+                                    class="font-bold text-[#111] mb-4 line-clamp-2 text-[20px] leading-tight hover:underline">
+                                    Wireless
+                                    Gaming Headphones MS920</h3>
+                            </a>
+                            <div class="flex items-center text-[17px]"><span
+                                    class="text-[#111] font-medium mr-2">$75.66</span><span
+                                    class="text-[#999] line-through font-medium">$85.66</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 (Duplicate of 2) -->
+                    <div
+                        class="bg-[#f5f5f5] rounded-[1.25rem] p-6 group cursor-pointer transition min-w-[300px] w-[85vw] md:w-[calc(45%-12px)] lg:w-[calc(31%-18px)] flex-none snap-start">
+                        <div class="relative h-[440px] mb-8 flex flex-col items-center justify-center overflow-hidden">
+                            <div
+                                class="absolute top-0 left-0 bg-[#111] text-white text-[13px] font-bold px-3.5 py-1.5 rounded-full z-10">
+                                8%</div>
+                            <div
+                                class="absolute top-0 right-0 bg-white text-[#111] text-[13px] font-bold px-3.5 py-1.5 rounded-full flex items-center shadow-sm group-hover:opacity-0 transition-opacity duration-300 z-10">
+                                <i data-lucide="star" class="fill-yellow-400 text-yellow-400 mr-1" width="12"
+                                    height="12"></i> 3.67
+                            </div>
+                            <div
+                                class="absolute top-0 right-0 flex flex-col space-y-2 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                                <button
+                                    class="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-black hover:text-white transition text-black"><i
+                                        data-lucide="eye" width="16" height="16"></i></button>
+                                <button
+                                    class="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-black hover:text-white transition text-black"><i
+                                        data-lucide="arrow-left-right" width="16" height="16"></i></button>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=400"
+                                data-images='["https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=400", "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400", "https://images.unsplash.com/photo-1612444530582-fc66184b156b?auto=format&fit=crop&q=80&w=400"]'
+                                alt="Headphones"
+                                class="h-[90%] w-full object-contain mix-blend-multiply transition duration-500 mb-4 auto-slide-img">
+
+                            <div
+                                class="absolute bottom-6 left-1/2 transform -translate-x-1/2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10 w-full px-4 flex justify-center">
+                                <button
+                                    class="bg-black text-white font-bold text-[13px] px-8 py-3 rounded-[2rem] shadow-lg hover:bg-gray-800 transition whitespace-nowrap">Add
+                                    to cart</button>
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex space-x-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 auto-slide-dots">
+                                <div class="w-2 h-2 rounded-full border-[2px] border-black"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-[14px] text-gray-500 mb-2 font-medium">Headphones</p>
+                            <h3 class="font-bold text-[#111] mb-4 line-clamp-2 text-[20px] leading-tight">Wireless
+                                Gaming Headphones
+                                DM420</h3>
+                            <div class="flex items-center text-[17px]"><span class="text-[#111] font-medium">$117.88 –
+                                    $147.88</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 (Duplicate of 3) -->
+                    <div
+                        class="bg-[#f5f5f5] rounded-[1.25rem] p-6 group cursor-pointer transition min-w-[300px] w-[85vw] md:w-[calc(45%-12px)] lg:w-[calc(31%-18px)] flex-none snap-start">
+                        <div class="relative h-[440px] mb-8 flex flex-col items-center justify-center overflow-hidden">
+                            <div
+                                class="absolute top-0 left-0 bg-[#111] text-white text-[13px] font-bold px-3.5 py-1.5 rounded-full z-10">
+                                19%</div>
+                            <div
+                                class="absolute top-0 right-0 bg-white text-[#111] text-[13px] font-bold px-3.5 py-1.5 rounded-full flex items-center shadow-sm group-hover:opacity-0 transition-opacity duration-300 z-10">
+                                <i data-lucide="star" class="fill-yellow-400 text-yellow-400 mr-1" width="12"
+                                    height="12"></i> 4.67
+                            </div>
+                            <div
+                                class="absolute top-0 right-0 flex flex-col space-y-2 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                                <button
+                                    class="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-black hover:text-white transition text-black"><i
+                                        data-lucide="eye" width="16" height="16"></i></button>
+                                <button
+                                    class="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-black hover:text-white transition text-black"><i
+                                        data-lucide="arrow-left-right" width="16" height="16"></i></button>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1612444530582-fc66184b156b?auto=format&fit=crop&q=80&w=400"
+                                data-images='["https://images.unsplash.com/photo-1612444530582-fc66184b156b?auto=format&fit=crop&q=80&w=400", "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=400", "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400"]'
+                                alt="Headphones"
+                                class="h-[90%] w-full object-contain mix-blend-multiply transition duration-500 mb-4 auto-slide-img">
+
+                            <div
+                                class="absolute bottom-6 left-1/2 transform -translate-x-1/2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10 w-full px-4 flex justify-center">
+                                <button
+                                    class="bg-black text-white font-bold text-[13px] px-8 py-3 rounded-[2rem] shadow-lg hover:bg-gray-800 transition whitespace-nowrap">Add
+                                    to cart</button>
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex space-x-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 auto-slide-dots">
+                                <div class="w-2 h-2 rounded-full border-[2px] border-black"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-[14px] text-gray-500 mb-2 font-medium">Headphones</p>
+                            <h3 class="font-bold text-[#111] mb-4 line-clamp-2 text-[20px] leading-tight">W75 Automobili
+                                Lamborghini
+                                Headphones</h3>
+                            <div class="flex items-center text-[17px]"><span
+                                    class="text-[#111] font-medium mr-2">$247.55</span><span
+                                    class="text-[#999] line-through font-medium">$303.45</span></div>
+                        </div>
+                    </div>
+
                 </div>
-                </div>
+                <!-- Carousel Buttons -->
+                <button
+                    class="carousel-prev absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover/carousel:opacity-100 transition-opacity z-20 text-black hover:bg-black hover:text-white border border-gray-100"
+                    onclick="scrollCarousel(-1)">
+                    <i data-lucide="chevron-left" width="24" height="24"></i>
+                </button>
+                <button
+                    class="carousel-next absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover/carousel:opacity-100 transition-opacity z-20 text-black hover:bg-black hover:text-white border border-gray-100"
+                    onclick="scrollCarousel(1)">
+                    <i data-lucide="chevron-right" width="24" height="24"></i>
+                </button>
             </div>
-
             <div id="grid-microphones" class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="bg-[#f5f5f5] rounded-[1.25rem] p-6 group cursor-pointer transition">
-                    <div class="relative h-64 mb-6 flex items-center justify-center">
-                        <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&q=80&w=400" alt="Microphone" class="h-[90%] object-contain mix-blend-multiply group-hover:scale-105 transition duration-500">
+                    <div class="relative h-74 mb-6 flex flex-col items-center justify-center overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 flex flex-col space-y-2 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                            <button
+                                class="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-black hover:text-white transition text-black">
+                                <i data-lucide="eye" width="16" height="16"></i>
+                            </button>
+                            <button
+                                class="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-black hover:text-white transition text-black">
+                                <i data-lucide="arrow-left-right" width="16" height="16"></i>
+                            </button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&q=80&w=400"
+                            alt="Microphone"
+                            class="h-[90%] w-full object-contain mix-blend-multiply transition duration-500 mb-4">
+
+                        <div
+                            class="absolute bottom-6 left-1/2 transform -translate-x-1/2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10 w-full px-4 flex justify-center">
+                            <button
+                                class="bg-black text-white font-bold text-[13px] px-8 py-3 rounded-[2rem] shadow-lg hover:bg-gray-800 transition whitespace-nowrap">
+                                Add to cart
+                            </button>
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex space-x-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="w-2 h-2 rounded-full border-[2px] border-black"></div>
+                            <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                            <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                        </div>
                     </div>
                     <div>
-                        <p class="text-[12px] text-gray-500 mb-2">Microphones</p>
-                        <h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px]">Studio Pro Microphone</h3>
-                        <div class="flex items-center text-[13px]">
-                            <span class="font-bold text-[#111] mr-2">$129.99</span>
+                        <p class="text-[14px] text-gray-500 mb-2 font-medium">Microphones</p>
+                        <h3 class="font-bold text-[#111] mb-4 line-clamp-2 text-[20px] leading-tight">Studio Pro
+                            Microphone</h3>
+                        <div class="flex items-center text-[17px]">
+                            <span class="text-[#111] font-medium mr-2">$129.99</span>
                         </div>
                     </div>
                 </div>
@@ -556,14 +1027,42 @@
 
             <div id="grid-smartwatches" class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="bg-[#f5f5f5] rounded-[1.25rem] p-6 group cursor-pointer transition">
-                    <div class="relative h-64 mb-6 flex items-center justify-center">
-                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=400" alt="Smartwatch" class="h-[90%] object-contain mix-blend-multiply group-hover:scale-105 transition duration-500">
+                    <div class="relative h-[440px] mb-8 flex flex-col items-center justify-center overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 flex flex-col space-y-2 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                            <button
+                                class="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-black hover:text-white transition text-black">
+                                <i data-lucide="eye" width="16" height="16"></i>
+                            </button>
+                            <button
+                                class="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-black hover:text-white transition text-black">
+                                <i data-lucide="arrow-left-right" width="16" height="16"></i>
+                            </button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=400"
+                            alt="Smartwatch"
+                            class="h-[90%] w-full object-contain mix-blend-multiply transition duration-500 mb-4">
+
+                        <div
+                            class="absolute bottom-6 left-1/2 transform -translate-x-1/2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10 w-full px-4 flex justify-center">
+                            <button
+                                class="bg-black text-white font-bold text-[13px] px-8 py-3 rounded-[2rem] shadow-lg hover:bg-gray-800 transition whitespace-nowrap">
+                                Add to cart
+                            </button>
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex space-x-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="w-2 h-2 rounded-full border-[2px] border-black"></div>
+                            <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                            <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                        </div>
                     </div>
                     <div>
-                        <p class="text-[12px] text-gray-500 mb-2">Smartwatches</p>
-                        <h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px]">Fitness Tracker Pro</h3>
-                        <div class="flex items-center text-[13px]">
-                            <span class="font-bold text-[#111] mr-2">$199.50</span>
+                        <p class="text-[14px] text-gray-500 mb-2 font-medium">Smartwatches</p>
+                        <h3 class="font-bold text-[#111] mb-4 line-clamp-2 text-[20px] leading-tight">Fitness Tracker
+                            Pro</h3>
+                        <div class="flex items-center text-[17px]">
+                            <span class="text-[#111] font-medium mr-2">$199.50</span>
                         </div>
                     </div>
                 </div>
@@ -571,14 +1070,42 @@
 
             <div id="grid-speakers" class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="bg-[#f5f5f5] rounded-[1.25rem] p-6 group cursor-pointer transition">
-                    <div class="relative h-64 mb-6 flex items-center justify-center">
-                        <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&q=80&w=400" alt="Speaker" class="h-[90%] object-contain mix-blend-multiply group-hover:scale-105 transition duration-500">
+                    <div class="relative h-[440px] mb-8 flex flex-col items-center justify-center overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 flex flex-col space-y-2 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                            <button
+                                class="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-black hover:text-white transition text-black">
+                                <i data-lucide="eye" width="16" height="16"></i>
+                            </button>
+                            <button
+                                class="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-black hover:text-white transition text-black">
+                                <i data-lucide="arrow-left-right" width="16" height="16"></i>
+                            </button>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&q=80&w=400"
+                            alt="Speaker"
+                            class="h-[90%] w-full object-contain mix-blend-multiply transition duration-500 mb-4">
+
+                        <div
+                            class="absolute bottom-6 left-1/2 transform -translate-x-1/2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10 w-full px-4 flex justify-center">
+                            <button
+                                class="bg-black text-white font-bold text-[13px] px-8 py-3 rounded-[2rem] shadow-lg hover:bg-gray-800 transition whitespace-nowrap">
+                                Add to cart
+                            </button>
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex space-x-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="w-2 h-2 rounded-full border-[2px] border-black"></div>
+                            <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                            <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                        </div>
                     </div>
                     <div>
-                        <p class="text-[12px] text-gray-500 mb-2">Speakers</p>
-                        <h3 class="font-bold text-[#111] mb-3 line-clamp-2 text-[15px]">Portable Bluetooth Speaker</h3>
-                        <div class="flex items-center text-[13px]">
-                            <span class="font-bold text-[#111] mr-2">$89.00</span>
+                        <p class="text-[14px] text-gray-500 mb-2 font-medium">Speakers</p>
+                        <h3 class="font-bold text-[#111] mb-4 line-clamp-2 text-[20px] leading-tight">Portable Bluetooth
+                            Speaker</h3>
+                        <div class="flex items-center text-[17px]">
+                            <span class="text-[#111] font-medium mr-2">$89.00</span>
                         </div>
                     </div>
                 </div>
@@ -589,18 +1116,23 @@
         <section class="py-16">
             <div class="container mx-auto px-4 lg:px-8 flex flex-col md:flex-row items-baseline mb-8">
                 <h2 class="text-3xl font-bold text-black mr-4">Capture Every Detail</h2>
-                <p class="text-gray-500 text-sm">Capture every nuance of your voice with this high-performance microphone.</p>
+                <p class="text-gray-500 text-sm">Capture every nuance of your voice with this high-performance
+                    microphone.</p>
             </div>
-            
+
             <div class="relative w-full h-[600px] bg-black overflow-hidden group">
-                <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&q=80&w=2000" alt="Microphone Banner" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition duration-700">
+                <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&q=80&w=2000"
+                    alt="Microphone Banner"
+                    class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                
+
                 <div class="relative h-full flex flex-col justify-center items-center text-center px-4">
                     <span class="text-white text-sm font-semibold tracking-wider uppercase mb-4">Highest Quality</span>
-                    <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight max-w-3xl">Redefine Your Sound <br/> with Precision <br/> Microphones</h2>
+                    <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight max-w-3xl">Redefine Your
+                        Sound <br /> with Precision <br /> Microphones</h2>
                     <p class="text-gray-300 text-lg mb-8">Innovative tech, timeless design, ultimate experience.</p>
-                    <a href="#" class="inline-flex items-center justify-center bg-white text-black font-semibold px-8 py-3.5 rounded-full hover:bg-gray-100 transition shadow-lg text-sm">
+                    <a href="#"
+                        class="inline-flex items-center justify-center bg-white text-black font-semibold px-8 py-3.5 rounded-full hover:bg-gray-100 transition shadow-lg text-sm">
                         Shop Now <i data-lucide="arrow-right" class="ml-2" width="16" height="16"></i>
                     </a>
                 </div>
@@ -611,9 +1143,10 @@
         <section class="bg-gradient-to-b from-white to-surface py-20 border-b border-gray-100">
             <div class="container mx-auto px-4 lg:px-8 text-center mb-12">
                 <h2 class="text-4xl font-bold text-black mb-4">Our Happy Clients</h2>
-                <p class="text-gray-500">See what our satisfied customers have to say about our electronic accessories.</p>
+                <p class="text-gray-500">See what our satisfied customers have to say about our electronic accessories.
+                </p>
             </div>
-            
+
             <div class="container mx-auto px-4 lg:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- Testimonial 1 -->
@@ -626,7 +1159,9 @@
                             <i data-lucide="star" class="fill-current" width="12" height="12"></i>
                         </div>
                         <h4 class="font-bold text-black mb-3">Best Customer Service</h4>
-                        <p class="text-sm text-gray-600 mb-6 leading-relaxed">I've been using this product for a month now, and I've had no issues. The customer service is top-notch, and the product is exactly as described.</p>
+                        <p class="text-sm text-gray-600 mb-6 leading-relaxed">I've been using this product for a month
+                            now, and I've had no issues. The customer service is top-notch, and the product is exactly
+                            as described.</p>
                         <div>
                             <p class="text-xs font-bold text-black">John Malkovich</p>
                             <p class="text-xs text-gray-400">California, USA</p>
@@ -642,7 +1177,9 @@
                             <i data-lucide="star" class="fill-current" width="12" height="12"></i>
                         </div>
                         <h4 class="font-bold text-black mb-3">Best Customer Service</h4>
-                        <p class="text-sm text-gray-600 mb-6 leading-relaxed">I've been using this product for a month now, and I've had no issues. The customer service is top-notch, and the product is exactly as described.</p>
+                        <p class="text-sm text-gray-600 mb-6 leading-relaxed">I've been using this product for a month
+                            now, and I've had no issues. The customer service is top-notch, and the product is exactly
+                            as described.</p>
                         <div>
                             <p class="text-xs font-bold text-black">Jessica Lindström</p>
                             <p class="text-xs text-gray-400">California, USA</p>
@@ -658,7 +1195,9 @@
                             <i data-lucide="star" class="fill-current" width="12" height="12"></i>
                         </div>
                         <h4 class="font-bold text-black mb-3">Best Customer Service</h4>
-                        <p class="text-sm text-gray-600 mb-6 leading-relaxed">I've been using this product for a month now, and I've had no issues. The customer service is top-notch, and the product is exactly as described.</p>
+                        <p class="text-sm text-gray-600 mb-6 leading-relaxed">I've been using this product for a month
+                            now, and I've had no issues. The customer service is top-notch, and the product is exactly
+                            as described.</p>
                         <div>
                             <p class="text-xs font-bold text-black">John Malkovich</p>
                             <p class="text-xs text-gray-400">California, USA</p>
@@ -671,16 +1210,19 @@
         <!-- Stats Section -->
         <section class="bg-surface py-20 border-b border-gray-200">
             <div class="container mx-auto px-4 lg:px-8">
-                <div class="flex flex-col md:flex-row justify-center items-center divide-y md:divide-y-0 md:divide-x divide-gray-300">
+                <div
+                    class="flex flex-col md:flex-row justify-center items-center divide-y md:divide-y-0 md:divide-x divide-gray-300">
                     <div class="px-12 py-8 md:py-0 text-center flex-1">
                         <h2 class="text-7xl font-bold text-gray-300 mb-2">1.5k</h2>
                         <h3 class="text-xl font-bold text-black mb-2">Happy Customers</h3>
-                        <p class="text-sm text-gray-500 max-w-sm mx-auto">Ut sit amet aliquam libero. Vestibulum ut consectetur orci. Pellentesque nunc sem, consequat non blandit non dictum a mauris.</p>
+                        <p class="text-sm text-gray-500 max-w-sm mx-auto">Ut sit amet aliquam libero. Vestibulum ut
+                            consectetur orci. Pellentesque nunc sem, consequat non blandit non dictum a mauris.</p>
                     </div>
                     <div class="px-12 py-8 md:py-0 text-center flex-1">
                         <h2 class="text-7xl font-bold text-gray-300 mb-2">300k</h2>
                         <h3 class="text-xl font-bold text-black mb-2">Total Sales per Month</h3>
-                        <p class="text-sm text-gray-500 max-w-sm mx-auto">Ut sit amet aliquam libero. Vestibulum ut consectetur orci. Pellentesque nunc sem, consequat non blandit non dictum a mauris.</p>
+                        <p class="text-sm text-gray-500 max-w-sm mx-auto">Ut sit amet aliquam libero. Vestibulum ut
+                            consectetur orci. Pellentesque nunc sem, consequat non blandit non dictum a mauris.</p>
                     </div>
                 </div>
             </div>
@@ -690,52 +1232,125 @@
         <section class="py-20 border-b border-gray-100">
             <div class="container mx-auto px-4 lg:px-8 text-center mb-12">
                 <h2 class="text-4xl font-bold text-black mb-4">Our Journal</h2>
-                <p class="text-gray-500">See what our satisfied customers have to say about our electronic accessories.</p>
+                <p class="text-gray-500">See what our satisfied customers have to say about our electronic accessories.
+                </p>
             </div>
-            
+
             <div class="container mx-auto px-4 lg:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- Post 1 -->
                     <div class="group cursor-pointer">
                         <div class="relative rounded-2xl overflow-hidden aspect-square mb-6">
-                            <span class="absolute top-4 left-4 bg-white text-black text-xs font-semibold px-3 py-1 rounded-full z-10">Tech Tips</span>
-                            <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=600" alt="Blog Post" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span
+                                class="absolute top-4 left-4 bg-white text-black text-xs font-semibold px-3 py-1 rounded-full z-10">Tech
+                                Tips</span>
+                            <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=600"
+                                alt="Blog Post"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         </div>
-                        <h3 class="text-xl font-bold text-black mb-2 group-hover:text-gray-600 transition">Essential Tips for Maintaining Your Electronic Devices</h3>
-                        <p class="text-xs text-gray-500">by <span class="text-black font-semibold">Sinan</span> &bull; 26 Nov 2024</p>
+                        <h3 class="text-xl font-bold text-black mb-2 group-hover:text-gray-600 transition">Essential
+                            Tips for Maintaining Your Electronic Devices</h3>
+                        <p class="text-xs text-gray-500">by <span class="text-black font-semibold">Sinan</span> &bull;
+                            26 Nov 2024</p>
                     </div>
                     <!-- Post 2 -->
                     <div class="group cursor-pointer">
                         <div class="relative rounded-2xl overflow-hidden aspect-square mb-6">
-                            <span class="absolute top-4 left-4 bg-white text-black text-xs font-semibold px-3 py-1 rounded-full z-10">Home Electronics</span>
-                            <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&q=80&w=600" alt="Blog Post" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span
+                                class="absolute top-4 left-4 bg-white text-black text-xs font-semibold px-3 py-1 rounded-full z-10">Home
+                                Electronics</span>
+                            <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&q=80&w=600"
+                                alt="Blog Post"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         </div>
-                        <h3 class="text-xl font-bold text-black mb-2 group-hover:text-gray-600 transition">Top 5 Home Electronics to Upgrade Your Living Space</h3>
-                        <p class="text-xs text-gray-500">by <span class="text-black font-semibold">Sinan</span> &bull; 26 Nov 2024</p>
+                        <h3 class="text-xl font-bold text-black mb-2 group-hover:text-gray-600 transition">Top 5 Home
+                            Electronics to Upgrade Your Living Space</h3>
+                        <p class="text-xs text-gray-500">by <span class="text-black font-semibold">Sinan</span> &bull;
+                            26 Nov 2024</p>
                     </div>
                     <!-- Post 3 -->
                     <div class="group cursor-pointer">
                         <div class="relative rounded-2xl overflow-hidden aspect-square mb-6">
-                            <span class="absolute top-4 left-4 bg-white text-black text-xs font-semibold px-3 py-1 rounded-full z-10">Product Guides</span>
-                            <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&q=80&w=600" alt="Blog Post" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span
+                                class="absolute top-4 left-4 bg-white text-black text-xs font-semibold px-3 py-1 rounded-full z-10">Product
+                                Guides</span>
+                            <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&q=80&w=600"
+                                alt="Blog Post"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         </div>
-                        <h3 class="text-xl font-bold text-black mb-2 group-hover:text-gray-600 transition">How to Choose the Perfect Smartphone: A Buyer's Guide</h3>
-                        <p class="text-xs text-gray-500">by <span class="text-black font-semibold">Sinan</span> &bull; 26 Nov 2024</p>
+                        <h3 class="text-xl font-bold text-black mb-2 group-hover:text-gray-600 transition">How to Choose
+                            the Perfect Smartphone: A Buyer's Guide</h3>
+                        <p class="text-xs text-gray-500">by <span class="text-black font-semibold">Sinan</span> &bull;
+                            26 Nov 2024</p>
                     </div>
                 </div>
             </div>
         </section>
 
+
+    </main>
+
+    <!-- Floating Left Navbar -->
+    <div id="left-floating-navbar"
+        class="fixed left-6 top-1/2 transform -translate-y-1/2 -translate-x-full opacity-0 pointer-events-none z-40 bg-white rounded-[3rem] shadow-[4px_0_24px_rgba(0,0,0,0.08)] border border-gray-100 py-10 px-4 flex flex-col items-center space-y-8 hidden 2xl:flex transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
+        <a href="#" class="text-black transition hover:scale-110 transform" title="Speakers"><i data-lucide="speaker"
+                stroke-width="2" width="26" height="26"></i></a>
+        <a href="headphones.html" class="text-black transition hover:scale-110 transform" title="Headphones"><i
+                data-lucide="headphones" stroke-width="2" width="26" height="26"></i></a>
+        <a href="#" class="text-black transition hover:scale-110 transform" title="Earbuds">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 16v-5c0-1.66-1.34-3-3-3H6a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h1v2a1.5 1.5 0 0 0 3 0z" />
+                <circle cx="6.5" cy="10.5" r="1.5" fill="currentColor" stroke="none" />
+                <path d="M14 16v-5c0-1.66 1.34-3 3-3h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1v2a1.5 1.5 0 0 1-3 0z" />
+                <circle cx="17.5" cy="10.5" r="1.5" fill="currentColor" stroke="none" />
+            </svg>
+        </a>
+        <a href="#" class="text-black transition hover:scale-110 transform" title="Microphone"><i data-lucide="mic"
+                stroke-width="2" width="26" height="26"></i></a>
+        <a href="#" class="text-black transition hover:scale-110 transform" title="Smartwatch"><i data-lucide="watch"
+                stroke-width="2" width="26" height="26"></i></a>
+        <a href="#" class="text-black transition hover:scale-110 transform" title="Accessories"><i data-lucide="plug"
+                stroke-width="2" width="26" height="26"></i></a>
+    </div>
+
+    <!-- Mobile Bottom Navbar -->
+    <div
+        class="fixed bottom-0 left-0 w-full bg-white z-40 border-t border-gray-100 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] rounded-t-[2rem] py-4 px-8 flex justify-between items-center 2xl:hidden">
+        <a href="#" class="text-gray-500 hover:text-black transition transform hover:scale-110"><i data-lucide="speaker"
+                stroke-width="2" width="24" height="24"></i></a>
+        <a href="headphones.html" class="text-black transition transform hover:scale-110"><i data-lucide="headphones"
+                stroke-width="2" width="24" height="24"></i></a>
+        <a href="#" class="text-gray-500 hover:text-black transition transform hover:scale-110">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 16v-5c0-1.66-1.34-3-3-3H6a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h1v2a1.5 1.5 0 0 0 3 0z" />
+                <circle cx="6.5" cy="10.5" r="1.5" fill="currentColor" stroke="none" />
+                <path d="M14 16v-5c0-1.66 1.34-3 3-3h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1v2a1.5 1.5 0 0 1-3 0z" />
+                <circle cx="17.5" cy="10.5" r="1.5" fill="currentColor" stroke="none" />
+            </svg>
+        </a>
+        <a href="#" class="text-gray-500 hover:text-black transition transform hover:scale-110"><i data-lucide="mic"
+                stroke-width="2" width="24" height="24"></i></a>
+        <a href="#" class="text-gray-500 hover:text-black transition transform hover:scale-110"><i data-lucide="watch"
+                stroke-width="2" width="24" height="24"></i></a>
+        <a href="#" class="text-gray-500 hover:text-black transition transform hover:scale-110"><i data-lucide="plug"
+                stroke-width="2" width="24" height="24"></i></a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#0b0b0b] text-white pt-0 pb-28 2xl:pb-8">
         <!-- Features List -->
-        <section class="py-16">
-            <div class="container mx-auto px-4 lg:px-8">
+        <div class="bg-white rounded-b-[4rem] pb-16 pt-8 mb-16">
+            <div class="container mx-auto px-4 lg:px-8  border-gray-100 pt-16">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Feature 1 -->
                     <div class="flex items-start">
                         <i data-lucide="headphones" class="text-black mr-4 mt-1" width="24" height="24"></i>
                         <div>
                             <h4 class="font-bold text-black mb-1">Customer service</h4>
-                            <p class="text-xs text-gray-500 leading-relaxed">It's not actually free we just price it into the products.</p>
+                            <p class="text-xs text-gray-500 leading-relaxed">It's not actually free we just price it
+                                into the products.</p>
                         </div>
                     </div>
                     <!-- Feature 2 -->
@@ -743,7 +1358,8 @@
                         <i data-lucide="box" class="text-black mr-4 mt-1" width="24" height="24"></i>
                         <div>
                             <h4 class="font-bold text-black mb-1">Fast Free Shipping</h4>
-                            <p class="text-xs text-gray-500 leading-relaxed">Get free shipping on orders of $150 or more (within the US)</p>
+                            <p class="text-xs text-gray-500 leading-relaxed">Get free shipping on orders of $150 or more
+                                (within the US)</p>
                         </div>
                     </div>
                     <!-- Feature 3 -->
@@ -751,7 +1367,8 @@
                         <i data-lucide="refresh-cw" class="text-black mr-4 mt-1" width="24" height="24"></i>
                         <div>
                             <h4 class="font-bold text-black mb-1">Returns & Exchanges</h4>
-                            <p class="text-xs text-gray-500 leading-relaxed">We offer free returns and exchanges within 30 days of purchase.</p>
+                            <p class="text-xs text-gray-500 leading-relaxed">We offer free returns and exchanges within
+                                30 days of purchase.</p>
                         </div>
                     </div>
                     <!-- Feature 4 -->
@@ -759,60 +1376,24 @@
                         <i data-lucide="credit-card" class="text-black mr-4 mt-1" width="24" height="24"></i>
                         <div>
                             <h4 class="font-bold text-black mb-1">Secure payment</h4>
-                            <p class="text-xs text-gray-500 leading-relaxed">Your payment information is processed securely and encrypted.</p>
+                            <p class="text-xs text-gray-500 leading-relaxed">Your payment information is processed
+                                securely and encrypted.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <!-- Floating Left Navbar -->
-    <div id="left-floating-navbar" class="fixed left-0 top-1/2 transform -translate-y-1/2 -translate-x-full opacity-0 pointer-events-none z-40 bg-white rounded-r-[3rem] shadow-[4px_0_24px_rgba(0,0,0,0.08)] border border-l-0 border-gray-100 py-10 px-4 flex flex-col items-center space-y-8 hidden 2xl:flex transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
-        <a href="#" class="text-black transition hover:scale-110 transform" title="Speakers"><i data-lucide="speaker" stroke-width="2" width="26" height="26"></i></a>
-        <a href="headphones.html" class="text-black transition hover:scale-110 transform" title="Headphones"><i data-lucide="headphones" stroke-width="2" width="26" height="26"></i></a>
-        <a href="#" class="text-black transition hover:scale-110 transform" title="Earbuds">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M10 16v-5c0-1.66-1.34-3-3-3H6a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h1v2a1.5 1.5 0 0 0 3 0z" />
-                <circle cx="6.5" cy="10.5" r="1.5" fill="currentColor" stroke="none" />
-                <path d="M14 16v-5c0-1.66 1.34-3 3-3h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1v2a1.5 1.5 0 0 1-3 0z" />
-                <circle cx="17.5" cy="10.5" r="1.5" fill="currentColor" stroke="none" />
-            </svg>
-        </a>
-        <a href="#" class="text-black transition hover:scale-110 transform" title="Microphone"><i data-lucide="mic" stroke-width="2" width="26" height="26"></i></a>
-        <a href="#" class="text-black transition hover:scale-110 transform" title="Smartwatch"><i data-lucide="watch" stroke-width="2" width="26" height="26"></i></a>
-        <a href="#" class="text-black transition hover:scale-110 transform" title="Accessories"><i data-lucide="plug" stroke-width="2" width="26" height="26"></i></a>
-    </div>
-
-    <!-- Mobile Bottom Navbar -->
-    <div class="fixed bottom-0 left-0 w-full bg-white z-40 border-t border-gray-100 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] rounded-t-[2rem] py-4 px-8 flex justify-between items-center 2xl:hidden">
-        <a href="#" class="text-gray-500 hover:text-black transition transform hover:scale-110"><i data-lucide="speaker" stroke-width="2" width="24" height="24"></i></a>
-        <a href="headphones.html" class="text-black transition transform hover:scale-110"><i data-lucide="headphones" stroke-width="2" width="24" height="24"></i></a>
-        <a href="#" class="text-gray-500 hover:text-black transition transform hover:scale-110">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M10 16v-5c0-1.66-1.34-3-3-3H6a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h1v2a1.5 1.5 0 0 0 3 0z" />
-                <circle cx="6.5" cy="10.5" r="1.5" fill="currentColor" stroke="none" />
-                <path d="M14 16v-5c0-1.66 1.34-3 3-3h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1v2a1.5 1.5 0 0 1-3 0z" />
-                <circle cx="17.5" cy="10.5" r="1.5" fill="currentColor" stroke="none" />
-            </svg>
-        </a>
-        <a href="#" class="text-gray-500 hover:text-black transition transform hover:scale-110"><i data-lucide="mic" stroke-width="2" width="24" height="24"></i></a>
-        <a href="#" class="text-gray-500 hover:text-black transition transform hover:scale-110"><i data-lucide="watch" stroke-width="2" width="24" height="24"></i></a>
-        <a href="#" class="text-gray-500 hover:text-black transition transform hover:scale-110"><i data-lucide="plug" stroke-width="2" width="24" height="24"></i></a>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-[#0b0b0b] text-white pt-20 pb-28 2xl:pb-8">
+        </div>
         <div class="container mx-auto px-4 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                 <!-- Company Info -->
                 <div>
                     <a href="#" class="text-2xl font-extrabold text-white flex items-center mb-8">
                         <i data-lucide="zap" class="mr-2 fill-white" width="24" height="24"></i>
-                        trands
+                        Ashnet
                     </a>
                     <div class="text-xs text-gray-400 space-y-3">
-                        <p><span class="text-white font-semibold">Address:</span> 1234 Fashion Street, Suite 567, New York, NY</p>
+                        <p><span class="text-white font-semibold">Address:</span> 1234 Fashion Street, Suite 567, New
+                            York, NY</p>
                         <p><span class="text-white font-semibold">Phone:</span> +123 456 7890</p>
                         <p><span class="text-white font-semibold">Email:</span> info@example.com</p>
                     </div>
@@ -851,24 +1432,35 @@
                 <!-- Newsletter -->
                 <div>
                     <h4 class="text-sm font-bold text-white mb-6">Sign Up for Email</h4>
-                    <p class="text-xs text-gray-400 mb-4">Sign up to get first dibs on new arrivals, sales, exclusive content, events and more!</p>
+                    <p class="text-xs text-gray-400 mb-4">Sign up to get first dibs on new arrivals, sales, exclusive
+                        content, events and more!</p>
                     <form class="flex flex-col space-y-3 relative mb-4">
-                        <input type="email" placeholder="Enter your email address" class="w-full px-4 py-3 bg-[#1a1a1a] border border-gray-800 rounded-md text-white text-xs outline-none focus:border-gray-500 transition pr-20">
-                        <button type="submit" class="absolute right-1 top-1 bottom-1 bg-black hover:bg-gray-800 text-white text-[10px] font-bold px-4 rounded transition">SEND</button>
+                        <input type="email" placeholder="Enter your email address"
+                            class="w-full px-4 py-3 bg-[#1a1a1a] border border-gray-800 rounded-md text-white text-xs outline-none focus:border-gray-500 transition pr-20">
+                        <button type="submit"
+                            class="absolute right-1 top-1 bottom-1 bg-black hover:bg-gray-800 text-white text-[10px] font-bold px-4 rounded transition">SEND</button>
                     </form>
-                    <p class="text-[10px] text-gray-500">By subscribing you agree to our <a href="#" class="underline hover:text-white">Terms & Conditions and Privacy & Cookies Policy.</a></p>
+                    <p class="text-[10px] text-gray-500">By subscribing you agree to our <a href="#"
+                            class="underline hover:text-white">Terms & Conditions and Privacy & Cookies Policy.</a></p>
                 </div>
             </div>
 
             <!-- Copyright Bar -->
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-                <p>Copyright &copy; 2026 <a href="#" class="text-white hover:underline">Trands</a>. All rights reserved.</p>
+            <div
+                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>Copyright &copy; 2026 <a href="#" class="text-white hover:underline">Trands</a>. All rights reserved.
+                </p>
                 <div class="flex items-center space-x-2 mt-4 md:mt-0">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa" class="h-4 bg-white rounded px-1">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Mastercard" class="h-4 bg-white rounded px-1">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/2560px-PayPal.svg.png" alt="PayPal" class="h-4 bg-white rounded px-1">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Skrill_logo.svg/2560px-Skrill_logo.svg.png" alt="Skrill" class="h-4 bg-white rounded px-1">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Klarna_logo_%282019%29.svg/2560px-Klarna_logo_%282019%29.svg.png" alt="Klarna" class="h-4 bg-white rounded px-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png"
+                        alt="Visa" class="h-4 bg-white rounded px-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png"
+                        alt="Mastercard" class="h-4 bg-white rounded px-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/2560px-PayPal.svg.png"
+                        alt="PayPal" class="h-4 bg-white rounded px-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Skrill_logo.svg/2560px-Skrill_logo.svg.png"
+                        alt="Skrill" class="h-4 bg-white rounded px-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Klarna_logo_%282019%29.svg/2560px-Klarna_logo_%282019%29.svg.png"
+                        alt="Klarna" class="h-4 bg-white rounded px-1">
                 </div>
             </div>
         </div>
@@ -876,15 +1468,17 @@
 
     <!-- Initialize Lucide Icons -->
     <!-- Mobile Full Screen Menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-[100] flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-white z-[100] flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
         <div class="p-5 flex justify-between items-center border-b border-gray-100">
             <a href="#" class="text-[26px] font-extrabold text-[#111] flex items-center tracking-tight">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
-                    <path d="M5 16L10 9" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
-                    <path d="M11 20L16 13" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
-                    <path d="M12 12L15 8" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="mr-2">
+                    <path d="M5 16L10 9" stroke="#9ca3af" stroke-width="4" stroke-linecap="round" />
+                    <path d="M11 20L16 13" stroke="#9ca3af" stroke-width="4" stroke-linecap="round" />
+                    <path d="M12 12L15 8" stroke="#9ca3af" stroke-width="4" stroke-linecap="round" />
                 </svg>
-                trands
+                Ashnet
             </a>
             <button id="close-menu-btn" class="text-gray-500 hover:text-black transition p-2 rounded-full bg-gray-100">
                 <i data-lucide="x" stroke-width="2" width="24" height="24"></i>
@@ -892,9 +1486,12 @@
         </div>
         <div class="flex-1 overflow-y-auto px-6 py-8">
             <nav class="flex flex-col space-y-6 text-xl font-bold text-gray-800">
-                <a href="#" class="flex justify-between items-center border-b border-gray-50 pb-4">Home <i data-lucide="chevron-right" width="20" height="20" class="text-gray-300"></i></a>
-                <a href="products.html" class="flex justify-between items-center border-b border-gray-50 pb-4">Shop <i data-lucide="chevron-right" width="20" height="20" class="text-gray-300"></i></a>
-                <a href="headphones.html" class="flex justify-between items-center border-b border-gray-50 pb-4">Headphones</a>
+                <a href="#" class="flex justify-between items-center border-b border-gray-50 pb-4">Home <i
+                        data-lucide="chevron-right" width="20" height="20" class="text-gray-300"></i></a>
+                <a href="products.html" class="flex justify-between items-center border-b border-gray-50 pb-4">Shop <i
+                        data-lucide="chevron-right" width="20" height="20" class="text-gray-300"></i></a>
+                <a href="headphones.html"
+                    class="flex justify-between items-center border-b border-gray-50 pb-4">Headphones</a>
                 <a href="#" class="flex justify-between items-center border-b border-gray-50 pb-4">Accessories</a>
                 <a href="#" class="flex justify-between items-center border-b border-gray-50 pb-4">Blog</a>
                 <a href="#" class="flex justify-between items-center border-b border-gray-50 pb-4">Contact</a>
@@ -912,13 +1509,13 @@
     <!-- Initialize Lucide Icons & Scripts -->
     <script>
         lucide.createIcons();
-        
+
         // Mobile Menu Toggle logic
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const closeMenuBtn = document.getElementById('close-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        if(mobileMenuBtn && closeMenuBtn && mobileMenu) {
+        if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
             mobileMenuBtn.addEventListener('click', () => {
                 mobileMenu.classList.remove('translate-x-full');
                 document.body.classList.add('overflow-hidden');
@@ -958,7 +1555,7 @@
             showTopbarSlide(currentTopbarSlide);
         }
 
-        if(topbarNext && topbarPrev && topbarSlides.length > 0) {
+        if (topbarNext && topbarPrev && topbarSlides.length > 0) {
             topbarNext.addEventListener('click', nextTopbarSlide);
             topbarPrev.addEventListener('click', prevTopbarSlide);
             setInterval(nextTopbarSlide, 4000);
@@ -979,7 +1576,7 @@
                     slide.classList.add('opacity-0', 'pointer-events-none', 'z-0');
                 }
             });
-            
+
             heroDots.forEach((dot, i) => {
                 if (i === index) {
                     dot.classList.remove('bg-white/40');
@@ -1004,19 +1601,19 @@
         const heroPrev = document.getElementById('hero-prev');
         const heroNext = document.getElementById('hero-next');
 
-        if(heroSlides.length > 0 && heroDots.length > 0) {
+        if (heroSlides.length > 0 && heroDots.length > 0) {
             heroDots.forEach((dot, index) => {
                 dot.addEventListener('click', () => {
                     currentHeroSlide = index;
                     showHeroSlide(currentHeroSlide);
                 });
             });
-            
+
             if (heroPrev && heroNext) {
                 heroPrev.addEventListener('click', prevHeroSlide);
                 heroNext.addEventListener('click', nextHeroSlide);
             }
-            
+
             setInterval(nextHeroSlide, 5000);
         }
 
@@ -1040,7 +1637,7 @@
         const tabBtns = document.querySelectorAll('.tab-btn');
         const tabContents = document.querySelectorAll('.tab-content');
 
-        if(tabBtns.length > 0 && tabContents.length > 0) {
+        if (tabBtns.length > 0 && tabContents.length > 0) {
             tabBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     // Update active tab styling
@@ -1064,5 +1661,226 @@
             });
         }
     </script>
+
+    <!-- Custom Scripts for Auto Slider & Carousel -->
+    <script>
+        // Horizontal Carousel Scroll
+        function scrollCarousel(direction) {
+            const container = document.getElementById('grid-headphones');
+            // Scroll by roughly the width of one card + gap (e.g., 300px)
+            const scrollAmount = 320;
+            container.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+
+            // Show/hide prev button based on scroll position
+            setTimeout(() => {
+                const prevBtn = document.querySelector('.carousel-prev');
+                if (container.scrollLeft > 0) {
+                    prevBtn.classList.remove('hidden');
+                    prevBtn.classList.add('flex');
+                } else {
+                    prevBtn.classList.add('hidden');
+                    prevBtn.classList.remove('flex');
+                }
+            }, 300);
+        }
+
+        // Auto slide on hover
+        document.addEventListener('DOMContentLoaded', () => {
+            const imgs = document.querySelectorAll('.auto-slide-img');
+
+            imgs.forEach(img => {
+                const card = img.closest('.group');
+                const dotsContainer = card.querySelector('.auto-slide-dots');
+                if (!card || !dotsContainer) return;
+
+                try {
+                    const images = JSON.parse(img.getAttribute('data-images'));
+                    const dots = dotsContainer.querySelectorAll('div');
+
+                    // Create a slider container
+                    const sliderWrapper = document.createElement('div');
+                    sliderWrapper.className = 'w-full h-[90%] mb-4 overflow-hidden relative flex-shrink-0';
+
+                    const sliderTrack = document.createElement('div');
+                    sliderTrack.className = 'flex w-full h-full transition-transform duration-500 ease-in-out';
+
+                    // Create individual image elements for the track
+                    images.forEach((src) => {
+                        const slideImg = document.createElement('img');
+                        slideImg.src = src;
+                        slideImg.className = 'w-full h-full flex-shrink-0 object-contain mix-blend-multiply';
+                        sliderTrack.appendChild(slideImg);
+                    });
+
+                    sliderWrapper.appendChild(sliderTrack);
+
+                    // Replace the static image with our sliding track
+                    img.parentNode.replaceChild(sliderWrapper, img);
+
+                    let currentIndex = 0;
+                    let intervalId = null;
+
+                    const updateSlide = (index) => {
+                        sliderTrack.style.transform = `translateX(-${index * 100}%)`;
+                        dots.forEach((dot, i) => {
+                            if (i === index) {
+                                dot.className = 'w-2 h-2 rounded-full border-[2px] border-black';
+                            } else {
+                                dot.className = 'w-2 h-2 rounded-full bg-gray-300';
+                            }
+                        });
+                    };
+
+                    card.addEventListener('mouseenter', () => {
+                        intervalId = setInterval(() => {
+                            currentIndex = (currentIndex + 1) % images.length;
+                            updateSlide(currentIndex);
+                        }, 1200); // 1.2s interval to allow smooth sliding
+                    });
+
+                    card.addEventListener('mouseleave', () => {
+                        clearInterval(intervalId);
+                        currentIndex = 0;
+                        updateSlide(currentIndex);
+                    });
+                } catch (e) {
+                    console.error("Error parsing images", e);
+                }
+            });
+        });
+    </script>
+
+
+    <!-- Offcanvas Search -->
+    <div id="search-offcanvas-overlay" class="fixed inset-0 bg-black/50 z-[100] opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <div id="search-offcanvas" class="fixed top-0 right-0 w-full md:w-[450px] h-full bg-white z-[110] transform translate-x-full transition-transform duration-300 ease-out shadow-2xl flex flex-col rounded-l-3xl">
+        <div class="px-8 py-6 flex items-center justify-between border-b border-gray-100">
+            <h3 class="text-xl font-bold text-black">Search</h3>
+            <button id="close-search-btn" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50 transition text-gray-500">
+                <i data-lucide="x" width="18" height="18"></i>
+            </button>
+        </div>
+        <div class="p-8 flex-1 overflow-y-auto">
+            <div class="relative mb-8">
+                <i data-lucide="search" width="20" height="20" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                <input type="text" id="offcanvas-search-input" class="w-full bg-gray-50 border-none rounded-xl py-4 pl-12 pr-4 text-sm focus:ring-2 focus:ring-black/5 transition" placeholder="Search everything...">
+            </div>
+            
+            <!-- Mock categories/suggestions when empty -->
+            <div id="search-empty-state" class="text-gray-500">
+                <p class="text-xs font-semibold uppercase tracking-wider mb-4 text-gray-400">Popular Categories</p>
+                <div class="flex flex-wrap gap-2">
+                    <a href="headphones.html" class="px-4 py-2 rounded-xl bg-gray-50 hover:bg-gray-100 hover:text-black transition text-gray-600 text-xs font-medium">Headphones</a>
+                    <a href="#" class="px-4 py-2 rounded-xl bg-gray-50 hover:bg-gray-100 hover:text-black transition text-gray-600 text-xs font-medium">Microphones</a>
+                    <a href="#" class="px-4 py-2 rounded-xl bg-gray-50 hover:bg-gray-100 hover:text-black transition text-gray-600 text-xs font-medium">Smartwatches</a>
+                    <a href="#" class="px-4 py-2 rounded-xl bg-gray-50 hover:bg-gray-100 hover:text-black transition text-gray-600 text-xs font-medium">Speakers</a>
+                </div>
+            </div>
+
+            <!-- Dynamic results grid -->
+            <div id="search-results-grid" class="grid grid-cols-1 gap-4 hidden">
+                <!-- JS will inject results here -->
+            </div>
+            <div id="search-no-results" class="hidden text-center text-gray-500 py-12 text-sm flex-col items-center">
+                <i data-lucide="search-x" width="32" height="32" class="text-gray-300 mb-3"></i>
+                <p>No products found.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Offcanvas Search Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const triggers = document.querySelectorAll('.offcanvas-search-trigger');
+            const overlay = document.getElementById('search-offcanvas-overlay');
+            const offcanvas = document.getElementById('search-offcanvas');
+            const closeBtn = document.getElementById('close-search-btn');
+            const input = document.getElementById('offcanvas-search-input');
+            const emptyState = document.getElementById('search-empty-state');
+            const resultsGrid = document.getElementById('search-results-grid');
+            const noResults = document.getElementById('search-no-results');
+
+            if(!offcanvas) return;
+
+            const products = [
+                { title: "Wireless Gaming Headphones MS920", category: "Headphones", price: "$75.66", url: "product-details.html", img: "images/most-sold-1.png" },
+                { title: "Wireless Gaming Headphones DM420", category: "Headphones", price: "$117.88", url: "product-details.html", img: "images/most-sold-2.png" },
+                { title: "W75 Automobili Lamborghini Headphones", category: "Headphones", price: "$247.55", url: "product-details.html", img: "images/most-sold-3.png" },
+                { title: "Smart Ergonomic Wireless Headphones", category: "Headphones", price: "$48.90", url: "product-details.html", img: "images/most-sold-4.jpg" },
+                { title: "Master Dynamic MW75 Active Noise-Cancelling", category: "Headphones", price: "$249.00", url: "product-details.html", img: "images/most-sold-5.png" },
+                { title: "Studio Pro Microphone", category: "Microphones", price: "$129.99", url: "product-details.html", img: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&q=80&w=400" },
+                { title: "Fitness Tracker Pro", category: "Smartwatches", price: "$199.50", url: "product-details.html", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=400" },
+                { title: "Portable Bluetooth Speaker", category: "Speakers", price: "$89.00", url: "product-details.html", img: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&q=80&w=400" }
+            ];
+
+            function openSearch() {
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                overlay.classList.add('opacity-100', 'pointer-events-auto');
+                offcanvas.classList.remove('translate-x-full');
+                setTimeout(() => input.focus(), 300);
+            }
+
+            function closeSearch() {
+                overlay.classList.remove('opacity-100', 'pointer-events-auto');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                offcanvas.classList.add('translate-x-full');
+            }
+
+            triggers.forEach(trigger => {
+                trigger.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openSearch();
+                });
+            });
+
+            closeBtn.addEventListener('click', closeSearch);
+            overlay.addEventListener('click', closeSearch);
+
+            input.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase().trim();
+                
+                if (query.length === 0) {
+                    emptyState.classList.remove('hidden');
+                    resultsGrid.classList.add('hidden');
+                    noResults.classList.add('hidden');
+                    return;
+                }
+
+                emptyState.classList.add('hidden');
+                
+                const filtered = products.filter(p => 
+                    p.title.toLowerCase().includes(query) || 
+                    p.category.toLowerCase().includes(query)
+                );
+
+                if (filtered.length > 0) {
+                    resultsGrid.innerHTML = filtered.map(p => `
+                        <a href="${p.url}" class="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 transition border border-transparent hover:border-gray-100 group">
+                            <div class="w-14 h-14 bg-[#f8f9fa] rounded-lg flex items-center justify-center p-2 flex-shrink-0 group-hover:scale-105 transition">
+                                <img src="${p.img}" alt="${p.title}" class="w-full h-full object-contain mix-blend-multiply">
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h4 class="text-sm font-bold text-black truncate">${p.title}</h4>
+                                <p class="text-xs text-gray-500">${p.category}</p>
+                            </div>
+                            <div class="text-sm font-bold text-black flex-shrink-0">
+                                ${p.price}
+                            </div>
+                        </a>
+                    `).join('');
+                    resultsGrid.classList.remove('hidden');
+                    noResults.classList.add('hidden');
+                } else {
+                    resultsGrid.classList.add('hidden');
+                    noResults.classList.remove('hidden');
+                }
+            });
+        });
+    </script>
 </body>
+
+
 </html>
