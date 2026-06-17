@@ -287,24 +287,32 @@
                 <!-- Main Image -->
                 <div id="zoom-container" class="relative bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef] rounded-[2rem] aspect-square flex items-center justify-center mb-4 shadow-sm overflow-hidden cursor-zoom-in group">
                     <div class="absolute top-6 left-6 bg-black/80 backdrop-blur-md border border-white/20 text-white text-xs font-bold px-4 py-2 rounded-full z-10 shadow-lg pointer-events-none">22% OFF</div>
-                    <img id="main-product-image" src="https://images.unsplash.com/photo-1606220838315-056192d5e927?auto=format&fit=crop&q=80&w=800" alt="Beats Studio Buds" class="w-full h-full object-cover mix-blend-multiply transition-transform duration-300 ease-out origin-center group-hover:scale-[2]">
+                    <img id="main-product-image" src="images/most-sold-1.png" alt="Beats Studio Buds" class="w-full h-full object-contain mix-blend-multiply transition-transform duration-300 ease-out origin-center group-hover:scale-[2]">
+                    
+                    <!-- Navigation Buttons -->
+                    <button id="main-prev" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/50 hover:bg-white rounded-full flex items-center justify-center text-black shadow-md transition-colors z-20" onclick="event.stopPropagation(); changeMainImageByDirection(-1)">
+                        <i data-lucide="chevron-left" width="20" height="20"></i>
+                    </button>
+                    <button id="main-next" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/50 hover:bg-white rounded-full flex items-center justify-center text-black shadow-md transition-colors z-20" onclick="event.stopPropagation(); changeMainImageByDirection(1)">
+                        <i data-lucide="chevron-right" width="20" height="20"></i>
+                    </button>
                 </div>
                 <!-- Thumbnails -->
-                <div class="flex flex-wrap gap-4 mt-4" id="thumbnail-container">
-                    <div class="thumbnail-btn w-20 h-20 bg-[#f5f5f5] rounded-xl cursor-pointer border-2 border-black p-2 flex items-center justify-center transition opacity-100" onclick="changeMainImage(this, 'https://images.unsplash.com/photo-1606220838315-056192d5e927?auto=format&fit=crop&q=80&w=800', 0)">
-                        <img src="https://images.unsplash.com/photo-1606220838315-056192d5e927?auto=format&fit=crop&q=80&w=200" alt="Thumb 1" class="w-full h-full object-cover mix-blend-multiply pointer-events-none">
+                <div class="flex flex-nowrap md:flex-wrap overflow-x-auto md:overflow-visible gap-4 mt-4 pb-2 snap-x [&::-webkit-scrollbar]:hidden" style="scrollbar-width: none;" id="thumbnail-container">
+                    <div class="thumbnail-btn w-20 h-20 bg-[#f5f5f5] rounded-xl cursor-pointer border-2 border-black p-2 flex items-center justify-center transition opacity-100" onclick="changeMainImage(this, 'images/most-sold-1.png', 0)">
+                        <img src="images/most-sold-1.png" alt="Thumb 1" class="w-full h-full object-contain mix-blend-multiply pointer-events-none">
                     </div>
-                    <div class="thumbnail-btn w-20 h-20 bg-[#f5f5f5] rounded-xl cursor-pointer border-2 border-transparent hover:border-gray-300 p-2 flex items-center justify-center transition opacity-60" onclick="changeMainImage(this, 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&q=80&w=800', 1)">
-                        <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&q=80&w=200" alt="Thumb 2" class="w-full h-full object-cover mix-blend-multiply pointer-events-none">
+                    <div class="thumbnail-btn w-20 h-20 bg-[#f5f5f5] rounded-xl cursor-pointer border-2 border-transparent hover:border-gray-300 p-2 flex items-center justify-center transition opacity-60" onclick="changeMainImage(this, 'images/most-sold-2.png', 1)">
+                        <img src="images/most-sold-2.png" alt="Thumb 2" class="w-full h-full object-contain mix-blend-multiply pointer-events-none">
                     </div>
-                    <div class="thumbnail-btn w-20 h-20 bg-[#f5f5f5] rounded-xl cursor-pointer border-2 border-transparent hover:border-gray-300 p-2 flex items-center justify-center transition opacity-60" onclick="changeMainImage(this, 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800', 2)">
-                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=200" alt="Thumb 3" class="w-full h-full object-cover mix-blend-multiply pointer-events-none">
+                    <div class="thumbnail-btn w-20 h-20 bg-[#f5f5f5] rounded-xl cursor-pointer border-2 border-transparent hover:border-gray-300 p-2 flex items-center justify-center transition opacity-60" onclick="changeMainImage(this, 'images/most-sold-3.png', 2)">
+                        <img src="images/most-sold-3.png" alt="Thumb 3" class="w-full h-full object-contain mix-blend-multiply pointer-events-none">
                     </div>
-                    <div class="thumbnail-btn w-20 h-20 bg-[#f5f5f5] rounded-xl cursor-pointer border-2 border-transparent hover:border-gray-300 p-2 flex items-center justify-center transition opacity-60" onclick="changeMainImage(this, 'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=800', 3)">
-                        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=200" alt="Thumb 4" class="w-full h-full object-cover mix-blend-multiply pointer-events-none">
+                    <div class="thumbnail-btn w-20 h-20 bg-[#f5f5f5] rounded-xl cursor-pointer border-2 border-transparent hover:border-gray-300 p-2 flex items-center justify-center transition opacity-60" onclick="changeMainImage(this, 'images/most-sold-4.jpg', 3)">
+                        <img src="images/most-sold-4.jpg" alt="Thumb 4" class="w-full h-full object-contain mix-blend-multiply pointer-events-none">
                     </div>
-                    <div class="thumbnail-btn w-20 h-20 bg-[#f5f5f5] rounded-xl cursor-pointer border-2 border-transparent hover:border-gray-300 p-2 flex items-center justify-center transition opacity-60" onclick="changeMainImage(this, 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=800', 4)">
-                        <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=200" alt="Thumb 5" class="w-full h-full object-cover mix-blend-multiply pointer-events-none">
+                    <div class="thumbnail-btn w-20 h-20 bg-[#f5f5f5] rounded-xl cursor-pointer border-2 border-transparent hover:border-gray-300 p-2 flex items-center justify-center transition opacity-60" onclick="changeMainImage(this, 'images/most-sold-5.png', 4)">
+                        <img src="images/most-sold-5.png" alt="Thumb 5" class="w-full h-full object-contain mix-blend-multiply pointer-events-none">
                     </div>
                 </div>
             </div>
@@ -933,11 +941,11 @@
         // Product Details Image Gallery
         let currentImageIndex = 0;
         const galleryImages = [
-            "https://images.unsplash.com/photo-1606220838315-056192d5e927?auto=format&fit=crop&q=80&w=1600",
-            "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&q=80&w=1600",
-            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=1600",
-            "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=1600",
-            "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=1600"
+            "images/most-sold-1.png",
+            "images/most-sold-2.png",
+            "images/most-sold-3.png",
+            "images/most-sold-4.jpg",
+            "images/most-sold-5.png"
         ];
 
         function changeMainImage(element, src, index) {
@@ -957,6 +965,18 @@
             }
             element.classList.remove('border-transparent', 'opacity-60');
             element.classList.add('border-black', 'opacity-100');
+
+            // Scroll thumbnail into view on mobile
+            element.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+
+        function changeMainImageByDirection(dir) {
+            let nextIndex = (currentImageIndex + dir + galleryImages.length) % galleryImages.length;
+            const thumbs = document.getElementById('thumbnail-container').children;
+            if(thumbs[nextIndex]) {
+                const smallSrc = thumbs[nextIndex].querySelector('img').src;
+                changeMainImage(thumbs[nextIndex], smallSrc, nextIndex);
+            }
         }
 
         // Lightbox Logic
@@ -1004,7 +1024,7 @@
                 // Also update the underlying main image to stay synced
                 const thumbs = document.getElementById('thumbnail-container').children;
                 if(thumbs[index]) {
-                    const smallSrc = thumbs[index].querySelector('img').src.replace('w=200', 'w=800');
+                    const smallSrc = thumbs[index].querySelector('img').src;
                     changeMainImage(thumbs[index], smallSrc, index);
                 }
             }
