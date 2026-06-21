@@ -283,11 +283,14 @@
         <!-- Product Hero Section -->
         <section class="container mx-auto px-4 lg:px-8 py-12 flex flex-col lg:flex-row gap-12 lg:gap-16">
             <!-- Left: Gallery -->
-            <div class="w-full lg:w-1/2">
+            <div class="w-full lg:w-1/2 relative z-10">
                 <!-- Main Image -->
-                <div id="zoom-container" class="relative bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef] rounded-[2rem] aspect-square flex items-center justify-center mb-4 shadow-sm overflow-hidden cursor-zoom-in group">
+                <div id="zoom-container" class="relative bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef] rounded-[2rem] aspect-square flex items-center justify-center mb-4 shadow-sm overflow-hidden">
                     <div class="absolute top-6 left-6 bg-black/80 backdrop-blur-md border border-white/20 text-white text-xs font-bold px-4 py-2 rounded-full z-10 shadow-lg pointer-events-none">22% OFF</div>
-                    <img id="main-product-image" src="images/most-sold-1.png" alt="Beats Studio Buds" class="w-full h-full object-contain mix-blend-multiply transition-transform duration-300 ease-out origin-center group-hover:scale-[2]">
+                    <img id="main-product-image" src="images/most-sold-1.png" alt="Beats Studio Buds" class="w-full h-full object-contain mix-blend-multiply transition-opacity duration-300">
+                    
+                    <!-- Zoom Overlay for tracking mouse -->
+                    <div id="zoom-overlay" class="absolute inset-0 z-10 cursor-crosshair"></div>
                     
                     <!-- Navigation Buttons -->
                     <button id="main-prev" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/50 hover:bg-white rounded-full flex items-center justify-center text-black shadow-md transition-colors z-20" onclick="event.stopPropagation(); changeMainImageByDirection(-1)">
@@ -297,6 +300,10 @@
                         <i data-lucide="chevron-right" width="20" height="20"></i>
                     </button>
                 </div>
+                
+                <!-- Zoom Pane (Amazon style) -->
+                <div id="zoom-pane" class="hidden lg:block absolute top-0 left-[calc(100%+2rem)] w-[120%] h-[120%] bg-white border border-gray-100 shadow-2xl rounded-[2rem] z-[100] bg-no-repeat pointer-events-none opacity-0 transition-opacity duration-200" style="background-color: #fff; background-size: 200%;"></div>
+
                 <!-- Thumbnails -->
                 <div class="flex flex-nowrap md:flex-wrap overflow-x-auto md:overflow-visible gap-4 mt-4 pb-2 snap-x [&::-webkit-scrollbar]:hidden" style="scrollbar-width: none;" id="thumbnail-container">
                     <div class="thumbnail-btn w-20 h-20 bg-[#f5f5f5] rounded-xl cursor-pointer border-2 border-black p-2 flex items-center justify-center transition opacity-100" onclick="changeMainImage(this, 'images/most-sold-1.png', 0)">
@@ -990,8 +997,9 @@
             const zoomContainer = document.getElementById('zoom-container');
 
             // Open Lightbox
-            if(zoomContainer && lightbox) {
-                zoomContainer.addEventListener('click', (e) => {
+            const zoomOverlay = document.getElementById('zoom-overlay');
+            if(zoomOverlay && lightbox) {
+                zoomOverlay.addEventListener('click', (e) => {
                     lightbox.classList.remove('opacity-0', 'pointer-events-none');
                     lightbox.classList.add('opacity-100', 'pointer-events-auto');
                     lightboxImg.src = galleryImages[currentImageIndex];
@@ -1069,20 +1077,30 @@
             }
         });
 
-        // Product Details Zoom Effect
-        const zoomContainer = document.getElementById('zoom-container');
-        const mainImage = document.getElementById('main-product-image');
+        // Product Details Zoom Effect (Amazon Style)
+        const zoomOverlayElem = document.getElementById('zoom-overlay');
+        const zoomPane = document.getElementById('zoom-pane');
+        const mainImageElem = document.getElementById('main-product-image');
 
-        if (zoomContainer && mainImage) {
-            zoomContainer.addEventListener('mousemove', (e) => {
-                const rect = zoomContainer.getBoundingClientRect();
-                const x = ((e.clientX - rect.left) / rect.width) * 100;
-                const y = ((e.clientY - rect.top) / rect.height) * 100;
-                mainImage.style.transformOrigin = `${x}% ${y}%`;
+        if (zoomOverlayElem && zoomPane && mainImageElem) {
+            zoomOverlayElem.addEventListener('mouseenter', () => {
+                if(window.innerWidth >= 1024) { // Only on desktop
+                    zoomPane.style.opacity = '1';
+                    zoomPane.style.backgroundImage = `url(${mainImageElem.src})`;
+                }
             });
 
-            zoomContainer.addEventListener('mouseleave', () => {
-                mainImage.style.transformOrigin = 'center center';
+            zoomOverlayElem.addEventListener('mousemove', (e) => {
+                if(window.innerWidth >= 1024) {
+                    const rect = zoomOverlayElem.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    zoomPane.style.backgroundPosition = `${x}% ${y}%`;
+                }
+            });
+
+            zoomOverlayElem.addEventListener('mouseleave', () => {
+                zoomPane.style.opacity = '0';
             });
         }
 
