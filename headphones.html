@@ -871,6 +871,14 @@
             const noResults = document.getElementById('search-no-results');
 
             if(!offcanvas) return;
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons({
+                    nameAttr: 'data-lucide',
+                    attrs: {
+                        class: 'lucide'
+                    }
+                });
+            }
 
             const products = [
                 { title: "Wireless Gaming Headphones MS920", category: "Headphones", price: "$75.66", url: "product-details.html", img: "images/most-sold-1.png" },
